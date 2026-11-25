@@ -48,8 +48,10 @@ Thank you for helping keep travelers on their path. Contributions of every size 
 ## Translations
 
 `README.md` (English) is canonical. When you change it, note in the pull request which translated
-READMEs are now out of date. Translators: keep the language bar, links, commands, and code blocks
-identical. Update the `Translated from` line at the top of the file.
+READMEs are now out of date. Translators: keep the language bar, links, badges, commands, and shell
+code blocks identical (the dialogue in *Quick example* may be translated). Update the
+`Translated from` note at the top of the file. Arabic: keep prose inside `<div dir="rtl">` and code
+blocks outside it.
 
 ## Pull requests
 
