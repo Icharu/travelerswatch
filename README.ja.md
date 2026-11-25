@@ -1,11 +1,11 @@
 <!-- lang-bar -->
 [English](README.md) · [Português (Brasil)](README.pt-BR.md) · [Español](README.es.md) · [繁體中文](README.zh-Hant.md) · [简体中文](README.zh-Hans.md) · **日本語** · [العربية](README.ar.md)
 
-> `README.md` v1.0.0（2026-11-25）からの翻訳です。機械支援による翻訳のため、ネイティブスピーカーによるレビューを歓迎します。正式な版は英語版です。
+> `README.md` v1.1.0（2026-11-25）からの翻訳です。機械支援による翻訳のため、ネイティブスピーカーによるレビューを歓迎します。正式な版は英語版です。
 
 # The Traveler's Watch（旅人の時計）
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -22,14 +22,20 @@
 
 | コマンド | 内容 |
 |---|---|
-| **`/checkwatch`** | **航海日誌がまだない場合：** あなたと一緒に*針路*（基準・コンテキスト・制約・課題・ツール）を決め、誤ったセクションに書かれた項目を移し、セクション間の緊張関係を指摘して `.watch/WATCH.md` を作成します。**航海日誌がある場合：** チェックポイントを実行し、根拠とともに **順調／ずれ始めている／針路外** を報告します。 |
-| **見張り番**（自動） | プロンプトのたびに、Claude Code の hook が Claude に針路を思い出させます。依頼が針路から外れていれば、Claude は一行で指摘して `/fixwatch` を提案し、そのまま作業を続けます。 |
+| **`/checkwatch`** | **航海日誌がまだない場合：** まずプロジェクト自身のドキュメントと履歴を読み、あなたと一緒に*針路*（範囲・基準・コンテキスト・制約・課題・ツール）を決め、誤ったセクションに書かれた項目を移し、証拠との矛盾を一つずつ解消または明示的に受け入れてもらったうえで `.watch/WATCH.md` を作成します。**航海日誌がある場合：** 作業*と*針路そのものの両方をチェックし、根拠とともに **順調／ずれ始めている／針路外／針路に疑義** を報告します。 |
+| **見張り番**（自動） | プロンプトのたびに、Claude Code の hook が Claude に針路を思い出させます。依頼が針路から外れていれば、Claude は一行で指摘して `/fixwatch` を提案し、そのまま作業を続けます。チェックポイントの時期にはセッションごとに一度知らせ、針路が*レビュー中*の間は一時停止します。 |
 | **`/fixwatch`** | 針路の変更を変更前／変更後の差分として提案し、ほかへの影響を示し、プロジェクトマネージャーの確認を待ってから針路を更新し、航路記録（*Path log*）に**追記**します。Claude は提案できます（自分がコンテキストを誤解していた場合も含む）が、確認できるのはプロジェクトマネージャーだけです。 |
+| **`/configwatch`** | 見張りの状態を表示し、チェックポイントを求める頻度を設定します：*N* コミットまたは *M* セッションごと（既定は 3 または 2）、またはオフ。 |
+
+### 証拠に基づく針路
+
+針路は、それ自体では筋が通っていても、プロジェクトの実態とずれていることがあります。v1.1.0 からは、時計をプロジェクト自身の証拠に合わせ、早めのチェックポイントで誤りを早期に見つけ、針路がレビュー中の間は見張り番が一時停止します（[理由](docs/benchmarks/2026-11-25-best-vs-worst.md)）。
 
 ### 針路
 
 | セクション | 答える問い |
 |---|---|
+| **範囲**（*Scope*） | この針路はプロジェクトのどの部分を導き、どの部分は対象外か？ |
 | **基準**（*Standard*） | 作業を何に照らして評価するか？**レンズのプリセット**、**自由記述のルーブリック**、または**名前のある外部規格**。適合性・評価可能性・一貫性・範囲・権利・倫理を必ず確認します。 |
 | **コンテキスト**（*Context*） | この作業はどこに属するか？分野、ステークホルダー、現状、**参考文献・先行事例**。 |
 | **制約**（*Constraints*） | 何に縛られているか？期間、予算、人員、指定された技術、規制。 |
@@ -54,16 +60,16 @@
 /plugin install travelerswatch@travelerswatch
 ```
 
-コマンドは名前空間付きになります：`/travelerswatch:checkwatch`、`/travelerswatch:fixwatch`。
+コマンドは名前空間付きになります：`/travelerswatch:checkwatch`、`/travelerswatch:fixwatch`、`/travelerswatch:configwatch`。
 
 **スキルのみ**（Claude Code、または [Agent Skills](https://agentskills.io/) を読める任意のエージェント。hook なし）：
 
 ```bash
 git clone https://github.com/Icharu/travelerswatch
-cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch ~/.claude/skills/
+cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch travelerswatch/skills/configwatch ~/.claude/skills/
 ```
 
-コマンドは `/checkwatch` と `/fixwatch` になります。hook がない場合は、作業セッションの開始時に `/checkwatch` を実行してください。
+コマンドは `/checkwatch`、`/fixwatch`、`/configwatch` になります。hook がない場合は、作業セッションの開始時に `/checkwatch` を実行してください。
 
 **インストールせずにローカルで試す：** `claude --plugin-dir ./travelerswatch`
 
@@ -91,19 +97,21 @@ Claude：⚠️ 見張り：「課題」（2つのパイロット地区）と「
 .claude-plugin/        プラグインとマーケットプレイスのマニフェスト
 skills/checkwatch/     SKILL.md · references/（基準、セクション、関係、レンズ）· assets/WATCH.md · evals/
 skills/fixwatch/       SKILL.md · evals/
+skills/configwatch/    SKILL.md · evals/
 hooks/                 hooks.json · watchman.sh（bash + awk のみ）
 tests/                 watchman.test.sh
 docs/                  物語 · 概念 · 方法（文献）· adr/
 examples/              PM セッションの実例
 ```
 
-テストの実行：`bash tests/watchman.test.sh`
+テストの実行：`bash tests/watchman.test.sh` · hook の計測：`python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
 
 ## ドキュメント
 
 - [概念](docs/concepts.md)：スキル、針路、判定、誰が決めるか
 - [方法](docs/methods.md)：各設計判断の背景にある研究
-- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md)
+- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md) · [ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)
+- [ベンチマーク：最良と最悪のケース](docs/benchmarks/2026-11-25-best-vs-worst.md)：v1.0.0 が見逃したもの、v1.1.0 で直したもの、プロンプトごとの hook の所要時間
 - [変更履歴](CHANGELOG.md)
 
 （詳細なドキュメントは英語です。）

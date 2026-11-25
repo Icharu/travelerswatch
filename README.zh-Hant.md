@@ -1,11 +1,11 @@
 <!-- lang-bar -->
 [English](README.md) · [Português (Brasil)](README.pt-BR.md) · [Español](README.es.md) · **繁體中文** · [简体中文](README.zh-Hans.md) · [日本語](README.ja.md) · [العربية](README.ar.md)
 
-> 譯自 `README.md` v1.0.0（2026-11-25）。本文為機器輔助翻譯，歡迎母語人士協助校訂；以英文版為準。
+> 譯自 `README.md` v1.1.0（2026-11-25）。本文為機器輔助翻譯，歡迎母語人士協助校訂；以英文版為準。
 
 # The Traveler's Watch（旅人之錶）
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -22,14 +22,20 @@
 
 | 指令 | 作用 |
 |---|---|
-| **`/checkwatch`** | **尚無航行日誌時：** 與你共同確立*航向*（標準、脈絡、限制、問題、工具），把放錯區塊的項目移到正確位置，指出區塊之間的張力，並寫入 `.watch/WATCH.md`。**已有航行日誌時：** 進行檢查點評估，並附證據回報 **在路上／正在偏移／已偏離**。 |
-| **守望者**（自動） | 每次輸入提示時，Claude Code 的 hook 會提醒 Claude 目前的航向。若你的請求偏離航向，Claude 會用一行說明並建議使用 `/fixwatch`，然後繼續完成任務。 |
+| **`/checkwatch`** | **尚無航行日誌時：** 先閱讀專案本身的文件與歷史，再與你共同確立*航向*（範圍、標準、脈絡、限制、問題、工具），把放錯區塊的項目移到正確位置，要求你逐一解決或明確接受與證據的矛盾，並寫入 `.watch/WATCH.md`。**已有航行日誌時：** 同時檢查工作*與*航向本身，並附證據回報 **在路上／正在偏移／已偏離／航向存疑**。 |
+| **守望者**（自動） | 每次輸入提示時，Claude Code 的 hook 會提醒 Claude 目前的航向。若你的請求偏離航向，Claude 會用一行說明並建議使用 `/fixwatch`，然後繼續完成任務。檢查點到期時，每個工作階段提醒一次；航向*審查中*時暫停。 |
 | **`/fixwatch`** | 以「變更前／變更後」的差異提出方向調整，說明其連帶影響，等待專案經理確認後才更新航向，並在航程記錄（*Path log*）中**追加**一筆。Claude 可以提出建議，包括在它誤解脈絡時；只有專案經理能確認。 |
+| **`/configwatch`** | 顯示守望狀態，並設定多久要求一次檢查點：每 *N* 次提交或 *M* 個工作階段（預設 3 或 2），或關閉。 |
+
+### 以證據為本
+
+航向可能自身前後一致，卻與專案實況不符。自 v1.1.0 起，這只錶會以專案本身的證據校準，早期的檢查點能及早發現錯誤，航向審查中時守望者會暫停（[原因](docs/benchmarks/2026-11-25-best-vs-worst.md)）。
 
 ### 航向
 
 | 區塊 | 回答這個問題 |
 |---|---|
+| **範圍**（*Scope*） | 這個航向要引導專案的哪一部分？哪些不在範圍內？ |
 | **標準**（*Standard*） | 工作將依據什麼來評估？**預設視角**、**自由撰寫的評分準則**，或**具名的外部標準**；一律檢查其適用性、可評估性、一致性、範圍、權利與倫理。 |
 | **脈絡**（*Context*） | 這項工作屬於哪裡？領域、利害關係人、現況、**參考文獻與前案**。 |
 | **限制**（*Constraints*） | 什麼在限制你？時程、預算、人力、指定技術、法規。 |
@@ -54,16 +60,16 @@
 /plugin install travelerswatch@travelerswatch
 ```
 
-指令會帶有命名空間：`/travelerswatch:checkwatch`、`/travelerswatch:fixwatch`。
+指令會帶有命名空間：`/travelerswatch:checkwatch`、`/travelerswatch:fixwatch`、`/travelerswatch:configwatch`。
 
 **只安裝 skills**（Claude Code 或任何支援 [Agent Skills](https://agentskills.io/) 的代理；不含 hook）：
 
 ```bash
 git clone https://github.com/Icharu/travelerswatch
-cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch ~/.claude/skills/
+cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch travelerswatch/skills/configwatch ~/.claude/skills/
 ```
 
-指令即為 `/checkwatch` 與 `/fixwatch`。沒有 hook 時，請在每次工作階段開始時執行 `/checkwatch`。
+指令即為 `/checkwatch`、`/fixwatch` 與 `/configwatch`。沒有 hook 時，請在每次工作階段開始時執行 `/checkwatch`。
 
 **不安裝、在本機試用：** `claude --plugin-dir ./travelerswatch`
 
@@ -91,19 +97,21 @@ Claude：⚠️ 守望：偏離「問題」（兩個試辦區）與「限制」�
 .claude-plugin/        外掛與 marketplace 清單
 skills/checkwatch/     SKILL.md · references/（標準、區塊、關係、視角）· assets/WATCH.md · evals/
 skills/fixwatch/       SKILL.md · evals/
+skills/configwatch/    SKILL.md · evals/
 hooks/                 hooks.json · watchman.sh（僅需 bash + awk）
 tests/                 watchman.test.sh
 docs/                  故事 · 概念 · 方法（文獻）· adr/
 examples/              專案管理實例
 ```
 
-執行測試：`bash tests/watchman.test.sh`
+執行測試：`bash tests/watchman.test.sh` · 測量 hook：`python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
 
 ## 文件
 
 - [概念](docs/concepts.md)：skills、航向、判定結果、由誰決定
 - [方法](docs/methods.md)：每項設計決策背後的研究
-- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md)
+- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md) · [ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)
+- [基準測試：最佳與最差情境](docs/benchmarks/2026-11-25-best-vs-worst.md)：v1.0.0 漏掉了什麼、v1.1.0 修正了什麼、每次提示的 hook 耗時
 - [變更紀錄](CHANGELOG.md)
 
 （詳細文件為英文。）

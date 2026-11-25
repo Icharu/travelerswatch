@@ -3,7 +3,7 @@
 
 # The Traveler's Watch
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -24,14 +24,20 @@ context gets summarized away, and a model that took a wrong turn keeps returning
 
 | Command | What it does |
 |---|---|
-| **`/checkwatch`** | **No logbook yet:** agrees the *bearing* with you (Standard, Context, Constraints, Problem, Tools), moves misfiled items, names the tensions between sections, and writes `.watch/WATCH.md`. **Logbook exists:** runs a checkpoint and reports **On path / Drifting / Off path** with evidence. |
-| **watchman** *(automatic)* | On every prompt, a Claude Code hook reminds Claude of the bearing. If your request drifts, Claude says so in one line and suggests `/fixwatch`, then carries on. |
+| **`/checkwatch`** | **No logbook yet:** reads the project's own docs and history first, then agrees the *bearing* with you (Scope, Standard, Context, Constraints, Problem, Tools), moves misfiled items, makes you resolve or accept every contradiction with the evidence, and writes `.watch/WATCH.md`. **Logbook exists:** runs a checkpoint on the work *and* on the bearing itself, and reports **On path / Drifting / Off path / Bearing in question** with evidence. |
+| **watchman** *(automatic)* | On every prompt, a Claude Code hook reminds Claude of the bearing. If your request drifts, Claude says so in one line and suggests `/fixwatch`, then carries on. It also says once per session when a checkpoint is due, and pauses while the bearing is *under review*. |
 | **`/fixwatch`** | Proposes a course change as a before/after diff, shows what else it affects, waits for the PM's confirmation, then updates the bearing and **appends** to the Path log. Claude can propose, including when it misread the context; only the PM confirms. |
+| **`/configwatch`** | Shows the watch status and sets how often the watchman asks for a checkpoint: every *N* commits or *M* sessions (default 3 or 2), or off. |
+
+### Grounded in evidence
+
+A bearing can be consistent with itself and still wrong about the project. Since v1.1.0 the watch is set against the project's own evidence, an early shakedown checkpoint catches mistakes soon, and the watchman pauses while the bearing is under review ([why](docs/benchmarks/2026-11-25-best-vs-worst.md)).
 
 ### The bearing
 
 | Section | Answer this |
 |---|---|
+| **Scope** | What part of the project does this bearing steer, and what not? |
 | **Standard** | What will the work be judged against? A **lens preset**, a **free-text rubric**, or a **named external standard**, always checked for fit, evaluability, consistency, scope, rights, and ethics. |
 | **Context** | Where does this work live? Field, stakeholders, current state, **referenced works**. |
 | **Constraints** | What limits you? Time, budget, people, mandated technology, regulation. |
@@ -56,16 +62,16 @@ To add yours, see [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-lens).
 /plugin install travelerswatch@travelerswatch
 ```
 
-Commands are then namespaced: `/travelerswatch:checkwatch`, `/travelerswatch:fixwatch`.
+Commands are then namespaced: `/travelerswatch:checkwatch`, `/travelerswatch:fixwatch`, `/travelerswatch:configwatch`.
 
 **Skills only** (Claude Code or any agent that reads [Agent Skills](https://agentskills.io/); no hook):
 
 ```bash
 git clone https://github.com/Icharu/travelerswatch
-cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch ~/.claude/skills/
+cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch travelerswatch/skills/configwatch ~/.claude/skills/
 ```
 
-Commands are then `/checkwatch` and `/fixwatch`. Without the hook, run `/checkwatch` at the start
+Commands are then `/checkwatch`, `/fixwatch` and `/configwatch`. Without the hook, run `/checkwatch` at the start
 of each working session.
 
 **Try it locally without installing:** `claude --plugin-dir ./travelerswatch`
@@ -94,19 +100,21 @@ Full session: [examples/pm-walkthrough.md](examples/pm-walkthrough.md).
 .claude-plugin/        plugin + marketplace manifests
 skills/checkwatch/     SKILL.md · references/ (standards, sections, relations, lenses) · assets/WATCH.md · evals/
 skills/fixwatch/       SKILL.md · evals/
+skills/configwatch/    SKILL.md · evals/
 hooks/                 hooks.json · watchman.sh (bash + awk, no other dependencies)
 tests/                 watchman.test.sh
 docs/                  tale · concepts · methods (literature) · adr/
 examples/              worked PM session
 ```
 
-Run the tests: `bash tests/watchman.test.sh`
+Run the tests: `bash tests/watchman.test.sh` · time the hook: `python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
 
 ## Documentation
 
 - [Concepts](docs/concepts.md): skills, the bearing, verdicts, who decides
 - [Methods](docs/methods.md): the research behind each design choice
-- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md)
+- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md) · [ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)
+- [Benchmark: best vs worst case](docs/benchmarks/2026-11-25-best-vs-worst.md): what v1.0.0 missed, what v1.1.0 fixed, hook time per prompt
 - [Changelog](CHANGELOG.md)
 
 ## Contributing

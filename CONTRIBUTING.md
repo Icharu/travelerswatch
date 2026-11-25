@@ -37,13 +37,24 @@ Thank you for helping keep travelers on their path. Contributions of every size 
 
 ## Changing the hook
 
-- Bash and awk only, with no other runtime dependencies.
-- It must always exit 0, stay silent without a logbook, and keep the output capped.
-- **Write the failing test first** in `tests/watchman.test.sh`, then make it pass:
+- Bash (≥ 3.2, for macOS) and awk only; git is optional. Prefer bash built-ins over extra
+  processes; the logbook is parsed in a single `awk` pass.
+- It must always exit 0, stay silent without a logbook, keep the output capped, and write nothing
+  but `.watch/.state`.
+- **Write the failing test first** in `tests/watchman.test.sh`, then make it pass, and measure the
+  per-prompt time before and after:
 
   ```bash
   bash tests/watchman.test.sh
+  python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir> [...]
   ```
+
+## Changing the logbook format
+
+The hook parses exact labels: `## Status`, `- **Bearing:**`, `- **Checkpoint cadence:**`
+(`every N commits or M sessions` / `off`), `- **Last checkpoint:** <date> @ <sha>`,
+`**Boundary notes:**`, and Relations lines containing "accepted". Change them only together with the
+hook, the template (`skills/checkwatch/assets/WATCH.md`), the skills, and the tests.
 
 ## Translations
 

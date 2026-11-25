@@ -3,11 +3,11 @@
 
 <div dir="rtl">
 
-> مترجم عن `README.md` الإصدار v1.0.0 (2026-11-25). ترجمة بمساعدة الآلة؛ نرحّب بمراجعة المتحدثين الأصليين. النسخة الإنجليزية هي المرجع المعتمد.
+> مترجم عن `README.md` الإصدار v1.1.0 (2026-11-25). ترجمة بمساعدة الآلة؛ نرحّب بمراجعة المتحدثين الأصليين. النسخة الإنجليزية هي المرجع المعتمد.
 
 # The Traveler's Watch (ساعة المسافر)
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -24,14 +24,20 @@
 
 | الأمر | ماذا يفعل |
 |---|---|
-| **`/checkwatch`** | **عند عدم وجود سجل:** يتفق معك على *المسار* (المعيار، السياق، القيود، المشكلة، الأدوات)، وينقل البنود الموضوعة في غير مكانها، ويسمّي التوترات بين الأقسام، ثم يكتب `.watch/WATCH.md`. **عند وجود السجل:** يُجري نقطة تفتيش ويُبلغ بالحالة **على المسار / ينحرف / خارج المسار** مع الأدلة. |
-| **الحارس** *(تلقائي)* | مع كل طلب، يذكّر hook في Claude Code الـ Claude بالمسار. إذا انحرف طلبك، يقول Claude ذلك في سطر واحد ويقترح `/fixwatch`، ثم يتابع المهمة. |
+| **`/checkwatch`** | **عند عدم وجود سجل:** يقرأ أولًا وثائق المشروع نفسه وتاريخه، ثم يتفق معك على *المسار* (النطاق، المعيار، السياق، القيود، المشكلة، الأدوات)، وينقل البنود الموضوعة في غير مكانها، ويطلب منك حلّ كل تناقض مع الأدلة أو قبوله صراحةً، ثم يكتب `.watch/WATCH.md`. **عند وجود السجل:** يُجري نقطة تفتيش على العمل *وعلى* المسار نفسه، ويُبلغ بالحالة **على المسار / ينحرف / خارج المسار / المسار موضع شك** مع الأدلة. |
+| **الحارس** *(تلقائي)* | مع كل طلب، يذكّر hook في Claude Code الـ Claude بالمسار. إذا انحرف طلبك، يقول Claude ذلك في سطر واحد ويقترح `/fixwatch`، ثم يتابع المهمة. وينبّه مرة واحدة في كل جلسة عندما تحين نقطة تفتيش، ويتوقف مؤقتًا ما دام المسار *قيد المراجعة*. |
 | **`/fixwatch`** | يقترح تغيير المسار في صورة فرق «قبل/بعد»، ويبيّن ما يتأثر به أيضًا، وينتظر تأكيد مدير المشروع، ثم يحدّث المسار و**يضيف** قيدًا جديدًا إلى سجل الطريق (*Path log*). يمكن لـ Claude أن يقترح، حتى عندما يكون قد أساء فهم السياق؛ لكن مدير المشروع وحده يؤكد. |
+| **`/configwatch`** | يعرض حالة الحارس ويحدّد عدد مرات طلب نقطة تفتيش: كل *N* من الإيداعات (commits) أو *M* من الجلسات (الافتراضي 3 أو 2)، أو إيقافها. |
+
+### مستند إلى الأدلة
+
+قد يكون المسار متّسقًا مع نفسه ومع ذلك مخطئًا بشأن المشروع. منذ الإصدار v1.1.0 تُضبط الساعة على أدلة المشروع نفسه، وتكشف نقطة تفتيش مبكرة الأخطاء سريعًا، ويتوقف الحارس مؤقتًا ما دام المسار قيد المراجعة ([لماذا](docs/benchmarks/2026-11-25-best-vs-worst.md)).
 
 ### المسار
 
 | القسم | أجب عن هذا |
 |---|---|
+| **النطاق** (*Scope*) | أيّ جزء من المشروع يوجّهه هذا المسار، وأيّ جزء لا؟ |
 | **المعيار** (*Standard*) | على أي أساس سيُقيَّم العمل؟ **عدسة جاهزة**، أو **معايير تقييم مكتوبة بحرية**، أو **معيار خارجي مسمّى**؛ ويُفحص دائمًا من حيث الملاءمة وقابلية التقييم والاتساق والنطاق والحقوق والأخلاقيات. |
 | **السياق** (*Context*) | أين يقع هذا العمل؟ المجال، وأصحاب المصلحة، والوضع الحالي، و**الأعمال المرجعية**. |
 | **القيود** (*Constraints*) | ما الذي يحدّك؟ الوقت، والميزانية، والأفراد، والتقنيات المفروضة، والأنظمة. |
@@ -60,7 +66,7 @@
 
 <div dir="rtl">
 
-تصبح الأوامر ضمن نطاق اسم: `/travelerswatch:checkwatch` و`/travelerswatch:fixwatch`.
+تصبح الأوامر ضمن نطاق اسم: `/travelerswatch:checkwatch` و`/travelerswatch:fixwatch` و`/travelerswatch:configwatch`.
 
 **المهارات فقط** (Claude Code أو أي وكيل يقرأ [Agent Skills](https://agentskills.io/)؛ بدون hook):
 
@@ -68,12 +74,12 @@
 
 ```bash
 git clone https://github.com/Icharu/travelerswatch
-cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch ~/.claude/skills/
+cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch travelerswatch/skills/configwatch ~/.claude/skills/
 ```
 
 <div dir="rtl">
 
-تصبح الأوامر `/checkwatch` و`/fixwatch`. بدون الـ hook، شغّل `/checkwatch` في بداية كل جلسة عمل.
+تصبح الأوامر `/checkwatch` و`/fixwatch` و`/configwatch`. بدون الـ hook، شغّل `/checkwatch` في بداية كل جلسة عمل.
 
 **للتجربة محليًا دون تثبيت:** `claude --plugin-dir ./travelerswatch`
 
@@ -107,6 +113,7 @@ Claude: ⚠️ الحارس: ينحرف عن المشكلة (حيّان تجري
 .claude-plugin/        plugin + marketplace manifests
 skills/checkwatch/     SKILL.md · references/ (standards, sections, relations, lenses) · assets/WATCH.md · evals/
 skills/fixwatch/       SKILL.md · evals/
+skills/configwatch/    SKILL.md · evals/
 hooks/                 hooks.json · watchman.sh (bash + awk only)
 tests/                 watchman.test.sh
 docs/                  tale · concepts · methods · adr/
@@ -115,13 +122,14 @@ examples/              worked PM session
 
 <div dir="rtl">
 
-تشغيل الاختبارات: `bash tests/watchman.test.sh`
+تشغيل الاختبارات: `bash tests/watchman.test.sh` · قياس زمن الـ hook: `python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
 
 ## التوثيق
 
 - [المفاهيم](docs/concepts.md): المهارات، والمسار، والأحكام، ومن يقرّر
 - [المنهجية](docs/methods.md): الأبحاث وراء كل قرار تصميمي
-- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md)
+- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md) · [ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)
+- [قياس الأداء: أفضل وأسوأ حالة](docs/benchmarks/2026-11-25-best-vs-worst.md): ما فات الإصدار v1.0.0، وما أصلحه v1.1.0، وزمن الـ hook لكل طلب
 - [سجل التغييرات](CHANGELOG.md)
 
 (التوثيق المفصّل باللغة الإنجليزية.)

@@ -1,11 +1,11 @@
 <!-- lang-bar -->
 [English](README.md) · **Português (Brasil)** · [Español](README.es.md) · [繁體中文](README.zh-Hant.md) · [简体中文](README.zh-Hans.md) · [日本語](README.ja.md) · [العربية](README.ar.md)
 
-> Traduzido de `README.md` v1.0.0 (2026-11-25). Tradução assistida por máquina; revisões de falantes nativos são bem-vindas. A versão em inglês é a canônica.
+> Traduzido de `README.md` v1.1.0 (2026-11-25). Tradução assistida por máquina; revisões de falantes nativos são bem-vindas. A versão em inglês é a canônica.
 
 # The Traveler's Watch (O Relógio do Viajante)
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -29,14 +29,20 @@ você pode confiar.
 
 | Comando | O que faz |
 |---|---|
-| **`/checkwatch`** | **Sem diário de bordo:** define com você o *rumo* (Padrão, Contexto, Restrições, Problema, Ferramentas), move itens que estão na seção errada, aponta as tensões entre seções e grava `.watch/WATCH.md`. **Com diário de bordo:** faz um ponto de controle e informa **No caminho / Desviando / Fora do caminho**, com evidências. |
-| **vigia** *(automático)* | A cada prompt, um hook do Claude Code lembra o Claude do rumo. Se o seu pedido se desvia, o Claude avisa em uma linha, sugere `/fixwatch` e segue com a tarefa. |
+| **`/checkwatch`** | **Sem diário de bordo:** primeiro lê a documentação e o histórico do próprio projeto, depois define com você o *rumo* (Escopo, Padrão, Contexto, Restrições, Problema, Ferramentas), move itens que estão na seção errada, pede que você resolva ou aceite cada contradição com as evidências e grava `.watch/WATCH.md`. **Com diário de bordo:** faz um ponto de controle sobre o trabalho *e* sobre o próprio rumo e informa **No caminho / Desviando / Fora do caminho / Rumo em questão**, com evidências. |
+| **vigia** *(automático)* | A cada prompt, um hook do Claude Code lembra o Claude do rumo. Se o seu pedido se desvia, o Claude avisa em uma linha, sugere `/fixwatch` e segue com a tarefa. Também avisa, uma vez por sessão, quando um ponto de controle está pendente, e fica em pausa enquanto o rumo está *em revisão*. |
 | **`/fixwatch`** | Propõe uma mudança de curso como um diff antes/depois, mostra o que mais ela afeta, espera a confirmação do gerente de projeto e só então atualiza o rumo e **acrescenta** uma entrada ao Registro de percurso (*Path log*). O Claude pode propor, inclusive quando interpretou mal o contexto; só o gerente de projeto confirma. |
+| **`/configwatch`** | Mostra o estado do vigia e define com que frequência ele pede um ponto de controle: a cada *N* commits ou *M* sessões (padrão: 3 ou 2), ou desligado. |
+
+### Ancorado em evidências
+
+Um rumo pode ser coerente consigo mesmo e ainda assim estar errado sobre o projeto. Desde a v1.1.0, o relógio é acertado com as evidências do próprio projeto, um ponto de controle inicial pega erros cedo e o vigia pausa enquanto o rumo está em revisão ([por quê](docs/benchmarks/2026-11-25-best-vs-worst.md)).
 
 ### O rumo
 
 | Seção | Responda a isto |
 |---|---|
+| **Escopo** (*Scope*) | Que parte do projeto este rumo conduz, e qual não? |
 | **Padrão** (*Standard*) | Contra o que o trabalho será avaliado? Um **preset de lente**, uma **rubrica em texto livre** ou um **padrão externo nomeado**, sempre verificado quanto a adequação, avaliabilidade, consistência, escopo, direitos e ética. |
 | **Contexto** (*Context*) | Onde esse trabalho se insere? Área, partes interessadas, situação atual, **obras de referência**. |
 | **Restrições** (*Constraints*) | O que limita vocês? Prazo, orçamento, pessoas, tecnologia obrigatória, regulação. |
@@ -61,16 +67,16 @@ Para adicionar a sua, veja [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-lens).
 /plugin install travelerswatch@travelerswatch
 ```
 
-Os comandos ficam com namespace: `/travelerswatch:checkwatch`, `/travelerswatch:fixwatch`.
+Os comandos ficam com namespace: `/travelerswatch:checkwatch`, `/travelerswatch:fixwatch`, `/travelerswatch:configwatch`.
 
 **Somente as skills** (Claude Code ou qualquer agente que leia [Agent Skills](https://agentskills.io/); sem hook):
 
 ```bash
 git clone https://github.com/Icharu/travelerswatch
-cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch ~/.claude/skills/
+cp -r travelerswatch/skills/checkwatch travelerswatch/skills/fixwatch travelerswatch/skills/configwatch ~/.claude/skills/
 ```
 
-Os comandos passam a ser `/checkwatch` e `/fixwatch`. Sem o hook, rode `/checkwatch` no início de
+Os comandos passam a ser `/checkwatch`, `/fixwatch` e `/configwatch`. Sem o hook, rode `/checkwatch` no início de
 cada sessão de trabalho.
 
 **Testar localmente sem instalar:** `claude --plugin-dir ./travelerswatch`
@@ -99,19 +105,21 @@ Sessão completa (em inglês): [examples/pm-walkthrough.md](examples/pm-walkthro
 .claude-plugin/        manifests do plugin e do marketplace
 skills/checkwatch/     SKILL.md · references/ (padrões, seções, relações, lentes) · assets/WATCH.md · evals/
 skills/fixwatch/       SKILL.md · evals/
+skills/configwatch/    SKILL.md · evals/
 hooks/                 hooks.json · watchman.sh (bash + awk, sem outras dependências)
 tests/                 watchman.test.sh
 docs/                  conto · conceitos · métodos (literatura) · adr/
 examples/              sessão de GP comentada
 ```
 
-Rodar os testes: `bash tests/watchman.test.sh`
+Rodar os testes: `bash tests/watchman.test.sh` · medir o hook: `python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
 
 ## Documentação
 
 - [Conceitos](docs/concepts.md): skills, o rumo, veredictos, quem decide
 - [Métodos](docs/methods.md): a pesquisa por trás de cada decisão de design
-- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md)
+- [ADR 0001](docs/adr/0001-hook-for-per-prompt-watch.md) · [ADR 0002](docs/adr/0002-committed-logbook.md) · [ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)
+- [Benchmark: melhor vs pior caso](docs/benchmarks/2026-11-25-best-vs-worst.md): o que a v1.0.0 deixou passar, o que a v1.1.0 corrigiu, tempo do hook por prompt
 - [Changelog](CHANGELOG.md)
 
 *(A documentação detalhada está em inglês.)*

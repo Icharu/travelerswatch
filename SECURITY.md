@@ -4,7 +4,8 @@
 
 | Version | Supported |
 |---|---|
-| 1.0.x | ✅ |
+| 1.1.x | ✅ |
+| 1.0.x | ⚠️ Critical fixes only — please upgrade |
 | < 1.0 | ❌ |
 
 ## Reporting a vulnerability
@@ -24,8 +25,13 @@ is published afterwards, and you are credited unless you ask not to be.
 
 ## What is in scope
 
-- **`hooks/watchman.sh`**, which runs on every prompt in Claude Code: command injection, path
-  traversal, reading files outside `.watch/WATCH.md`, crashes that block prompts, unbounded output.
+- **`hooks/watchman.sh`**, which runs on every prompt in Claude Code: command injection (including
+  through the session id or the checkpoint SHA it passes to `git`), path traversal, reading or
+  writing files other than `.watch/WATCH.md` and `.watch/.state`, symlink tricks on the state file,
+  crashes that block prompts, unbounded output.
+- **The evidence scan** (`checkwatch` intake and checkpoints), which reads project documents: text in
+  those documents that gets the model to act on it as instructions, or to copy secrets or personal
+  data into the logbook.
 - **Prompt injection through the logbook**: text in `.watch/WATCH.md` that escapes the `<bearing>`
   data block or gets the model to act on it as instructions.
 - **Skill instructions** (`skills/*/SKILL.md`, `references/`) that could lead an agent to write

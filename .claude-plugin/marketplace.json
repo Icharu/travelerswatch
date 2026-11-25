@@ -8,8 +8,8 @@
     {
       "name": "travelerswatch",
       "source": "./",
-      "description": "Set a project's bearing, get a one-line drift flag on every prompt, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
-      "version": "1.0.0",
+      "description": "The Traveler's Watch: set a project's bearing grounded in its own evidence, get a one-line drift flag on every prompt, catch a bearing that no longer matches reality, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
+      "version": "1.1.0",
       "category": "productivity"
     }
   ]

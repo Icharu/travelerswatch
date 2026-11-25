@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use The Traveler's Watch, please cite it using the metadata below."
 type: software
 title: "The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude"
-version: 1.0.0
+version: 1.1.0
 date-released: "2026-11-25"
 license: MIT
 repository-code: "https://github.com/Icharu/travelerswatch"
@@ -18,9 +18,10 @@ keywords:
   - context-drift
   - large-language-models
 abstract: >-
-  A Claude Code plugin and pair of portable Agent Skills that set a project's bearing
-  (Standard, Context, Constraints, Problem, Tools), flag drift from it on every prompt, and
-  record deliberate, PM-confirmed course changes in an append-only logbook.
+  A Claude Code plugin and three portable Agent Skills that set a project's bearing
+  (Scope, Standard, Context, Constraints, Problem, Tools) grounded in the project's own
+  evidence, flag drift from it on every prompt, check whether the bearing itself still
+  matches reality, and record deliberate, PM-confirmed course changes in an append-only logbook.
 # identifiers:
 #   - type: doi
 #     value: "10.5281/zenodo.XXXXXXX"   # add after Zenodo mints the DOI for v1.0.0
