@@ -1,0 +1,10 @@
+{
+  "name": "travelerswatch",
+  "version": "1.0.0",
+  "description": "The Traveler's Watch: set a project's bearing (Standard, Context, Constraints, Problem, Tools), get a one-line drift flag on every prompt, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
+  "author": {
+    "name": "Icaro de Jesus Silva"
+  },
+  "license": "MIT",
+  "keywords": ["project-management", "evaluation", "methodology", "context-drift", "agent-skills"]
+}

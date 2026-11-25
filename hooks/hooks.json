@@ -1,0 +1,16 @@
+{
+  "description": "The Traveler's Watch — watchman: injects the project bearing from .watch/WATCH.md on every prompt (silent when absent).",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/watchman.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
