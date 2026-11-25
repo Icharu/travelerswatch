@@ -1,0 +1,34 @@
+name: Lens proposal
+description: Propose a lens for a new field (see CONTRIBUTING.md → Adding a lens).
+labels: [lens]
+body:
+  - type: input
+    id: field
+    attributes:
+      label: Field
+      placeholder: e.g. event planning, construction, nonprofit programs
+    validations:
+      required: true
+  - type: textarea
+    id: sections
+    attributes:
+      label: How do Context, Constraints, Problem and Tools read in this field?
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Default criteria (4–8, observable, in your own words)
+    validations:
+      required: true
+  - type: textarea
+    id: drift
+    attributes:
+      label: Drift signals in this field
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights
+      options:
+        - label: The criteria are my own wording and do not copy text from a paid or copyrighted standard.
+          required: true

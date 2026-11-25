@@ -1,0 +1,16 @@
+{
+  "name": "travelerswatch",
+  "owner": {
+    "name": "Icaro de Jesus Silva"
+  },
+  "description": "The Traveler's Watch — evaluation, methodology assessment and context-drift watch for project work with Claude.",
+  "plugins": [
+    {
+      "name": "travelerswatch",
+      "source": "./",
+      "description": "Set a project's bearing, get a one-line drift flag on every prompt, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
+      "version": "1.0.0",
+      "category": "productivity"
+    }
+  ]
+}
