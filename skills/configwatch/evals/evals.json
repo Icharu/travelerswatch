@@ -1,0 +1,57 @@
+{
+  "skill_name": "configwatch",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/configwatch — we've passed the first checkpoint, space them out.",
+      "expected_output": "Shows current settings, offers presets, writes exactly 'every 10 commits or 5 sessions' (Steady) or the PM's choice, appends a 'Watch settings changed' entry, touches nothing else.",
+      "files": [
+        "evals/files/v1.1-WATCH.md"
+      ],
+      "expectations": [
+        "Shows bearing status, cadence and last checkpoint before changing anything",
+        "Writes the cadence line in the exact parseable form 'every N commits or M sessions'",
+        "Changes no bearing section and no other Status line",
+        "Appends a 'Watch settings changed' Path log entry"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "/configwatch off",
+      "expected_output": "Sets cadence to 'off' and warns once that a wrong bearing will then only be caught by a manual /checkwatch.",
+      "files": [
+        "evals/files/v1.1-WATCH.md"
+      ],
+      "expectations": [
+        "Writes '- **Checkpoint cadence:** off'",
+        "Warns once that drift flags continue but checkpoint nudges stop",
+        "Appends a Path log entry"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "/configwatch",
+      "expected_output": "v1.0 logbook without Status: offers to add a Status section with the default cadence.",
+      "files": [
+        "evals/files/composting-v1.0-WATCH.md"
+      ],
+      "expectations": [
+        "Notices the logbook has no Status section",
+        "Offers to add Status with 'every 3 commits or 2 sessions' and a Last checkpoint line",
+        "Does not change the bearing"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "/configwatch — mark the bearing as under review.",
+      "expected_output": "Refuses to change bearing status from configwatch; explains that a checkpoint sets 'under review' and /fixwatch closes it.",
+      "files": [
+        "evals/files/v1.1-WATCH.md"
+      ],
+      "expectations": [
+        "Does not edit the Bearing status line",
+        "Points to /checkwatch (to set it via a checkpoint) and /fixwatch (to close it)"
+      ]
+    }
+  ]
+}

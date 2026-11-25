@@ -4,14 +4,16 @@
     {
       "id": 1,
       "prompt": "/checkwatch — we're starting a volunteer tutoring app for our school. Context: we only have 3 weeks and no budget. Problem: build a React app. Tools: Firebase.",
-      "expected_output": "Intake mode. Claude first asks which Standard mode to use, then flags misfiled items and the solution-posing-as-problem.",
+      "expected_output": "Intake mode. Claude asks for a one-line scope and scans for evidence (none in an empty folder), then asks which Standard mode to use, then flags misfiled items and the solution-posing-as-problem.",
       "files": [],
       "expectations": [
-        "Asks the user to choose a Standard mode (lens preset, free-text rubric, or named external standard) before evaluating",
+        "Asks for (or confirms) a one-line scope before asking for the Standard",
+        "Asks the user to choose a Standard mode (lens preset, free-text rubric, or named external standard)",
         "Says that '3 weeks' and 'no budget' are limitations that belong in Constraints, not Context",
         "Says 'build a React app' is a solution, and asks for the problem behind it",
         "Asks why Firebase fits (a reason tied to context or constraints)",
-        "Does not create .watch/WATCH.md before the user confirms the bearing"
+        "Does not create .watch/WATCH.md before the user confirms the bearing",
+        "If it writes the logbook, section items contain no 'moved from' annotations"
       ]
     },
     {
@@ -30,24 +32,107 @@
       "id": 3,
       "prompt": "/checkwatch",
       "expected_output": "Checkpoint mode because the logbook exists. Claude reads the bearing, evaluates against the PM-lens criteria, and gives a verdict in the report format.",
-      "files": ["evals/files/composting-WATCH.md"],
+      "files": [
+        "evals/files/composting-WATCH.md"
+      ],
       "expectations": [
         "Recognizes the existing logbook and runs a checkpoint, not a new intake",
         "Produces a report with a verdict of On path, Drifting, or Off path",
         "Includes a table of criteria/sections with status and evidence",
-        "Does not evaluate environmental-permit compliance (respects Boundary notes)"
+        "Does not evaluate environmental-permit compliance (respects Boundary notes)",
+        "Evaluates both directions: work vs bearing and bearing vs reality",
+        "Updates (or offers to update) Last checkpoint, and offers to add a Status section because this v1.0 logbook has none"
       ]
     },
     {
       "id": 4,
       "prompt": "Let's also add a smartphone app with gamified recycling points for the whole city.",
       "expected_output": "With the watchman reminder in context, Claude flags drift in one line (Problem scope: two pilot districts; Constraints: budget, staff) and suggests /fixwatch, then continues.",
-      "files": ["evals/files/composting-WATCH.md"],
+      "files": [
+        "evals/files/composting-WATCH.md"
+      ],
       "expectations": [
         "Flags the drift in a single line naming the section(s) it conflicts with",
         "Suggests /fixwatch",
         "Does not edit .watch/WATCH.md",
         "Still engages with the request after the flag"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "/checkwatch — fieldnotes is our lab website. It works, it just looks old. Problem: redesign the landing page and add a performance dashboard. Tools: Vercel and Firebase Auth. Standard: a free-text rubric — the advisor approves the redesign.",
+      "expected_output": "Consistent-but-wrong bearing. Claude scans README and docs before confirming anything, finds the NO-GO evaluation with open High findings and the ADR fixing university hosting, shows each contradiction side by side, and requires the PM to resolve or explicitly accept each one.",
+      "files": [
+        "evals/files/fixture-live-blockers/README.md",
+        "evals/files/fixture-live-blockers/docs/evaluation/2026-11-10-evaluation.md",
+        "evals/files/fixture-live-blockers/docs/adr/0001-stack-and-hosting.md"
+      ],
+      "expectations": [
+        "Reads README.md and docs/ before the bearing is confirmed",
+        "Shows an evidence card naming the NO-GO verdict and open High-severity findings (by severity/area, without exploit detail)",
+        "Flags 'it works, just looks old' as contradicting the evaluation",
+        "Flags Vercel and Firebase as conflicting with ADR 0001 (university hosting, personal data)",
+        "Requires each contradiction to be resolved or explicitly accepted as an 'Accepted contradiction (PM)'",
+        "Proposes an objective anchor tied to the Final objective, or notes the redesign criterion already anchors it",
+        "Does not confirm the bearing while contradictions are unaddressed"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "/checkwatch — scope: hardening the fieldnotes platform only (no research outputs). Standard: use the Research lens.",
+      "expected_output": "Fit fails against the scope: the Research lens judges research questions and methods, not platform hardening. Claude names check 1 (Fit) and proposes the Software lens (optionally with rubric items).",
+      "files": [
+        "evals/files/fixture-live-blockers/README.md",
+        "evals/files/fixture-live-blockers/docs/evaluation/2026-11-10-evaluation.md"
+      ],
+      "expectations": [
+        "Names the Fit check as failing because of the stated scope",
+        "Proposes the Software lens (or a rubric) as the closest fit",
+        "Continues only after the PM picks a standard or explicitly accepts the mismatch as a boundary note"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "/checkwatch — PM lens, but keep only one criterion: 'architecture stays clean'. Final objective: close the three High findings by 2026-12-15.",
+      "expected_output": "Objective-anchor rule: the single criterion does not measure the Final objective. Claude proposes an anchor criterion; an opt-out is allowed only if explicit and is recorded in Boundary notes.",
+      "files": [],
+      "expectations": [
+        "Points out that no criterion measures progress toward the Final objective",
+        "Proposes a concrete anchor (e.g. H findings closed and verified by 2026-12-15)",
+        "Says what a one-criterion standard can and cannot detect",
+        "Records an opt-out in Boundary notes only if the PM explicitly opts out"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "/checkwatch",
+      "expected_output": "Checkpoint on a bearing that contradicts the project's own evidence. Verdict 'Bearing in question'; Claude asks to mark Status under review and proposes /fixwatch (evidence contradiction or misinterpretation).",
+      "files": [
+        "evals/files/fixture-wrong-bearing/README.md",
+        "evals/files/fixture-wrong-bearing/docs/evaluation/2026-11-10-evaluation.md",
+        "evals/files/fixture-wrong-bearing/docs/adr/0001-stack-and-hosting.md",
+        "evals/files/fixture-wrong-bearing/.watch/WATCH.md"
+      ],
+      "expectations": [
+        "Runs a checkpoint (logbook exists), not a new intake",
+        "Separates 'work vs bearing' from 'bearing vs reality'",
+        "Returns the verdict 'Bearing in question', citing the evaluation's NO-GO and ADR 0001",
+        "Asks the PM to confirm setting Status to 'under review since <date> — <reason>'",
+        "Proposes /fixwatch with trigger evidence contradiction or misinterpretation, without applying it"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "/checkwatch — new community garden project, we haven't written anything down yet.",
+      "expected_output": "No evidence available. Claude says so, records 'Evidence scanned: none found', proceeds with the intake, and recommends keeping the shakedown cadence on.",
+      "files": [
+        "evals/files/fixture-empty/NOTES.md"
+      ],
+      "expectations": [
+        "States that no evidence documents were found",
+        "Says the bearing will rest on the PM's statements alone",
+        "Recommends keeping the default shakedown cadence (3 commits or 2 sessions)",
+        "Continues the intake instead of stopping"
       ]
     }
   ]
