@@ -1,0 +1,16 @@
+{
+  "name": "travelerswatch",
+  "version": "1.1.0",
+  "description": "The Traveler's Watch: set a project's bearing grounded in its own evidence, get a one-line drift flag on every prompt, catch a bearing that no longer matches reality, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
+  "author": {
+    "name": "Icaro de Jesus Silva"
+  },
+  "license": "MIT AND CC-BY-4.0",
+  "keywords": [
+    "project-management",
+    "evaluation",
+    "methodology",
+    "context-drift",
+    "agent-skills"
+  ]
+}

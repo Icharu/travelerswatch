@@ -1,0 +1,30 @@
+{
+  "title": "The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude",
+  "upload_type": "software",
+  "version": "1.1.0",
+  "description": "<p>A Claude Code plugin and three portable Agent Skills that set a project's bearing (Scope, Standard, Context, Constraints, Problem, Tools) grounded in the project's own evidence, flag drift from it on every prompt, check whether the bearing itself still matches reality, and record deliberate, PM-confirmed course changes in an append-only logbook.</p>",
+  "creators": [
+    {
+      "name": "de Jesus Silva, Icaro"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "project-management",
+    "evaluation",
+    "methodology",
+    "context-drift",
+    "large-language-models"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Icharu/travelerswatch",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Dual-licensed from v1.1.0: code (hooks, tests, configuration: .sh, .py, .json, .yml, .cff) under MIT (LICENSE); documentation and skill text (all Markdown files) under CC BY 4.0 (LICENSE-docs). Release v1.0.0 is MIT in full."
+}

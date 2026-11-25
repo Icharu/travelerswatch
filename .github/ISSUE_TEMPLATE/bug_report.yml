@@ -1,0 +1,37 @@
+name: Bug report
+description: Something in /checkwatch, /fixwatch, or the watchman hook did not behave as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Security problem? **Do not file it here.** Use private vulnerability reporting (see SECURITY.md)."
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part?
+      options: [checkwatch, fixwatch, watchman hook, lens, docs / translation, install]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Include the prompt you used and, if relevant, a redacted .watch/WATCH.md. Remove any private data first.
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: Claude Code version, OS, plugin or skills-only install
