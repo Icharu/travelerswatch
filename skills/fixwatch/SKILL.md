@@ -1,7 +1,7 @@
 ---
 name: fixwatch
 description: Proposes and records a deliberate course change to a project's bearing in .watch/WATCH.md, with PM confirmation and an append-only Path log entry, and closes a bearing that is under review. Use when the user runs /fixwatch, when new information changes the project's Scope, Context, Constraints, Problem, Tools or Standard, when the watchman or a /checkwatch report flags drift that should become the new path, when a checkpoint put the bearing under review, or when Claude realizes it misinterpreted the context earlier.
-license: MIT
+license: CC-BY-4.0
 metadata:
   version: "1.1.0"
   family: travelers-watch

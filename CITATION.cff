@@ -4,7 +4,9 @@ type: software
 title: "The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude"
 version: 1.1.0
 date-released: "2026-11-25"
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 repository-code: "https://github.com/Icharu/travelerswatch"
 authors:
   - family-names: "de Jesus Silva"

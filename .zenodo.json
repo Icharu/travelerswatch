@@ -25,5 +25,6 @@
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
-  ]
+  ],
+  "notes": "Dual-licensed from v1.1.0: code (hooks, tests, configuration: .sh, .py, .json, .yml, .cff) under MIT (LICENSE); documentation and skill text (all Markdown files) under CC BY 4.0 (LICENSE-docs). Release v1.0.0 is MIT in full."
 }

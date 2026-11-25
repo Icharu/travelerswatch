@@ -6,7 +6,7 @@
 # The Traveler's Watch（旅人の時計）
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
@@ -130,7 +130,7 @@ examples/              PM セッションの実例
 
 ## ライセンス
 
-[MIT](LICENSE) © 2026 Icaro de Jesus Silva。[docs/tale.md](docs/tale.md) の物語はオリジナルの再話です。イザヤ書 21:11 の引用はパブリックドメインです。
+© 2026 Icaro de Jesus Silva。**コード**（`hooks/`、`tests/`、およびすべての `.sh`・`.py`・`.json`・`.yml`・`.cff` ファイル）は [MIT](LICENSE) ライセンス、**ドキュメントとスキルの本文**（`skills/**/*.md`、`docs/`、`examples/`、各 README を含むすべての Markdown ファイル）は [CC BY 4.0](LICENSE-docs) ライセンスです。クレジットを表示すれば、自由に再利用・改変できます。v1.0.0 は引き続き全体が MIT ライセンスです。[docs/tale.md](docs/tale.md) の物語はオリジナルの再話です。イザヤ書 21:11 の引用はパブリックドメインです。
 
 ## 参考文献
 

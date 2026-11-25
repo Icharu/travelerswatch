@@ -1,7 +1,7 @@
 ---
 name: configwatch
 description: Shows and changes the Traveler's Watch settings for a project — the checkpoint cadence (every N commits or M sessions, or off) stored in the Status section of .watch/WATCH.md — without touching the bearing. Use when the user runs /configwatch, asks how often checkpoints should happen, wants the "checkpoint is due" nudge more or less often or turned off, or wants to see the watch's current status.
-license: MIT
+license: CC-BY-4.0
 metadata:
   version: "1.1.0"
   family: travelers-watch

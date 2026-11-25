@@ -4,7 +4,7 @@
 # The Traveler's Watch
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
@@ -139,7 +139,7 @@ added here once v1.0.0 is released.
 
 ## License
 
-[MIT](LICENSE) © 2026 Icaro de Jesus Silva. The tale in [docs/tale.md](docs/tale.md) is an
+© 2026 Icaro de Jesus Silva. **Code** (`hooks/`, `tests/`, and all `.sh`, `.py`, `.json`, `.yml`, `.cff` files) is licensed under [MIT](LICENSE). **Documentation and skill text** (all Markdown files, including `skills/**/*.md`, `docs/`, `examples/` and the READMEs) is licensed under [CC BY 4.0](LICENSE-docs): reuse and adapt freely, with attribution. Release v1.0.0 remains MIT in full. The tale in [docs/tale.md](docs/tale.md) is an
 original retelling; the quotation from Isaiah 21:11 is in the public domain.
 
 ## Further reading

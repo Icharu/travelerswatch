@@ -6,7 +6,7 @@
 # The Traveler's Watch（旅人之表）
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
@@ -130,7 +130,7 @@ examples/              项目管理实例
 
 ## 许可证
 
-[MIT](LICENSE) © 2026 Icaro de Jesus Silva。[docs/tale.md](docs/tale.md) 中的故事为原创改写；以赛亚书 21:11 的引文属于公有领域。
+© 2026 Icaro de Jesus Silva。**代码**（`hooks/`、`tests/` 以及所有 `.sh`、`.py`、`.json`、`.yml`、`.cff` 文件）采用 [MIT](LICENSE) 许可；**文档与 skill 文本**（所有 Markdown 文件，包括 `skills/**/*.md`、`docs/`、`examples/` 和各 README）采用 [CC BY 4.0](LICENSE-docs) 许可：只要注明出处，即可自由复用和改编。v1.0.0 版本仍完全采用 MIT 许可。[docs/tale.md](docs/tale.md) 中的故事为原创改写；以赛亚书 21:11 的引文属于公有领域。
 
 ## 延伸阅读
 

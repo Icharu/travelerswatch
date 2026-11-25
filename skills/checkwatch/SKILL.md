@@ -1,7 +1,7 @@
 ---
 name: checkwatch
 description: Sets and checks a project's bearing (Scope, Standard, Context, Constraints, Problem, Tools), grounded in the project's own evidence, and evaluates whether the work is still on path and whether the bearing itself still matches reality. Use when the user runs /checkwatch, starts or re-scopes a project, asks "are we still on track?", asks for an evaluation or methodology assessment of their project, or when a .watch/WATCH.md logbook exists and a checkpoint is due.
-license: MIT
+license: CC-BY-4.0
 metadata:
   version: "1.1.0"
   family: travelers-watch

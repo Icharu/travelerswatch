@@ -8,7 +8,7 @@
 # The Traveler's Watch (ساعة المسافر)
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
@@ -148,7 +148,7 @@ examples/              worked PM session
 
 ## الترخيص
 
-[MIT](LICENSE) © 2026 Icaro de Jesus Silva. الحكاية في [docs/tale.md](docs/tale.md) إعادة سرد أصلية؛ والاقتباس من سفر إشعياء 21:11 في الملك العام.
+© 2026 Icaro de Jesus Silva. **الشيفرة** (`hooks/` و`tests/` وجميع ملفات `.sh` و`.py` و`.json` و`.yml` و`.cff`) مرخّصة بموجب [MIT](LICENSE). أما **التوثيق ونصوص المهارات** (جميع ملفات Markdown، بما فيها `skills/**/*.md` و`docs/` و`examples/` وملفات README) فمرخّصة بموجب [CC BY 4.0](LICENSE-docs): يمكنك إعادة استخدامها وتعديلها بحرية مع نسبة العمل إلى صاحبه. يبقى الإصدار v1.0.0 مرخّصًا بالكامل بموجب MIT. الحكاية في [docs/tale.md](docs/tale.md) إعادة سرد أصلية؛ والاقتباس من سفر إشعياء 21:11 في الملك العام.
 
 ## قراءات إضافية
 

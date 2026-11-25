@@ -72,4 +72,6 @@ blocks outside it.
 4. Add an entry under **Unreleased** in [CHANGELOG.md](CHANGELOG.md).
 5. Use [Conventional Commits](https://www.conventionalcommits.org/) messages (`feat:`, `fix:`, `docs:`).
 
-By contributing, you agree that your contributions are licensed under the [MIT License](LICENSE).
+By contributing, you agree that your contributions are licensed under the same terms as the files you
+change: code under the [MIT License](LICENSE), documentation and skill text (Markdown) under
+[CC BY 4.0](LICENSE-docs).

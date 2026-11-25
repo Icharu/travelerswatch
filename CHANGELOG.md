@@ -38,6 +38,11 @@ steered the work the wrong way. See [ADR 0003](docs/adr/0003-evidence-grounded-b
 - Hook parses the logbook in a single `awk` pass and uses bash built-ins (bash ≥ 3.2); ≈ 10–11 ms
   per prompt with cadence and git counting, vs ≈ 8 ms in v1.0.0.
 
+### Licensing
+- Dual license from this release: code (`hooks/`, `tests/`, `.sh`, `.py`, `.json`, `.yml`, `.cff`)
+  under MIT (`LICENSE`); documentation and skill text (all Markdown files) under CC BY 4.0
+  (`LICENSE-docs`). Release 1.0.0 remains MIT in full.
+
 ### Compatibility
 - v1.0 logbooks keep working unchanged (no Status → no nudges). `/checkwatch` or `/configwatch`
   offers to add the Status section.

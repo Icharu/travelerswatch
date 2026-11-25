@@ -6,7 +6,7 @@
 # The Traveler's Watch (El Reloj del Viajero)
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
 [![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
@@ -145,7 +145,7 @@ Zenodo en cuanto se publique la v1.0.0.
 
 ## Licencia
 
-[MIT](LICENSE) © 2026 Icaro de Jesus Silva. El cuento en [docs/tale.md](docs/tale.md) es una
+© 2026 Icaro de Jesus Silva. El **código** (`hooks/`, `tests/` y todos los archivos `.sh`, `.py`, `.json`, `.yml`, `.cff`) está bajo la licencia [MIT](LICENSE). La **documentación y el texto de las skills** (todos los archivos Markdown, incluidos `skills/**/*.md`, `docs/`, `examples/` y los READMEs) están bajo la licencia [CC BY 4.0](LICENSE-docs): reutiliza y adapta libremente, con atribución. La versión v1.0.0 sigue íntegramente bajo MIT. El cuento en [docs/tale.md](docs/tale.md) es una
 reescritura original; la cita de Isaías 21:11 es de dominio público.
 
 ## Lecturas recomendadas
