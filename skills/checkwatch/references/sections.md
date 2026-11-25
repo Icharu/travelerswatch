@@ -32,7 +32,13 @@ Say each move in one line: *"'Budget is 20k' → Constraints: it limits what we 
 - **Tools:** every tool has a "why". A tool with no reason is a candidate for removal or a hidden
   constraint (e.g. "the company mandates it").
 
-## When the user is unsure
+## Drafts from evidence
 
-Offer a draft based on what they already said, clearly marked as a draft, and ask them to correct it.
-Never fill a section silently.
+Start each section from a draft built from the scope line and the evidence card
+(`evidence.md`), clearly marked as a draft, and ask the PM to correct it. Never fill a section
+silently, and never let a draft overrule the PM without showing the contradiction.
+
+## Writing items clean
+
+Write each item as it should read from now on — no "*(moved from Context)*" or "*(was …)*" notes.
+The watchman injects these sections on every prompt; provenance belongs in the *Path log* entry.

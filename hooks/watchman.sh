@@ -107,6 +107,7 @@ esac
 # ---------------------------------------------------------------------------
 # Bearing
 # ---------------------------------------------------------------------------
+SCOPE="$(section "Scope")"
 PROBLEM="$(section "Problem")"
 CONSTRAINTS="$(section "Constraints")"
 TOOLS="$(section "Tools")"
@@ -119,6 +120,7 @@ if [ -z "$PROBLEM$CONSTRAINTS$TOOLS" ]; then
 fi
 
 BODY="$(
+  [ -n "$SCOPE" ] && printf '## Scope\n%s\n\n' "$SCOPE"
   printf '## Problem\n%s\n\n' "${PROBLEM:-(not set)}"
   printf '## Constraints\n%s\n\n' "${CONSTRAINTS:-(not set)}"
   printf '## Tools\n%s\n\n' "${TOOLS:-(not set)}"

@@ -14,6 +14,8 @@ name every tension you find.
 | **Constraints ↔ Tools** | Does any tool break a constraint (cost, skills, licensing, data rules)? | A paid service under a zero-budget constraint; a language nobody on the team knows. |
 | **Context ↔ Constraints** | Are there limits implied by the context that are missing from Constraints? | Healthcare context with no data-protection constraint listed. |
 | **Context ↔ Tools** | Are the tools normal for this field, or is there a reason to deviate? | A field-standard tool ignored without a reason; referenced works that used a different method. |
+| **Answers ↔ evidence** | Does anything in the evidence card contradict what the PM said? (see `evidence.md`) | PM: "it just looks old" · evaluation: release blocked by open security findings. |
+| **Scope ↔ Standard** | Does the chosen Standard judge the part of the project the Scope names? | Research lens on a scope of "platform hardening only". |
 | **Standard ↔ everything** | Can each criterion actually be checked with this context, these tools, under these limits? | A criterion that needs data the constraints forbid collecting. |
 
 ## How to present them
@@ -25,8 +27,9 @@ name every tension you find.
    > Options: switch to a free tool, raise the budget, or accept the cost. Which one?
 3. For each tension, the user resolves it (change a section) or accepts it (record it under
    *Relations* as an accepted risk).
-4. Write the resolved and accepted relations into the logbook's *Relations* section. Checkpoints
-   re-test accepted risks.
+4. Write the resolved and accepted relations into the logbook's *Relations* section, using the
+   markers the watchman hook recognizes: `*Accepted risk (PM).*` and `*Accepted contradiction (PM).*`
+   (the hook injects every line containing "accepted"). Checkpoints re-test accepted risks.
 
 ## Common patterns
 

@@ -168,6 +168,9 @@ write_v11() {
 - **Checkpoint cadence:** $3
 - **Last checkpoint:** $4
 
+## Scope
+Platform pilot only — not the citywide rollout.
+
 ## Standard
 - **Mode:** lens preset
 - **Criteria:**
@@ -217,6 +220,7 @@ assert_contains "$OUT" "Vercel vs institutional server" "digest: includes accept
 assert_contains "$OUT" "README says live with blockers" "digest: includes accepted contradictions"
 assert_not_contains "$OUT" "tracking fits the objective" "digest: omits resolved relations"
 assert_not_contains "$OUT" "checkpoint is due" "cadence off: no nudge"
+assert_contains "$OUT" "Platform pilot only" "scope: injected with the bearing"
 rm -rf "$P"
 
 # 10. Bearing under review → no drift flagging, no bearing injected, /fixwatch pending
