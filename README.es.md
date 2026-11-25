@@ -7,7 +7,7 @@
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
-[![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
 **Evaluación, análisis de metodología y vigilancia de la deriva de contexto para proyectos con Claude.**
@@ -140,8 +140,8 @@ tabla de respuestas y qué hacer mientras esperas.
 ## Cita
 
 Si usas The Traveler's Watch en investigación o docencia, por favor cítalo. El botón
-**"Cite this repository"** de GitHub lee [CITATION.cff](CITATION.cff). Se añadirá aquí un DOI de
-Zenodo en cuanto se publique la v1.0.0.
+**"Cite this repository"** de GitHub lee [CITATION.cff](CITATION.cff). DOIs de Zenodo: todas las versiones [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) (cita este, salvo que
+necesites una versión concreta) · v1.1.0 [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) · v1.0.0 [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184).
 
 ## Licencia
 

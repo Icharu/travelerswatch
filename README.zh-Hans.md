@@ -7,7 +7,7 @@
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
-[![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
 **为使用 Claude 开展的项目工作提供评估、方法论审查和上下文漂移监测。**
@@ -126,7 +126,7 @@ examples/              项目管理实例
 
 ## 引用
 
-如果你在研究或教学中使用 The Traveler's Watch，请予以引用。GitHub 的 **"Cite this repository"** 按钮会读取 [CITATION.cff](CITATION.cff)。v1.0.0 发布后，将在此添加 Zenodo DOI。
+如果你在研究或教学中使用 The Traveler's Watch，请予以引用。GitHub 的 **"Cite this repository"** 按钮会读取 [CITATION.cff](CITATION.cff)。Zenodo DOI：所有版本 [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183)（除非需要引用特定版本，请引用此 DOI）· v1.1.0 [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) · v1.0.0 [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184)。
 
 ## 许可证
 

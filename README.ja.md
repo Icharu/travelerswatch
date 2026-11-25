@@ -7,7 +7,7 @@
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
-[![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
 **Claude と進めるプロジェクトのための、評価・方法論アセスメント・コンテキストのずれの見張り。**
@@ -126,7 +126,7 @@ examples/              PM セッションの実例
 
 ## 引用
 
-研究や教育で The Traveler's Watch を使う場合は、引用をお願いします。GitHub の **「Cite this repository」** ボタンは [CITATION.cff](CITATION.cff) を読み込みます。v1.0.0 のリリース後、ここに Zenodo の DOI を追加します。
+研究や教育で The Traveler's Watch を使う場合は、引用をお願いします。GitHub の **「Cite this repository」** ボタンは [CITATION.cff](CITATION.cff) を読み込みます。Zenodo の DOI：全バージョン [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183)（特定のリリースを引用する必要がなければこちら）· v1.1.0 [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) · v1.0.0 [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184)。
 
 ## ライセンス
 

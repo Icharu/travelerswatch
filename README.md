@@ -5,7 +5,7 @@
 
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
 [![License: MIT (code) + CC BY 4.0 (docs)](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-green)](LICENSE-docs)
-[![DOI](https://img.shields.io/badge/DOI-pending%20(Zenodo)-lightgrey)](CITATION.cff)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
 
 **Evaluation, methodology assessment, and context-drift watch for project work with Claude.**
@@ -134,8 +134,8 @@ you wait.
 ## Citation
 
 If you use The Traveler's Watch in research or teaching, please cite it. GitHub's
-**"Cite this repository"** button reads [CITATION.cff](CITATION.cff). A Zenodo DOI will be
-added here once v1.0.0 is released.
+**"Cite this repository"** button reads [CITATION.cff](CITATION.cff). Zenodo DOIs: all versions [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) (cite this one unless you need a
+specific release) · v1.1.0 [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) · v1.0.0 [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184).
 
 ## License
 
