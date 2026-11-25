@@ -1,0 +1,51 @@
+{
+  "skill_name": "fixwatch",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/fixwatch — the sponsor approved moving the launch to June 2027.",
+      "expected_output": "Trigger = new information. Claude shows a before/after diff of Constraints, lists the ripple, asks for confirmation, and only then updates and appends a Path log entry.",
+      "files": ["evals/files/composting-WATCH.md"],
+      "expectations": [
+        "Names the trigger as new information",
+        "Shows the change as a before/after diff limited to the changed section",
+        "Lists affected sections or criteria (e.g. the 12-month objective window)",
+        "Asks the PM to confirm before writing",
+        "After confirmation, appends a new Path log entry and leaves the 2026-11-01 entry unchanged"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wait — I said 'two pilot districts' but you've been planning for the whole city all along. /fixwatch",
+      "expected_output": "Trigger = misinterpretation by Claude. Claude states plainly what it misread and since when, and proposes how to realign; the bearing itself may not need to change.",
+      "files": ["evals/files/composting-WATCH.md"],
+      "expectations": [
+        "Names the trigger as misinterpretation and owns it plainly",
+        "Says what was misread and since when",
+        "Recognizes the bearing (two districts) was correct and the work, not the bearing, must change — or asks the PM which one",
+        "Does not write to the logbook without confirmation"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "/fixwatch — actually, never mind, cancel that.",
+      "expected_output": "Cancel path: nothing is written and Claude says the bearing is unchanged.",
+      "files": ["evals/files/composting-WATCH.md"],
+      "expectations": [
+        "Writes nothing to .watch/WATCH.md",
+        "States that the bearing is unchanged"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "/fixwatch — switch the tracking tool to Jira.",
+      "expected_output": "No logbook present: Claude says there is no bearing yet and offers /checkwatch.",
+      "files": [],
+      "expectations": [
+        "Says that .watch/WATCH.md does not exist",
+        "Offers /checkwatch to set the bearing first",
+        "Does not create a logbook from inside fixwatch"
+      ]
+    }
+  ]
+}

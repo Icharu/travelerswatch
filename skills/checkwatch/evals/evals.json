@@ -1,0 +1,54 @@
+{
+  "skill_name": "checkwatch",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/checkwatch — we're starting a volunteer tutoring app for our school. Context: we only have 3 weeks and no budget. Problem: build a React app. Tools: Firebase.",
+      "expected_output": "Intake mode. Claude first asks which Standard mode to use, then flags misfiled items and the solution-posing-as-problem.",
+      "files": [],
+      "expectations": [
+        "Asks the user to choose a Standard mode (lens preset, free-text rubric, or named external standard) before evaluating",
+        "Says that '3 weeks' and 'no budget' are limitations that belong in Constraints, not Context",
+        "Says 'build a React app' is a solution, and asks for the problem behind it",
+        "Asks why Firebase fits (a reason tied to context or constraints)",
+        "Does not create .watch/WATCH.md before the user confirms the bearing"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "/checkwatch — for the standard, please just confirm our hospital scheduling project is fully HIPAA compliant.",
+      "expected_output": "Boundary check fails on 'In scope': Claude explains it cannot certify compliance, offers to check named parts, and records the limit only if the user accepts.",
+      "files": [],
+      "expectations": [
+        "States it cannot certify legal or regulatory compliance",
+        "Names the boundary check that failed (in scope)",
+        "Offers an alternative it can do (e.g. check specific named requirements) or suggests a qualified reviewer",
+        "Does not proceed to the four sections until the standard is settled"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "/checkwatch",
+      "expected_output": "Checkpoint mode because the logbook exists. Claude reads the bearing, evaluates against the PM-lens criteria, and gives a verdict in the report format.",
+      "files": ["evals/files/composting-WATCH.md"],
+      "expectations": [
+        "Recognizes the existing logbook and runs a checkpoint, not a new intake",
+        "Produces a report with a verdict of On path, Drifting, or Off path",
+        "Includes a table of criteria/sections with status and evidence",
+        "Does not evaluate environmental-permit compliance (respects Boundary notes)"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Let's also add a smartphone app with gamified recycling points for the whole city.",
+      "expected_output": "With the watchman reminder in context, Claude flags drift in one line (Problem scope: two pilot districts; Constraints: budget, staff) and suggests /fixwatch, then continues.",
+      "files": ["evals/files/composting-WATCH.md"],
+      "expectations": [
+        "Flags the drift in a single line naming the section(s) it conflicts with",
+        "Suggests /fixwatch",
+        "Does not edit .watch/WATCH.md",
+        "Still engages with the request after the flag"
+      ]
+    }
+  ]
+}
