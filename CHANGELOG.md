@@ -6,6 +6,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Added
+- Zenodo DOIs in the READMEs and `CITATION.cff`: concept 10.5281/zenodo.24543183, v1.1.0 10.5281/zenodo.24543326, v1.0.0 10.5281/zenodo.24543184.
+
 ## [1.1.0] - 2026-11-25
 
 Motivated by a [best-vs-worst benchmark](docs/benchmarks/2026-11-25-best-vs-worst.md) on a live
