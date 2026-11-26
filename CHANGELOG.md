@@ -6,6 +6,28 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Added
+- The tale (`docs/tale.md`) in Português (Brasil), Español, 繁體中文, 简体中文, 日本語 and العربية
+  (`i18n/<lang>/tale.md`), with a language bar on every version; the translated READMEs now link to
+  the tale in their own language.
+
+## [1.2.1] - 2026-11-26
+
+Documentation-only release. DOI: 10.5281/zenodo.24548859.
+
+### Added
+- Release notes for v1.2.0 (`docs/releases/v1.2.0.md`).
+
+### Changed
+- v1.2.0 is cited with the all-versions DOI (10.5281/zenodo.24543183); the "pending" DOI rows were
+  removed from the READMEs and `CITATION.cff`.
+
+### Known issues
+- The plugin manifests, skills, `CITATION.cff` and `.zenodo.json` in this release still report
+  version 1.2.0, so the Zenodo record shows "1.2.0".
+- The tale translations were not pushed before the release was published, so they are not part of
+  v1.2.1. They are listed under Unreleased.
+
 ## [1.2.0] - 2026-11-26
 
 ### Added
@@ -98,7 +120,8 @@ steered the work the wrong way. See [ADR 0003](docs/adr/0003-evidence-grounded-b
 - SECURITY.md with private vulnerability reporting and a best-effort response table; CONTRIBUTING.md;
   CITATION.cff; .zenodo.json.
 
-[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/Icharu/travelerswatch/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Icharu/travelerswatch/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Icharu/travelerswatch/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Icharu/travelerswatch/releases/tag/v1.0.0
