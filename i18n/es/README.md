@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> Traducido de `README.md` (v1.2.0, 2026-11-26). Traducción asistida por máquina; las revisiones de hablantes nativos son bienvenidas. La versión en inglés es la canónica.
+> Traducido de `README.md` (v1.2.2, 2026-11-26). Traducción asistida por máquina; las revisiones de hablantes nativos son bienvenidas. La versión en inglés es la canónica.
 
 # The Traveler's Watch (El Reloj del Viajero)
 
-[![Version](https://img.shields.io/badge/version-v1.2.0-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -259,7 +259,7 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
 **"Cite this repository"** de GitHub lee [CITATION.cff](../../CITATION.cff).
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.2.0) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.2) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -270,7 +270,7 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.2.0},
+  version   = {1.2.2},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}

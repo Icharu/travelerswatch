@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> `README.md`（v1.2.0、2026-11-26）からの翻訳です。機械支援による翻訳のため、ネイティブスピーカーによるレビューを歓迎します。正式な版は英語版です。
+> `README.md`（v1.2.2、2026-11-26）からの翻訳です。機械支援による翻訳のため、ネイティブスピーカーによるレビューを歓迎します。正式な版は英語版です。
 
 # The Traveler's Watch（旅人の時計）
 
-[![Version](https://img.shields.io/badge/version-v1.2.0-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -208,7 +208,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
 研究でこの成果物を引用したい場合は、Zenodo のレコードを引用してください。GitHub の **「Cite this repository」** ボタンは [CITATION.cff](../../CITATION.cff) を読み込みます。
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.2.0) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.2) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -219,7 +219,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.2.0},
+  version   = {1.2.2},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}

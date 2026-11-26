@@ -1,6 +1,6 @@
 {
   "name": "travelerswatch",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "The Traveler's Watch: set a project's bearing grounded in its own evidence, get a one-line drift flag on every prompt, catch a bearing that no longer matches reality, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
   "author": {
     "name": "Icaro de Jesus Silva"

@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../docs/tale.md) · [Português (Brasil)](../pt-BR/tale.md) · [Español](../es/tale.md) · [繁體中文](../zh-Hant/tale.md) · [简体中文](../zh-Hans/tale.md) · **日本語** · [العربية](../ar/tale.md)
 
-> `docs/tale.md`（v1.2.0、2026-11-26）からの翻訳です。機械支援による翻訳のため、正式な版は英語版です。
+> `docs/tale.md`（v1.2.2、2026-11-26）からの翻訳です。機械支援による翻訳のため、正式な版は英語版です。
 
 # 旅人の時計
 

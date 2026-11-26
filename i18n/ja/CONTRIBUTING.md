@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../CONTRIBUTING.md) · [Português (Brasil)](../pt-BR/CONTRIBUTING.md) · [Español](../es/CONTRIBUTING.md) · [繁體中文](../zh-Hant/CONTRIBUTING.md) · [简体中文](../zh-Hans/CONTRIBUTING.md) · **日本語** · [العربية](../ar/CONTRIBUTING.md)
 
-> `CONTRIBUTING.md`（v1.2.0、2026-11-26）からの翻訳です。機械支援による翻訳のため、正式な版は英語版です。
+> `CONTRIBUTING.md`（v1.2.2、2026-11-26）からの翻訳です。機械支援による翻訳のため、正式な版は英語版です。
 
 # The Traveler's Watch への貢献
 

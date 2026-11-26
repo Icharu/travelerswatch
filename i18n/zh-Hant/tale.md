@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../docs/tale.md) · [Português (Brasil)](../pt-BR/tale.md) · [Español](../es/tale.md) · **繁體中文** · [简体中文](../zh-Hans/tale.md) · [日本語](../ja/tale.md) · [العربية](../ar/tale.md)
 
-> 譯自 `docs/tale.md`（v1.2.0，2026-11-26）。本譯文為機器輔助翻譯，以英文版為準。
+> 譯自 `docs/tale.md`（v1.2.2，2026-11-26）。本譯文為機器輔助翻譯，以英文版為準。
 
 # 旅人之錶
 

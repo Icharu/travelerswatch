@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../CONTRIBUTING.md) · [Português (Brasil)](../pt-BR/CONTRIBUTING.md) · [Español](../es/CONTRIBUTING.md) · [繁體中文](../zh-Hant/CONTRIBUTING.md) · **简体中文** · [日本語](../ja/CONTRIBUTING.md) · [العربية](../ar/CONTRIBUTING.md)
 
-> 译自 `CONTRIBUTING.md`（v1.2.0，2026-11-26）。本译文为机器辅助翻译，以英文版为准。
+> 译自 `CONTRIBUTING.md`（v1.2.2，2026-11-26）。本译文为机器辅助翻译，以英文版为准。
 
 # 为 The Traveler's Watch 做贡献
 

@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../QUICKSTART.md) · **Português (Brasil)** · [Español](../es/QUICKSTART.md) · [繁體中文](../zh-Hant/QUICKSTART.md) · [简体中文](../zh-Hans/QUICKSTART.md) · [日本語](../ja/QUICKSTART.md) · [العربية](../ar/QUICKSTART.md)
 
-> Traduzido de `QUICKSTART.md` (v1.2.0, 2026-11-26). Tradução assistida por máquina; a versão em inglês é a canônica.
+> Traduzido de `QUICKSTART.md` (v1.2.2, 2026-11-26). Tradução assistida por máquina; a versão em inglês é a canônica.
 
 # Guia rápido
 

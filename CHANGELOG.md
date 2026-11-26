@@ -6,10 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [1.2.2] - 2026-11-26
+
 ### Added
 - The tale (`docs/tale.md`) in Português (Brasil), Español, 繁體中文, 简体中文, 日本語 and العربية
   (`i18n/<lang>/tale.md`), with a language bar on every version; the translated READMEs now link to
   the tale in their own language.
+
+### Fixed
+- The version number is now the same everywhere (plugin manifests, skill metadata,
+  `CITATION.cff`, `.zenodo.json`, README badges and citations), so the Zenodo record shows the
+  right version. v1.2.1 still reported 1.2.0.
 
 ## [1.2.1] - 2026-11-26
 
@@ -120,7 +127,8 @@ steered the work the wrong way. See [ADR 0003](docs/adr/0003-evidence-grounded-b
 - SECURITY.md with private vulnerability reporting and a best-effort response table; CONTRIBUTING.md;
   CITATION.cff; .zenodo.json.
 
-[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.2...HEAD
+[1.2.2]: https://github.com/Icharu/travelerswatch/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/Icharu/travelerswatch/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Icharu/travelerswatch/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Icharu/travelerswatch/compare/v1.0.0...v1.1.0

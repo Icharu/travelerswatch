@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use The Traveler's Watch, please cite it using the metadata below."
 type: software
 title: "The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude"
-version: 1.2.0
+version: 1.2.2
 date-released: "2026-11-26"
 license: CC-BY-NC-4.0
 repository-code: "https://github.com/Icharu/travelerswatch"

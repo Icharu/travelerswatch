@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../docs/tale.md) · **Português (Brasil)** · [Español](../es/tale.md) · [繁體中文](../zh-Hant/tale.md) · [简体中文](../zh-Hans/tale.md) · [日本語](../ja/tale.md) · [العربية](../ar/tale.md)
 
-> Traduzido de `docs/tale.md` (v1.2.0, 2026-11-26). Tradução assistida por máquina; a versão em inglês é a canônica.
+> Traduzido de `docs/tale.md` (v1.2.2, 2026-11-26). Tradução assistida por máquina; a versão em inglês é a canônica.
 
 # O Relógio do Viajante
 
