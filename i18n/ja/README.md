@@ -229,6 +229,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
 | 引用対象 | DOI |
 |---|---|
 | 全バージョン（特定のリリースが必要な場合を除き、こちらを使用） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.2 | [10.5281/zenodo.24548998](https://doi.org/10.5281/zenodo.24548998) |
 | v1.2.1 | [10.5281/zenodo.24548859](https://doi.org/10.5281/zenodo.24548859) |
 | v1.2.0 | [10.5281/zenodo.24548668](https://doi.org/10.5281/zenodo.24548668) |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |

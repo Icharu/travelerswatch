@@ -8,6 +8,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [1.2.2] - 2026-11-26
 
+DOI: 10.5281/zenodo.24548998.
+
 ### Added
 - The tale (`docs/tale.md`) in Português (Brasil), Español, 繁體中文, 简体中文, 日本語 and العربية
   (`i18n/<lang>/tale.md`), with a language bar on every version; the translated READMEs now link to
