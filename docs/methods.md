@@ -32,7 +32,14 @@ their arXiv / publisher listings on 2026-11-25. Where authors are not listed, ci
 | Source | Point | Design consequence |
 |---|---|---|
 | Anthropic (2025). *Equipping agents for the real world with Agent Skills.* [anthropic.com/engineering](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) | Progressive disclosure: name and description first, body on demand, references only when needed. | Short `SKILL.md` bodies; lenses and checklists live in `references/`. |
-| Agent Skills specification. [agentskills.io](https://agentskills.io/) | Open, vendor-neutral format for skills. | Both skills use only standard frontmatter so they run outside Claude Code too. |
+| Agent Skills specification. [agentskills.io](https://agentskills.io/) | Open, vendor-neutral format for skills. | The skills use only standard frontmatter so they run outside Claude Code too. |
+
+## 5. Why a human stays in the loop
+
+| Source | Finding | Design consequence |
+|---|---|---|
+| Koshman, Y., & Zubkova, A. (2026). *Artificial intelligence in project management.* Development Management, 25(1), 23–31. [doi:10.63341/devt/1.2026.23](https://doi.org/10.63341/devt/1.2026.23) | A review of 97 publications: AI methods improved forecast accuracy, automated decision-making, and optimised task management in the planning, implementation, and closure stages. Unresolved: AI models adapt poorly to changing project conditions, are rarely validated against the initial data, and are little studied in phases such as the post-project review. | Direction stays with the PM ([ADR 0004](adr/0004-human-in-the-loop.md)); the bearing is checked against the project's evidence ([ADR 0003](adr/0003-evidence-grounded-bearing.md)); a post-project review is built from the logbook ([ADR 0005](adr/0005-post-project-review.md)). |
+| Adamantiadou, D. S., & Tsironis, L. (2025). *Leveraging Artificial Intelligence in Project Management: A Systematic Review of Applications, Challenges, and Future Directions.* Computers, 14(2), 66. [doi:10.3390/computers14020066](https://doi.org/10.3390/computers14020066) — *cited here as it is cited in Koshman & Zubkova (2026).* | Machine learning, deep learning, and hybrid models have expanded what project management can do, improving cost estimation, schedule forecasting, and risk analysis. | TTW automates repetitive work inside the bearing (coding, evaluating texts, gathering evidence) and keeps the decisions with a person. |
 
 ## Limits of this evidence
 

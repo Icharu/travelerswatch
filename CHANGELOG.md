@@ -8,6 +8,34 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 - Zenodo DOIs in the READMEs and `CITATION.cff`: concept 10.5281/zenodo.24543183, v1.1.0 10.5281/zenodo.24543326, v1.0.0 10.5281/zenodo.24543184.
+- **Post-project review** (`/checkwatch` Part C): rebuilds the timeline from the logbook and git
+  history, compares original and final bearing, reports unlogged changes, judges the objective and
+  accepted risks against evidence, and drafts evidence-tied lessons. The PM chooses *review and
+  close* or *review only*; reviews are written to `.watch/reviews/`. See ADR 0005.
+- **Checkpoint log** (logbook v1.2): one append-only line per checkpoint (date, SHA, verdict, reason).
+- **Closed** bearing status: the watchman stays silent; `/fixwatch` can reopen it as a logged scope change.
+- **Human-in-the-loop rule** in `checkwatch` and `fixwatch`: no fully automated sessions for the
+  bearing; repetitive work inside the bearing is automated. See ADR 0004.
+- `GOVERNANCE.md` (solo-maintained, solo-driven; origin; AI-assistance disclosure), `QUICKSTART.md`,
+  `docs/iso-iec-42001.md` (not certified; clause-by-clause map of what TTW covers and does not).
+- README: *What it is / what it is not*, *Why human-in-the-loop in project management?*,
+  *Positioning*, *Your data*, *Prohibited uses*, *ISO/IEC 42001*, *Citing TTW*.
+- CONTRIBUTING: *What led to this project* (research window and references).
+- Methods §5 (Koshman & Zubkova 2026; Adamantiadou & Tsironis 2025); tale epilogue.
+- Plugin icon (`.claude-plugin/icon.png`, 512×512), README banner (light and dark variants) in every README, and a social
+  preview image (`.github/assets/`).
+- Eval cases: checkwatch #10 (post-project review), #11 (Checkpoint log); fixwatch #7
+  (refuses auto-approval). Hook tests 16–17.
+
+### Changed
+- Translations moved to `i18n/<lang>/` (README, QUICKSTART, CONTRIBUTING in pt-BR, es, zh-Hant,
+  zh-Hans, ja, ar). Links to the old `README.<lang>.md` paths no longer work.
+
+### Licensing
+- **The whole repository is now licensed under CC BY-NC 4.0** (`LICENSE`), replacing MIT for code
+  and CC BY 4.0 for documentation; `LICENSE-docs` removed. Commercial use needs the maintainer's
+  permission. Copies of v1.0.0 (MIT) and v1.1.0 (MIT + CC BY 4.0) keep the licenses they were
+  released under.
 
 ## [1.1.0] - 2026-11-25
 

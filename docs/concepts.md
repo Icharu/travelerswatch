@@ -18,7 +18,8 @@ in any agent that reads it. The **hook** is the one Claude Code–specific part.
 | `fixwatch` | Skill | Yes | Propose → PM confirms → update bearing + append Path log; closes a bearing *under review* |
 | `configwatch` | Skill | Yes | Show status; set the checkpoint cadence (`every N commits or M sessions`, or `off`) |
 | `watchman.sh` | Hook (`UserPromptSubmit`) | Claude Code only | Inject a compact bearing on every prompt; flag drift in one line; nudge when a checkpoint is due |
-| `.watch/WATCH.md` | File in *your* repo | Yes | The bearing, its status, and its history; committed so the team can review it |
+| `.watch/WATCH.md` | File in *your* repo | Yes | The bearing, its status, and its history (Checkpoint log + Path log); committed so the team can review it |
+| `.watch/reviews/` | Files in *your* repo | Yes | Post-project and end-of-phase reviews, written only after the PM confirms |
 | `.watch/.state` | Local file | — | Session counter for the cadence; git-ignored |
 
 Without the hook (another agent, or the hook disabled), run `/checkwatch` at the start of each
@@ -28,7 +29,7 @@ working session for the same effect, by hand.
 
 | Part | Question it answers |
 |---|---|
-| **Status** | Is the bearing confirmed or under review? How often should a checkpoint happen, and when was the last one? |
+| **Status** | Is the bearing confirmed, under review, or closed? How often should a checkpoint happen, and when was the last one? |
 | **Scope** | What part of the project does this bearing steer — and what not? |
 | **Standard** | What will the work be judged against? (lens preset, free-text rubric, or named external standard — always boundary-checked; one criterion must anchor the Final objective) |
 | **Context** | Where does this work live? Field, stakeholders, current state *as the evidence shows it*, referenced works, evidence scanned |
@@ -36,6 +37,7 @@ working session for the same effect, by hand.
 | **Problem** | What is wrong today (original problem), and what does done look like (final objective)? |
 | **Tools** | What will we use, and why does each fit? |
 | **Relations** | Where do the sections pull against each other or against the evidence — and which tensions and contradictions did the PM accept? |
+| **Checkpoint log** | One line per checkpoint: date, commit, verdict, reason. Append-only; the post-project review is built from it |
 | **Path log** | Every course change and settings change: trigger, who proposed it, what changed, why, impact, PM confirmation |
 
 ## Three layers against a wrong bearing
@@ -59,8 +61,18 @@ that, so the design has three layers ([ADR 0003](adr/0003-evidence-grounded-bear
 - **Bearing in question** — the evidence contradicts the bearing itself. Mark it *under review*
   (PM confirms) and correct it with `/fixwatch`.
 
+## Post-project review
+
+At the end of a project or phase, `/checkwatch` rebuilds the timeline from the Checkpoint log, the
+Path log, and git history; compares the original and final bearing; reports any change that was
+never logged; judges the Final objective and the accepted risks against evidence; and drafts lessons
+tied to entries or commits. The PM chooses *review and close* (the watchman then goes silent) or
+*review only* ([ADR 0005](adr/0005-post-project-review.md)).
+
 ## Who decides
 
 Claude may **propose** a course change at any time, including when it realizes it misread the
-context, and may **propose** marking the bearing under review. Only the **PM confirms**. Nothing in
-the bearing changes without that confirmation, and the Path log is never rewritten.
+context, and may **propose** marking the bearing under review or closing it. Only the **PM
+confirms**. Nothing in the bearing changes without that confirmation, and neither log is ever
+rewritten. Asked to take over that role ("auto-approve", "decide for me"), the skills decline by
+principle and offer to automate the repetitive work instead ([ADR 0004](adr/0004-human-in-the-loop.md)).

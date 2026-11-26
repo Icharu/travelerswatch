@@ -63,7 +63,7 @@ advisory; please do not move the report to a public channel.
 You do not have to stay exposed while a report is open:
 
 1. **Turn off the watchman hook.** Set `export TRAVELERSWATCH_DISABLE=1`, or disable the plugin
-   (`/plugin` → travelerswatch → disable). The two skills still work; run `/checkwatch` by hand at
+   (`/plugin` → travelerswatch → disable). The three skills still work; run `/checkwatch` by hand at
    the start of each session.
 2. **Review changes to `.watch/`** in pull requests like code, because anything in that file reaches
    the model when the hook is on.
