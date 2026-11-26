@@ -229,7 +229,6 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 | 引用 | DOI |
 |---|---|
 | 所有版本（除非需要特定版本，请使用此 DOI） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
-| v1.2.0 | *DOI 将在 Zenodo 发布后补上* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 

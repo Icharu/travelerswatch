@@ -267,7 +267,6 @@ If you wish to cite this work in any of your research, please cite the Zenodo re
 | Cite | DOI |
 |---|---|
 | All versions (use this unless you need a specific release) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
-| v1.2.0 | *DOI added after the Zenodo release* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 

@@ -279,7 +279,6 @@ botão **"Cite this repository"** do GitHub lê o [CITATION.cff](../../CITATION.
 | Citar | DOI |
 |---|---|
 | Todas as versões (use este, salvo se precisar de uma versão específica) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
-| v1.2.0 | *DOI adicionado após a publicação no Zenodo* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 

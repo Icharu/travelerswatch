@@ -280,7 +280,6 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
 | Citar | DOI |
 |---|---|
 | Todas las versiones (usa este salvo que necesites una versión concreta) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
-| v1.2.0 | *DOI que se añadirá tras la publicación en Zenodo* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
