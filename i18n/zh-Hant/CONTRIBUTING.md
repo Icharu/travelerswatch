@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../CONTRIBUTING.md) · [Português (Brasil)](../pt-BR/CONTRIBUTING.md) · [Español](../es/CONTRIBUTING.md) · **繁體中文** · [简体中文](../zh-Hans/CONTRIBUTING.md) · [日本語](../ja/CONTRIBUTING.md) · [العربية](../ar/CONTRIBUTING.md)
 
-> 譯自 `CONTRIBUTING.md`（v1.2.2，2026-11-26）。本譯文為機器輔助翻譯，以英文版為準。
+> 譯自 `CONTRIBUTING.md`（v1.2.3，2026-11-26）。本譯文為機器輔助翻譯，以英文版為準。
 
 # 為 The Traveler's Watch 貢獻
 
@@ -9,13 +9,14 @@
 
 ## 促成本專案的背景
 
-TTW 鼓勵使用者與貢獻者在修改之前，先了解是什麼促成了它。本專案的設計建立在大約**五年的研究（2021–2026）**之上：語言模型在長時間工作中如何偏移，以及 AI 如何改變專案管理；另外還參考了一項更早的範疇蔓延（*scope creep*）研究。
+TTW 鼓勵使用者與貢獻者在修改之前，先了解是什麼促成了它。本專案的設計參考了 2020–2026 年發表的文獻：關於語言模型在長時間工作中如何偏移的研究、關於 AI 如何改變專案管理的回顧，以及一項關於範疇蔓延（*scope creep*）的研究。
 
-關於 AI 在現代世界中如何運作與被使用的研究，本質上是**跨領域**的（Koshman & Zubkova, 2026），因此歡迎任何領域的貢獻。以下兩篇回顧說明了 TTW 在這些研究中的位置：
+Koshman 與 Zubkova（2026）認為，關於 AI 在現代世界中如何運作與被使用的研究本質上是**跨領域**的，因此歡迎任何領域的貢獻。以下兩篇回顧說明了 TTW 在這些研究中的位置：
 
-- **AI 在專案管理中已經做得好的部分。** Adamantiadou 與 Tsironis（2025）發現，機器學習、深度學習與混合模型大幅擴展了專案管理的能力，改善了**成本估算、時程預測與風險分析**。TTW 認真看待這一點：它在航向之內自動化重複性工作。
-  *透明度說明：我們依據 Koshman & Zubkova（2026）的轉述引用此發現；原始文章的書目資料已透過其 DOI 核對。*
-- **仍未解決的部分。** Koshman 與 Zubkova（2026）回顧了 97 篇文獻，發現 AI 模型難以適應變動的專案條件、很少以初始資料加以驗證，且在專案後檢討等階段的研究仍然很少。TTW 正是圍繞這些缺口打造的：方向由專案經理掌握、航向以證據核對，而航行日誌支援專案後檢討。
+- **AI 在專案管理中已經做得好的部分。** Adamantiadou 與 Tsironis（2025）回顧了 97 篇同儕審查研究（2011–2024）。據其摘要，機器學習、深度學習與混合模型已顯示出改進專案管理的潛力，尤其是在**成本估算、工期預測與風險評估**方面。TTW 認真看待這一點：它在航向之內自動化重複性工作。
+- **仍未解決的部分。** 據 Koshman 與 Zubkova（2026）的轉述，同一篇回顧指出：AI 模型對變動的專案條件適應不足、以初始資料進行的驗證有限，且在專案後檢討等階段的研究仍然很少。TTW 正是圍繞這些缺口打造的：方向由專案經理掌握、航向以證據核對，而航行日誌支援專案後檢討。
+
+*來源說明（閱讀了什麼）：* Koshman & Zubkova（2026）：已閱讀全文。Adamantiadou & Tsironis（2025）：透過 Koshman & Zubkova 的轉述，以及其 DOI 紀錄中的摘要與書目資料閱讀；未閱讀全文。本檔案的早期版本將 97 篇文獻的回顧歸於 Koshman & Zubkova，這是歸屬錯誤，已在 v1.2.3 中更正。
 
 | 年份 | 文獻 | 與本專案的關係 |
 |---|---|---|
@@ -24,8 +25,8 @@ TTW 鼓勵使用者與貢獻者在修改之前，先了解是什麼促成了它�
 | 2024 | [*A Survey on LLM-as-a-Judge*](https://arxiv.org/abs/2411.15594) | LLM 評審需要明確的準則 → 在做出任何判定前先設定標準 |
 | 2025 | Laban et al., [*LLMs Get Lost In Multi-Turn Conversation*](https://arxiv.org/abs/2505.06120) | 模型走錯路後難以恢復 → 一開始就設定航向 |
 | 2025 | Dongre et al., [*Drift No More?*](https://arxiv.org/abs/2510.07777) | 提醒能降低偏移 → 每次提示都有守望者 |
-| 2025 | Adamantiadou & Tsironis, [*Leveraging AI in Project Management*](https://doi.org/10.3390/computers14020066) | AI 改善估算、預測與風險分析 → 自動化重複性工作 |
-| 2026 | Koshman & Zubkova, [*Artificial intelligence in project management*](https://doi.org/10.63341/devt/1.2026.23) | 適應性、驗證與專案後檢討仍未解決 → 人在迴路中 |
+| 2025 | Adamantiadou & Tsironis, [*Leveraging AI in Project Management*](https://doi.org/10.3390/computers14020066) | 對 97 篇研究的回顧：AI 在估算、預測與風險方面顯示出潛力；適應性、驗證與後期階段仍未解決 → 自動化重複性工作，保留人在迴路中 |
+| 2026 | Koshman & Zubkova, [*Artificial intelligence in project management*](https://doi.org/10.63341/devt/1.2026.23) | 對 21 篇文獻（2021–2025）與 AI 工具的回顧；轉述了 97 篇研究的回顧；跨領域視角 → 人在迴路中，歡迎任何領域的貢獻 |
 
 完整的附註清單與每項來源對設計的影響，請見 [docs/methods.md](../../docs/methods.md)（英文）。專案如何開始、由誰決定，請見 [GOVERNANCE.md](../../GOVERNANCE.md)。
 
@@ -88,6 +89,31 @@ hook 會解析固定標籤：`## Status`、`- **Bearing:**`（`confirmed` / `und
 ## 翻譯
 
 根目錄中的英文檔案（`README.md`、`QUICKSTART.md`、`CONTRIBUTING.md`）為正式版本。翻譯依語言集中放在 `i18n/<lang>/`，讓根目錄保持整潔。修改英文檔案時，請在 pull request 中註明哪些翻譯因此過時。譯者：請保持語言列、連結（相對於 `i18n/<lang>/`，例如 `../../docs/methods.md`）、徽章、指令與 shell 程式碼區塊完全相同（*快速範例*中的對話可以翻譯）。請更新檔案頂端的「譯自」說明。阿拉伯文：正文放在 `<div dir="rtl">` 內，程式碼區塊放在外面。
+
+**保持論斷的類型。** 關於 TTW 的每一句話，要麼是*設計意圖*（「旨在」「技能指示 Claude」），要麼是*機制*（「hook 做 X」，可在檔案中查核），要麼是*結果*（「在 <測試> 中，<數字>」）。譯文必須保持同一類型：檢查動詞，而不只是名詞。保持與英文相同的來源與數字，作者–年份引文與原始標題不翻譯，不加入在地的論斷或來源。西班牙文使用中性的國際西班牙文（無人稱 *se* 或 *usted*）。zh-Hans 與 zh-Hant 分別在地化，絕不逐字轉換。
+
+| English | pt-BR | es | zh-Hans | zh-Hant | ja | ar |
+|---|---|---|---|---|---|---|
+| is designed to | foi projetado para | está diseñado para | 旨在 | 旨在 | 〜を目的として設計されている | صُمّم لـ |
+| the skill instructs Claude to | a skill instrui o Claude a | la skill indica a Claude que | 技能指示 Claude | 技能指示 Claude | スキルは Claude に〜するよう指示する | توجّه المهارةُ Claude إلى |
+| tested by evals, not enforced by code | testado por evals, não imposto por código | probado con evals, no impuesto por código | 由评测检验，而非由代码强制 | 由評測檢驗，而非由程式碼強制 | eval で検証されており、コードで強制されてはいない | تُختبَر بالتقييمات ولا تفرضها الشيفرة |
+| may / can | pode | puede | 可能 | 可能 | 〜可能性がある | قد |
+| according to | segundo | según | 据 | 據 | 〜によれば | وفقًا لـ |
+| as summarized by | conforme resumido por | según el resumen de | 据…的综述 | 據…的回顧 | 〜の要約による | كما لخّصه |
+| design premise | premissa de projeto | premisa de diseño | 设计前提 | 設計前提 | 設計上の前提 | فرضية التصميم |
+| guarantees | *avoid*: foi projetado para | *avoid*: está diseñado para | *avoid*: 旨在 | *avoid*: 旨在 | *avoid*: 〜設計されている | *avoid*: صُمّم لـ |
+| always (rules only) | sempre | siempre | 始终 | 始終 | 必ず | دائمًا |
+| significant (statistical only) | significativo | significativo | 显著 | 顯著 | 有意 | دالّ إحصائيًا |
+| substantial (non-statistical) | substancial | sustancial | 较大 | 較大 | 大きな | كبير |
+| evidence | evidência | evidencia | 证据 | 證據 | 根拠 | الأدلة |
+| indicates (not "proves") | indica | indica | 表明 | 顯示 | 示唆する | تشير إلى |
+| efficient | eficiente | eficiente | 高效 | 高效 | 効率的 | ذو كفاءة |
+| effective | eficaz | eficaz | 有效 | 有效 | 効果的 | فعّال |
+| drift | desvio | desvío | 漂移 | 偏移 | ずれ | الانحراف |
+| bearing | rumo | rumbo | 航向 | 航向 | 針路 | المسار |
+| human in the loop | humano no circuito | humano en el circuito | 人在回路中 | 人在迴路中 | ヒューマン・イン・ザ・ループ | الإنسان ضمن الحلقة |
+
+本術語表為機器輔助翻譯，歡迎母語人士修正。
 
 ## Pull requests
 

@@ -3,6 +3,10 @@
 - **Status:** Accepted
 - **Date:** 2026-11-25
 - **Extends:** ADR 0001 (per-prompt watch), ADR 0003 (evidence-grounded bearing)
+- **Erratum (2026-11-26, v1.2.3):** the Context below says "the literature". The support is one
+  review, Adamantiadou & Tsironis (2025), as summarized by Koshman & Zubkova (2026); see
+  [methods §5](../methods.md#5-why-a-human-stays-in-the-loop). "Automating it is where AI helps
+  most" is the maintainer's judgement, not a cited finding. The decision is unchanged.
 
 ## Context
 

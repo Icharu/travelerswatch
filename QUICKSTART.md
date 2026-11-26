@@ -29,11 +29,12 @@ optional but enables commit counting and the full post-project review.
 2. Run **`/checkwatch`**. Answer one line: what the project is and which part this bearing steers.
 3. Claude reads your README, `docs/`, and recent git history, then shows an **evidence card** and
    **drafts** of each section. You correct them; it asks about gaps, misfiled items, and any place
-   where your answers contradict the evidence. Expect about five rounds.
+   where your answers contradict the evidence. Aim for about five rounds; in the v1.0.0 benchmark
+   it took about 4 in the best case and about 11 in the worst.
 4. Confirm the bearing. Claude writes `.watch/WATCH.md` and adds `.watch/.state` to `.gitignore`.
 5. **Commit the logbook**: `git add .watch/WATCH.md .gitignore && git commit -m "watch: bearing set"`.
 
-From now on, nothing in the bearing changes unless you confirm it.
+From now on, the skills are written so that nothing in the bearing changes unless you confirm it.
 
 ## 3. Every day
 
@@ -54,7 +55,7 @@ files. To be precise:
 | Moment | What is read | What is **not** read |
 |---|---|---|
 | **Every prompt** (watchman) | The bearing and Status in `.watch/WATCH.md`; the number of commits and sessions since the last checkpoint. | Your code, diffs, or other files. |
-| **Checkpoint** (`/checkwatch`) | The conversation, `git log` since the last checkpoint, changed files, the documents listed under *Evidence scanned*. | Anything outside the project folder. |
+| **Checkpoint** (`/checkwatch`) | The conversation, `git log` since the last checkpoint, changed files, the documents listed under *Evidence scanned*; open issues and pull requests through your forge CLI (e.g. `gh`), if installed. | Nothing outside the project folder is on the skill's reading list. |
 | **Post-project review** | The whole logbook (Checkpoint log + Path log) and the git history of `.watch/WATCH.md`. | Anything outside the project folder. |
 
 ## 4. Commands at a glance
@@ -67,8 +68,8 @@ files. To be precise:
 
 ## 5. What TTW will not do for you
 
-TTW will not confirm a change, accept a contradiction, or close the project on your behalf, even if
-you ask it to. It will draft the diff, check the ripple, and gather the evidence so that each
+The skills are written not to confirm a change, accept a contradiction, or close the project on
+your behalf, even if you ask (tested by evals, not enforced by code). They will draft the diff, check the ripple, and gather the evidence so that each
 decision takes you one look. That is by design: see
 [What it is, and what it is not](README.md#what-it-is-and-what-it-is-not).
 

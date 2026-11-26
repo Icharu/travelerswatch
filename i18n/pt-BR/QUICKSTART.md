@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../QUICKSTART.md) · **Português (Brasil)** · [Español](../es/QUICKSTART.md) · [繁體中文](../zh-Hant/QUICKSTART.md) · [简体中文](../zh-Hans/QUICKSTART.md) · [日本語](../ja/QUICKSTART.md) · [العربية](../ar/QUICKSTART.md)
 
-> Traduzido de `QUICKSTART.md` (v1.2.2, 2026-11-26). Tradução assistida por máquina; a versão em inglês é a canônica.
+> Traduzido de `QUICKSTART.md` (v1.2.3, 2026-11-26). Tradução assistida por máquina; a versão em inglês é a canônica.
 
 # Guia rápido
 
@@ -32,11 +32,11 @@ habilita a contagem de commits e a revisão pós-projeto completa.
 3. O Claude lê o seu README, `docs/` e o histórico recente do git, e mostra um **cartão de
    evidências** e **rascunhos** de cada seção. Você os corrige; ele pergunta sobre lacunas, itens na
    seção errada e qualquer ponto em que suas respostas contradizem as evidências. Conte com cerca de
-   cinco rodadas.
+   cinco rodadas; no benchmark da v1.0.0, foram cerca de 4 no melhor caso e cerca de 11 no pior.
 4. Confirme o rumo. O Claude grava `.watch/WATCH.md` e adiciona `.watch/.state` ao `.gitignore`.
 5. **Faça commit do diário de bordo**: `git add .watch/WATCH.md .gitignore && git commit -m "watch: bearing set"`.
 
-A partir daqui, nada no rumo muda sem a sua confirmação.
+A partir daqui, as skills foram escritas para que nada no rumo mude sem a sua confirmação.
 
 ## 3. Todos os dias
 
@@ -57,7 +57,7 @@ arquivos. Para ser preciso:
 | Momento | O que é lido | O que **não** é lido |
 |---|---|---|
 | **A cada prompt** (vigia) | O rumo e o Status em `.watch/WATCH.md`; o número de commits e sessões desde o último ponto de controle. | Seu código, diffs ou outros arquivos. |
-| **Ponto de controle** (`/checkwatch`) | A conversa, o `git log` desde o último ponto de controle, os arquivos alterados, os documentos listados em *Evidence scanned*. | Nada fora da pasta do projeto. |
+| **Ponto de controle** (`/checkwatch`) | A conversa, o `git log` desde o último ponto de controle, os arquivos alterados, os documentos listados em *Evidence scanned*; issues e pull requests abertos pela CLI da sua forja (ex.: `gh`), se instalada. | Nada fora da pasta do projeto está na lista de leitura da skill. |
 | **Revisão pós-projeto** | O diário de bordo inteiro (Registro de pontos de controle + Path log) e o histórico git de `.watch/WATCH.md`. | Nada fora da pasta do projeto. |
 
 ## 4. Comandos em resumo
@@ -70,8 +70,8 @@ arquivos. Para ser preciso:
 
 ## 5. O que o TTW não fará por você
 
-O TTW não confirma uma mudança, não aceita uma contradição nem encerra o projeto em seu nome, mesmo
-que você peça. Ele rascunha o diff, verifica o impacto e reúne as evidências para que cada decisão
+As skills foram escritas para não confirmar uma mudança, não aceitar uma contradição nem encerrar o
+projeto em seu nome, mesmo que você peça (testado por evals, não imposto por código). Elas rascunham o diff, verifica o impacto e reúne as evidências para que cada decisão
 leve só uma olhada sua. Isso é proposital: veja
 [O que é, e o que não é](README.md#o-que-é-e-o-que-não-é).
 

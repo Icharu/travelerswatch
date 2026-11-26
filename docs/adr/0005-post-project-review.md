@@ -3,6 +3,10 @@
 - **Status:** Accepted
 - **Date:** 2026-11-25
 - **Extends:** ADR 0002 (committed logbook), ADR 0003
+- **Erratum (2026-11-26, v1.2.3):** the review of 97 publications cited below is Adamantiadou &
+  Tsironis (2025), as summarized by Koshman & Zubkova (2026). Adamantiadou & Tsironis's abstract
+  names the gap "underexplored phases like project closure"; "post-project review" is Koshman &
+  Zubkova's wording. "We" below means the maintainer. The decision is unchanged.
 
 ## Context
 

@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> 譯自 `README.md`（v1.2.2，2026-11-26）。本譯文為機器輔助翻譯，歡迎母語人士校訂。以英文版為準。
+> 譯自 `README.md`（v1.2.3，2026-11-26）。本譯文為機器輔助翻譯，歡迎母語人士校訂。以英文版為準。
 
 # The Traveler's Watch（旅人之錶）
 
-[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.3-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -25,7 +25,7 @@
 > 一位旅人帶著一只壞掉的錶穿越濃霧。每次他在正午看錶，指針就倒退十分鐘，於是他一再走過同一段路，卻深信自己正在前進。
 > —— [閱讀完整故事](tale.md)
 
-借助語言模型推進的長期專案也會以同樣的方式失敗：早期的假設逐漸固化、脈絡在摘要中流失，而模型一旦走錯一步，就會不斷回到那條錯路（[原因說明](../../docs/methods.md)）。The Traveler's Watch（TTW）給你的專案一只值得信賴的錶，並讓**你**而不是模型，決定它指向哪裡。
+借助語言模型推進的長期專案往往會以相似的方式偏移：早期的假設逐漸固化、脈絡在摘要中流失，而模型一旦走錯一步，往往會不斷回到那條錯路（[研究發現](../../docs/methods.md)）。The Traveler's Watch（TTW）在你的儲存庫中保存一份成文的航向，在每次提示時把它呈現給模型，並讓**你**而不是模型，決定它指向哪裡。它能否減少偏移，目前尚未測量（[限制](../../docs/methods.md#limits-of-this-evidence)）。
 
 **→ 第一次使用？請從[快速入門](QUICKSTART.md)開始**（安裝、第一天、每日流程）。
 
@@ -37,22 +37,28 @@
 | 寫在你自己儲存庫中的**航向**（`.watch/WATCH.md`），每次提示都會重新讀取。 | 對話記憶、資料庫或雲端服務。 |
 | **一行的偏移提醒**、按節奏進行的檢查點、由你確認的方向調整，以及根據航行日誌歷史建立的專案後檢討。 | 保證：它尚未在減少偏移的對照研究中驗證過（[限制](../../docs/methods.md#limits-of-this-evidence)）。 |
 | **在航向之內自動化重複性工作**：寫程式、依你的標準評估文本、蒐集證據、起草報告。 | 你的判斷、你的專案管理工具（Jira、GitHub Projects…）或團隊決策的替代品。 |
-| **原則上以人為核心（human-in-the-loop）**：拒絕以全自動工作階段來掌控航向。 | 任何形式的認證：不是 ISO/IEC 42001，也不是法律、安全或法規遵循的證明。 |
+| **依設計以人為核心（human-in-the-loop）**：技能的寫法是拒絕以全自動工作階段來掌控航向（由評測檢驗，而非由程式碼強制）。 | 任何形式的認證：不是 ISO/IEC 42001，也不是法律、安全或法規遵循的證明。 |
 
-看到「每次提示都在守望」，有人可能以為這是一個會自己運作的工具。它不是，而且是刻意如此。在故事裡，旅人不會只憑錶本身就去修錶，因為出錯的正是那只錶；是守望者的說明讓他看清問題。而如果旅人不在那裡發問，守望者也永遠不會叫他修錶。**兩者缺一不可。** 在 TTW 中，你是旅人，模型是守望者，航行日誌則是你們一起校準的那只錶。
+看到「每次提示都在守望」，有人可能以為這是一個會自己運作的工具。它不是，而且是刻意如此。在故事裡，旅人不會只憑錶本身就去修錶，因為出錯的正是那只錶；是守望者的說明讓他看清問題。而如果旅人不在那裡發問，守望者也永遠不會叫他修錶。TTW 正是圍繞這種分工設計的：你是旅人，模型是守望者，航行日誌則是你們一起校準的那只錶。故事只是對設計的說明；設計的理由見下一節與 [docs/methods.md](../../docs/methods.md)。
 
 ## 為什麼專案管理需要人在迴路中？
 
-Koshman 與 Zubkova（2026）回顧了 97 篇關於專案管理中人工智慧的文獻。他們發現，AI 方法在規劃、執行與結案階段**提高了預測準確度、使決策自動化，並優化了任務管理**。他們也指出三項尚未解決的限制，而每一項都影響了 TTW 的設計：
+Adamantiadou 與 Tsironis（2025）回顧了 97 篇關於專案管理中人工智慧的同儕審查研究（2011–2024）。據 Koshman 與 Zubkova（2026）的轉述，這些研究中的 AI 方法在規劃、執行與結案階段**提高了預測準確度、使決策自動化，並優化了任務管理**。同一轉述也列出三項尚未解決的限制，而每一項都影響了 TTW 的設計：
 
-| 尚未解決的限制（Koshman & Zubkova, 2026） | TTW 的回應 |
+| 尚未解決的限制（Adamantiadou & Tsironis, 2025，據 Koshman & Zubkova, 2026 的轉述） | TTW 的回應 |
 |---|---|
-| AI 模型**難以適應不斷變化的專案條件**。 | 方向由專案經理掌握。變更須經 `/fixwatch` 並由專案經理確認；當現實已經改變，檢查點可將航向設為*審查中*。 |
-| AI 模型**很少以初始資料加以驗證**。 | 航向依據專案本身的文件與歷史設定，而每次檢查點都會確認航向是否仍符合這些證據。 |
+| AI 模型**對不斷變化的專案條件適應不足**。 | 方向由專案經理掌握。變更須經 `/fixwatch` 並由專案經理確認；當現實已經改變，檢查點可將航向設為*審查中*。 |
+| AI 模型**以初始資料進行的驗證有限**。 | 航向依據專案本身的文件與歷史設定，而每次檢查點都會確認航向是否仍符合這些證據。 |
 | 在**專案後檢討**等階段，AI 的研究仍然很少。 | TTW 現在保留檢查點記錄，並根據航行日誌歷史建立專案後檢討（[ADR 0005](../../docs/adr/0005-post-project-review.md)）。 |
 
-我們依據這篇回顧所持的立場是：**由 AI 主導的專案——由模型自行設定並改變方向——是低效的。** 模型對變動中專案的理解，還不夠具適應性，也未經足夠驗證，不足以掌握方向；而且越晚修正錯誤的方向，代價就越高。因此 TTW 自動化工作，把舵交給人。該回顧本身並未評估 TTW，以上是我們對它的解讀。
+*來源說明：* 以上各點取自 Koshman 與 Zubkova 的轉述（已閱讀全文）。Adamantiadou 與 Tsironis 本人的摘要將這些缺口表述為 "addressing dynamic project environments, validating AI models with real-world data, and … underexplored phases like project closure"。其全文未經閱讀。
 
+**設計前提**（維護者的解讀，並非任何一篇回顧的發現）：鑑於這些限制，TTW 假定模型不應自行設定或改變專案的方向。目前沒有證據顯示，模型對變動中專案的理解已具備足夠的適應性或經過足夠的驗證，可以掌握方向；而錯誤的方向若較晚才發現，修正的代價可能高於及早確認。因此 TTW 在方向之內自動化工作，把舵交給人。兩篇回顧都沒有評估 TTW。
+
+> Adamantiadou, D. S., & Tsironis, L. (2025). Leveraging artificial intelligence in project
+> management: A systematic review of applications, challenges, and future directions. *Computers*,
+> 14(2), 66. https://doi.org/10.3390/computers14020066
+>
 > Koshman, Y., & Zubkova, A. (2026). Artificial intelligence in project management. *Development
 > Management*, 25(1), 23–31. https://doi.org/10.63341/devt/1.2026.23
 
@@ -65,7 +71,7 @@ Koshman 與 Zubkova（2026）回顧了 97 篇關於專案管理中人工智慧�
 | 重複性工作（寫程式、評估文本…） | 一個提示一個提示地手動完成 | **在航向之內自動化** | 自動化 |
 | 事後留下什麼 | 一段很長的對話 | **儲存庫中的航行日誌與檢討** | 代理的日誌 |
 
-**原則。** 在與方向相關的決策上，TTW 原則上拒絕切換為全自動工作階段：即使你要求，它也不會設定、變更、結束或重新開啟航向，也不會代你確認任何事。但它**會**自動化重複性高的工作情境，例如寫程式、依標準評估文本、蒐集證據、起草報告與差異，並把結果交回給你決定（[ADR 0004](../../docs/adr/0004-human-in-the-loop.md)）。
+**原則。** 技能的寫法是：在與方向相關的決策上拒絕切換為全自動工作階段——即使你要求，也不會設定、變更、結束或重新開啟航向，也不會代你確認任何事。這有賴於模型遵循技能文本；由評測檢驗，而非由程式碼強制。但技能**會**自動化重複性高的工作情境，例如寫程式、依標準評估文本、蒐集證據、起草報告與差異，並把結果交回給你決定（[ADR 0004](../../docs/adr/0004-human-in-the-loop.md)）。
 
 ## 運作方式
 
@@ -81,14 +87,14 @@ Koshman 與 Zubkova（2026）回顧了 97 篇關於專案管理中人工智慧�
 
 ### 以證據為本
 
-航向可能在自身邏輯上一致，卻仍與專案實況不符。自 v1.1.0 起，錶會依據專案本身的證據校準，早期的試航檢查點能及早發現錯誤，而航向審查期間守望者會暫停（[原因](../../docs/benchmarks/2026-11-25-best-vs-worst.md)）。
+航向可能在自身邏輯上一致，卻仍與專案實況不符。自 v1.1.0 起，初始設定會依據專案本身的證據來校準航向；早期的試航檢查點旨在及早發現錯誤的航向；航向審查期間守望者會暫停。目前的證據只有一次基準測試與兩次在合成資料上各執行一次的評測，由維護者借助 Claude 完成（[基準測試及其偏差警示](../../docs/benchmarks/2026-11-25-best-vs-worst.md)）。
 
 ### 航向
 
 | 區塊 | 回答這個問題 |
 |---|---|
 | **範圍**（*Scope*） | 這個航向要引導專案的哪一部分？哪些不在範圍內？ |
-| **標準**（*Standard*） | 工作將依據什麼來評估？**預設視角**、**自由撰寫的評分準則**，或**具名的外部標準**；一律檢查其適用性、可評估性、一致性、範圍、權利與倫理。 |
+| **標準**（*Standard*） | 工作將依據什麼來評估？**預設視角**、**自由撰寫的評分準則**，或**具名的外部標準**。技能會指示 Claude 檢查其適用性、可評估性、一致性、範圍、權利與倫理。 |
 | **脈絡**（*Context*） | 這項工作屬於哪裡？領域、利害關係人、現況、**參考文獻與前案**。 |
 | **限制**（*Constraints*） | 什麼在限制你？時程、預算、人力、指定技術、法規。 |
 | **問題**（*Problem*） | 今天哪裡出了問題（**原始問題**）？「完成」是什麼樣子（**最終目標**）？ |
@@ -104,6 +110,16 @@ Koshman 與 Zubkova（2026）回顧了 97 篇關於專案管理中人工智慧�
 若要新增，請參閱 [CONTRIBUTING](CONTRIBUTING.md)。
 
 </details>
+
+## 成本與適用範圍
+
+| | |
+|---|---|
+| **需求** | 每次提示的守望者需要 Claude Code；`bash` ≥ 3.2 與 `awk`；`git` 可選（計算提交數、專案後檢討）。只用 skills 時，可在任何支援 Agent Skills 的代理中執行，但沒有每次提示的守望。 |
+| **每次提示**（實測） | hook 中位數 6–11 ms，p95 最高 21 ms；在基準測試的航行日誌上注入約 120–650 個 token 的脈絡，上限 4,000 字元（約 1,000 個 token）。沒有航行日誌時：約 3 ms，不注入任何內容。每列 300 次執行，在同一台機器上測得（[基準測試](../../docs/benchmarks/2026-11-25-best-vs-worst.md#hook-time-per-prompt)）。 |
+| **初始設定的工作量** | 預計約五輪問答。在 v1.0.0 的基準測試中（模擬的專案經理），最佳情況約 4 輪，最差情況約 11 輪；v1.1.0 的初始設定尚未重新測量。 |
+| **仍需由你完成的事** | 回答初始設定的問題，確認或拒絕每一項變更，在守望者提醒時執行檢查點，提交航行日誌。 |
+| **可能效果較差的情形**（未經測試） | 證據不在儲存庫中的專案：證據掃描會讀取 README、`docs/`、決策紀錄、計畫、`git log`，以及（若已安裝程式碼託管平台的 CLI）未關閉的 issue。沒有任何書面紀錄的誤解仍會通過初始設定（[ADR 0003](../../docs/adr/0003-evidence-grounded-bearing.md)）。Claude Code 以外的代理沒有每次提示的守望。 |
 
 ## 安裝
 
@@ -139,11 +155,12 @@ Claude：我不能替你確認變更；只有專案經理能確認。我可以�
 
 ## 你的資料：TTW 一概不保存
 
-- **沒有伺服器、沒有帳號、沒有遙測、沒有網路連線。** TTW 只是 Markdown 寫成的 skills，加上一支讀取檔案的 bash 腳本。
+- **沒有伺服器、沒有帳號、沒有遙測。** TTW 只是 Markdown 寫成的 skills，加上一支讀取檔案的 bash 腳本。這支腳本 [`hooks/watchman.sh`](../../hooks/watchman.sh) 不會發出任何網路連線；有 git 時，它會在本機執行 `git rev-list`。你可以自行查核：`grep -nE 'curl|wget|/dev/tcp|ssh|https?://' hooks/watchman.sh` 不會輸出任何內容。
+- **skills 中的一處網路使用：** 在證據掃描期間，若已安裝程式碼託管平台的 CLI（例如 `gh`），`/checkwatch` 可能會請 Claude 用它列出未關閉的 issue 與 pull request。這項請求會送往你的程式碼託管平台，並受你的 Claude Code 權限約束。
 - 守望者讀取 `.watch/WATCH.md`，只寫入 `.watch/.state`（用於計算檢查點的匿名工作階段 ID；僅存在本機，並被 git 忽略）。TTW 產生的其他一切——航行日誌與檢討——都**存放在你的儲存庫中，由你掌控**。
 - TTW 不保存你專案的程式碼、內容或對話。skills 被要求絕不將機密或個人資料複製到航行日誌中。
 - **TTW 無法控制的一件事：** 守望者輸出的內容會成為 Claude Code 傳送給模型供應商的提示的一部分。這部分受 Claude Code 與供應商的條款規範，而非 TTW。
-- TTW 是 **human-in-the-loop**：未經專案經理確認，航向不會有任何改變。
+- TTW 是 **human-in-the-loop**：技能的寫法是未經專案經理確認不改變航向的任何內容；hook 從不編輯航行日誌。
 
 ## 禁止用途
 
@@ -208,7 +225,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
 若你希望在任何研究中引用本作品，請引用其 Zenodo 記錄。GitHub 的 **「Cite this repository」** 按鈕會讀取 [CITATION.cff](../../CITATION.cff)。
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.2.2) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.3) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -219,7 +236,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.2.2},
+  version   = {1.2.3},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}

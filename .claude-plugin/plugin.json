@@ -1,10 +1,14 @@
 {
   "name": "travelerswatch",
-  "version": "1.2.2",
+  "displayName": "The Traveler's Watch",
+  "version": "1.2.3",
   "description": "The Traveler's Watch: set a project's bearing grounded in its own evidence, get a one-line drift flag on every prompt, catch a bearing that no longer matches reality, and change course only on purpose with a logged, PM-confirmed /fixwatch.",
   "author": {
-    "name": "Icaro de Jesus Silva"
+    "name": "Icaro de Jesus Silva",
+    "url": "https://github.com/Icharu"
   },
+  "homepage": "https://github.com/Icharu/travelerswatch",
+  "repository": "https://github.com/Icharu/travelerswatch",
   "license": "CC-BY-NC-4.0",
   "keywords": [
     "project-management",
@@ -12,5 +16,9 @@
     "methodology",
     "context-drift",
     "agent-skills"
-  ]
+  ],
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://github.com/Icharu/travelerswatch/blob/main/QUICKSTART.md",
+  "supportUrl": "https://github.com/Icharu/travelerswatch/issues",
+  "privacyPolicyUrl": "https://github.com/Icharu/travelerswatch/blob/main/README.md#your-data-ttw-keeps-none"
 }

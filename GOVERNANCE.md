@@ -30,7 +30,7 @@ confirms it. Here, anyone may propose; the maintainer confirms.
 
 ## Origin
 
-- **The problem.** Long projects worked through with language models drift: early assumptions
+- **The problem.** Long projects worked through with language models often drift: early assumptions
   harden, context gets summarized away, and a model that took a wrong turn keeps returning to it.
   The research behind that observation is in [docs/methods.md](docs/methods.md).
 - **The metaphor.** The project is built around an original retelling of a traveler with a
@@ -40,8 +40,8 @@ confirms it. Here, anyone may propose; the maintainer confirms.
   benchmark on a live academic project (anonymized) showed that a plausible but wrong bearing
   passed every check, which led to v1.1.0 and its evidence-grounded intake
   ([benchmark](docs/benchmarks/2026-11-25-best-vs-worst.md), [ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)).
-- **The research window.** The context that led to TTW is a roughly five-year window of research
-  on AI in project management and on how language models drift. It is summarized in
+- **The literature.** TTW draws on literature published 2020–2026 on AI in project management and
+  on how language models drift. It is summarized in
   [CONTRIBUTING.md](CONTRIBUTING.md#what-led-to-this-project).
 
 ## How decisions are made
@@ -59,15 +59,21 @@ merged:
 
 1. Only the PM confirms a course change, a closure, or an accepted contradiction.
 2. The Path log and the Checkpoint log are append-only.
-3. TTW never runs the bearing in a fully automated session ([ADR 0004](docs/adr/0004-human-in-the-loop.md)).
+3. The skills never run the bearing in a fully automated session. This is a skill rule, tested by
+   evals, not enforced by code ([ADR 0004](docs/adr/0004-human-in-the-loop.md)).
 4. TTW keeps no data outside the user's own repository: no server, no account, no telemetry.
 
 ## How AI was used to build TTW
 
 Being open about this is part of what TTW asks of its users.
 
-- Most commits up to v1.1.0 were written with **Claude Code (Claude Opus 5.5)** and carry a
-  `Co-Authored-By: Claude` trailer, so `git log` shows exactly which ones.
+- Every commit through v1.2.3 was written with **Claude Code (Claude Opus 5.5)** and carries a
+  `Co-Authored-By: Claude` trailer, except merge commits and two GitHub web edits (the initial
+  commit and a file deletion). To list them:
+  `git log --format='%h %s | %(trailers:key=Co-Authored-By,valueonly)'`.
+- The source checks for v1.2.3 (which parts of each review were read) were done by Claude and are
+  stated in [CONTRIBUTING.md](CONTRIBUTING.md#what-led-to-this-project) and
+  [docs/methods.md](docs/methods.md#5-why-a-human-stays-in-the-loop).
 - The maintainer set the direction, chose what to build, ran the benchmark, and merged every
   pull request. Claude drafted code, tests, and text inside that direction. This is the same
   split TTW describes: repetitive work automated, direction kept by a person.

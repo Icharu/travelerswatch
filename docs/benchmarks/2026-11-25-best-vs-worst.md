@@ -47,7 +47,7 @@ findings**. v1.0.0 built the bearing only from the conversation, so this contrad
 seen. The bearing was **internally consistent but wrong about the project**, and it passed every
 intake check.
 
-### Checkpoint on real evidence (15 days, 11 commits later)
+### Checkpoint on real evidence (5 days, 11 commits later)
 
 | | Best case | Worst case |
 |---|---|---|
@@ -64,7 +64,7 @@ intake check.
 | Move uploads to an external cloud host | breaks data rules | flags ✅ | **silent ❌** — the data risk sat in Relations / Boundary notes, which v1.0.0 did not inject |
 
 **Score:** best 4/4, worst **1/4**. Under a wrong bearing the watchman was a liability until the
-first checkpoint, 15 days later.
+first checkpoint, 5 days later.
 
 ### Findings from the real intake (not simulated)
 
@@ -83,7 +83,7 @@ Three layers, because no single check can catch a bearing that is wrong only in 
 | Prevent | **Scope line + evidence scan** before the Standard; drafts from evidence; every PM-vs-evidence contradiction resolved or explicitly accepted | The structural miss; Fit without scope; friction |
 | Prevent | **Objective anchor required** (explicit opt-out recorded) | Criteria with no floor |
 | Detect | Checkpoint evaluates **work vs bearing** *and* **bearing vs reality**; new verdict **Bearing in question** | "Right verdict, inverted reason" |
-| Detect | **Shakedown cadence** (default every 3 commits or 2 sessions; `/configwatch` to change) | 15-day detection lag |
+| Detect | **Shakedown cadence** (default every 3 commits or 2 sessions; `/configwatch` to change) | 5-day detection lag |
 | Contain | Status **under review** pauses drift flags until `/fixwatch` | The liability window |
 | Hook | Injects Scope + **limits & accepted risks**; strips intake annotations | The silent external-host probe; noise |
 

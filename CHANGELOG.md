@@ -6,6 +6,36 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [1.2.3] - 2026-11-26
+
+Documentation-only release. DOI: cite the all-versions DOI 10.5281/zenodo.24543183.
+
+### Fixed
+- **Attribution of the 97-publication review.** It is Adamantiadou & Tsironis (2025), as summarized
+  by Koshman & Zubkova (2026), not Koshman & Zubkova's own review (theirs covers 21 publications,
+  2021–2025). Corrected in README, CONTRIBUTING, `docs/methods.md`, all six translations, and by
+  dated errata in ADR 0004 and ADR 0005. The v1.2.0 release notes, archived on Zenodo, are left as
+  published; this entry corrects the record.
+- Benchmark: the checkpoint on real evidence came **5 days** after the bearing, not 15
+  (`docs/benchmarks/2026-11-25-best-vs-worst.md`, ADR 0003).
+- "Five years of research (2021–2026)" was Koshman & Zubkova's search window; TTW draws on
+  literature published 2020–2026.
+- GOVERNANCE: the AI-use disclosure now covers every commit through v1.2.3 and says how to list them.
+
+### Changed
+- Documentation separates **design intent** ("the skills are written to…"), **mechanism** (checkable
+  in a named file), and **measured result**. Rules enforced by model compliance are described as
+  such ("tested by evals, not enforced by code"), not as guarantees.
+- README: "Why human-in-the-loop" states a design premise (the maintainer's reading) instead of
+  claiming AI-led projects are inefficient; each source note says what was read in full and what
+  only as an abstract.
+- README: new section **What it costs and where it fits** (prerequisites, measured per-prompt cost,
+  intake effort, expected weak spots), using figures from the existing benchmark only.
+- README "Your data": the hook makes no network calls (with a command to check); the evidence scan
+  may list open issues/PRs through the user's forge CLI, which is now disclosed.
+- CONTRIBUTING → Translations: rule to keep the claim type across languages, plus a glossary.
+- Spanish translations use neutral international Spanish.
+
 ## [1.2.2] - 2026-11-26
 
 DOI: 10.5281/zenodo.24548998.
@@ -129,7 +159,8 @@ steered the work the wrong way. See [ADR 0003](docs/adr/0003-evidence-grounded-b
 - SECURITY.md with private vulnerability reporting and a best-effort response table; CONTRIBUTING.md;
   CITATION.cff; .zenodo.json.
 
-[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.2...HEAD
+[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.3...HEAD
+[1.2.3]: https://github.com/Icharu/travelerswatch/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/Icharu/travelerswatch/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/Icharu/travelerswatch/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Icharu/travelerswatch/compare/v1.1.0...v1.2.0

@@ -76,7 +76,7 @@ You do not have to stay exposed while a report is open:
 4. **Read the methods behind the skill** to apply them by hand:
    - [docs/methods.md](docs/methods.md): the annotated literature
    - Laban et al. (2025), [*LLMs Get Lost In Multi-Turn Conversation*](https://arxiv.org/abs/2505.06120)
-   - Dongre et al. (2025), [*Drift No More?*](https://arxiv.org/abs/2510.07777), which covers how goal reminders reduce drift
+   - Dongre et al. (2025), [*Drift No More?*](https://arxiv.org/abs/2510.07777), which reports that reminder interventions lowered drift in its experiments
    - PMI, [*Top five causes of scope creep*](https://www.pmi.org/learning/library/top-five-causes-scope-creep-6675)
 
 ## For the maintainer

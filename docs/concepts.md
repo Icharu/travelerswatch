@@ -31,7 +31,7 @@ working session for the same effect, by hand.
 |---|---|
 | **Status** | Is the bearing confirmed, under review, or closed? How often should a checkpoint happen, and when was the last one? |
 | **Scope** | What part of the project does this bearing steer — and what not? |
-| **Standard** | What will the work be judged against? (lens preset, free-text rubric, or named external standard — always boundary-checked; one criterion must anchor the Final objective) |
+| **Standard** | What will the work be judged against? (lens preset, free-text rubric, or named external standard; the skill instructs Claude to boundary-check it and to require one criterion that anchors the Final objective) |
 | **Context** | Where does this work live? Field, stakeholders, current state *as the evidence shows it*, referenced works, evidence scanned |
 | **Constraints** | What limits us? |
 | **Problem** | What is wrong today (original problem), and what does done look like (final objective)? |
@@ -73,6 +73,8 @@ tied to entries or commits. The PM chooses *review and close* (the watchman then
 
 Claude may **propose** a course change at any time, including when it realizes it misread the
 context, and may **propose** marking the bearing under review or closing it. Only the **PM
-confirms**. Nothing in the bearing changes without that confirmation, and neither log is ever
-rewritten. Asked to take over that role ("auto-approve", "decide for me"), the skills decline by
-principle and offer to automate the repetitive work instead ([ADR 0004](adr/0004-human-in-the-loop.md)).
+confirms**. The skills are written so that nothing in the bearing changes without that confirmation
+and neither log is rewritten; the hook itself never writes the logbook. Asked to take over that role
+("auto-approve", "decide for me"), the skills are written to decline and offer to automate the
+repetitive work instead. This is tested by evals, not enforced by code
+([ADR 0004](adr/0004-human-in-the-loop.md)).

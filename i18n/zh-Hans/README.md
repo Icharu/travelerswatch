@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> 译自 `README.md`（v1.2.2，2026-11-26）。本译文为机器辅助翻译，欢迎母语人士校订。以英文版为准。
+> 译自 `README.md`（v1.2.3，2026-11-26）。本译文为机器辅助翻译，欢迎母语人士校订。以英文版为准。
 
 # The Traveler's Watch（旅人之表）
 
-[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.3-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -25,7 +25,7 @@
 > 一位旅人带着一块坏掉的表穿越浓雾。每次他在正午看表，指针就倒退十分钟，于是他一遍遍走过同一段路，却坚信自己在前进。
 > —— [阅读完整故事](tale.md)
 
-借助语言模型推进的长期项目也会以同样的方式失败：早期假设逐渐固化，上下文在摘要中丢失，而模型一旦走错一步，就会不断回到那条错路（[原因说明](../../docs/methods.md)）。The Traveler's Watch（TTW）给你的项目一块值得信赖的表，并让**你**而不是模型，决定它指向哪里。
+借助语言模型推进的长期项目往往会以相似的方式漂移：早期假设逐渐固化，上下文在摘要中丢失，而模型一旦走错一步，往往会不断回到那条错路（[研究发现](../../docs/methods.md)）。The Traveler's Watch（TTW）在你的仓库中保存一份成文的航向，在每次提示时把它展示给模型，并让**你**而不是模型，决定它指向哪里。它能否减少漂移，目前尚未测量（[局限](../../docs/methods.md#limits-of-this-evidence)）。
 
 **→ 第一次使用？请从[快速入门](QUICKSTART.md)开始**（安装、第一天、日常流程）。
 
@@ -37,22 +37,28 @@
 | 写在你自己仓库中的**航向**（`.watch/WATCH.md`），每次提示都会重新读取。 | 对话记忆、数据库或云服务。 |
 | **一行的偏离提醒**、按节奏进行的检查点、由你确认的方向调整，以及根据航行日志历史生成的项目后评审。 | 保证：它尚未在减少漂移的对照研究中得到验证（[局限](../../docs/methods.md#limits-of-this-evidence)）。 |
 | **在航向之内自动化重复性工作**：编写代码、按你的标准评估文本、收集证据、起草报告。 | 你的判断、你的项目管理工具（Jira、GitHub Projects…）或团队决策的替代品。 |
-| **原则上坚持人在回路（human-in-the-loop）**：拒绝以全自动会话来掌控航向。 | 任何形式的认证：不是 ISO/IEC 42001，也不是法律、安全或监管合规的证明。 |
+| **按设计坚持人在回路（human-in-the-loop）**：技能的写法是拒绝以全自动会话来掌控航向（由评测检验，而非由代码强制）。 | 任何形式的认证：不是 ISO/IEC 42001，也不是法律、安全或监管合规的证明。 |
 
-看到"每次提示都在守望"，有人可能以为这是一个会自己运行的工具。它不是，而且是有意如此。在故事里，旅人不会仅凭表本身就去修表，因为出错的恰恰是那块表；是守望者的解释让他看清了问题。而如果旅人不在那里发问，守望者也永远不会叫他修表。**两者缺一不可。** 在 TTW 中，你是旅人，模型是守望者，航行日志则是你们一起校准的那块表。
+看到"每次提示都在守望"，有人可能以为这是一个会自己运行的工具。它不是，而且是有意如此。在故事里，旅人不会仅凭表本身就去修表，因为出错的恰恰是那块表；是守望者的解释让他看清了问题。而如果旅人不在那里发问，守望者也永远不会叫他修表。TTW 正是围绕这种分工设计的：你是旅人，模型是守望者，航行日志则是你们一起校准的那块表。故事只是对设计的说明；设计的理由见下一节和 [docs/methods.md](../../docs/methods.md)。
 
 ## 为什么项目管理需要人在回路？
 
-Koshman 和 Zubkova（2026）综述了 97 篇关于项目管理中人工智能的文献。他们发现，AI 方法在规划、实施和收尾阶段**提高了预测准确度、实现了决策自动化，并优化了任务管理**。他们还指出了三项尚未解决的局限，而每一项都影响了 TTW 的设计：
+Adamantiadou 和 Tsironis（2025）综述了 97 篇关于项目管理中人工智能的同行评审研究（2011–2024）。据 Koshman 和 Zubkova（2026）的转述，这些研究中的 AI 方法在规划、实施和收尾阶段**提高了预测准确度、实现了决策自动化，并优化了任务管理**。同一转述还列出了三项尚未解决的局限，而每一项都影响了 TTW 的设计：
 
-| 尚未解决的局限（Koshman & Zubkova, 2026） | TTW 的应对 |
+| 尚未解决的局限（Adamantiadou & Tsironis, 2025，据 Koshman & Zubkova, 2026 的转述） | TTW 的应对 |
 |---|---|
-| AI 模型**难以适应不断变化的项目条件**。 | 方向由项目经理掌握。变更须经 `/fixwatch` 并由项目经理确认；当现实已经改变，检查点可以把航向设为*审查中*。 |
-| AI 模型**很少用初始数据加以验证**。 | 航向依据项目自身的文档和历史设定，每次检查点都会确认航向是否仍与这些证据相符。 |
+| AI 模型**对不断变化的项目条件适应不足**。 | 方向由项目经理掌握。变更须经 `/fixwatch` 并由项目经理确认；当现实已经改变，检查点可以把航向设为*审查中*。 |
+| AI 模型**用初始数据进行的验证有限**。 | 航向依据项目自身的文档和历史设定，每次检查点都会确认航向是否仍与这些证据相符。 |
 | 在**项目后评审**等阶段，AI 的研究仍然很少。 | TTW 现在保留检查点记录，并根据航行日志历史生成项目后评审（[ADR 0005](../../docs/adr/0005-post-project-review.md)）。 |
 
-我们基于这篇综述的立场是：**由 AI 主导的项目——由模型自行设定并改变方向——是低效的。** 模型对变化中项目的理解，还不够有适应性，也未经充分验证，不足以掌握方向；而错误的方向越晚纠正，代价越高。因此 TTW 自动化工作，把舵交给人。该综述本身并未评估 TTW，以上是我们对它的解读。
+*来源说明：* 以上各点取自 Koshman 和 Zubkova 的转述（已阅读全文）。Adamantiadou 和 Tsironis 本人的摘要把这些空白表述为 "addressing dynamic project environments, validating AI models with real-world data, and … underexplored phases like project closure"。其全文未经阅读。
 
+**设计前提**（维护者的解读，并非任何一篇综述的发现）：鉴于这些局限，TTW 假定模型不应自行设定或改变项目的方向。目前没有证据表明，模型对变化中项目的理解已具备足够的适应性或经过足够的验证，可以掌握方向；而错误的方向若较晚才发现，纠正的代价可能高于及早确认。因此 TTW 在方向之内自动化工作，把舵交给人。两篇综述都没有评估 TTW。
+
+> Adamantiadou, D. S., & Tsironis, L. (2025). Leveraging artificial intelligence in project
+> management: A systematic review of applications, challenges, and future directions. *Computers*,
+> 14(2), 66. https://doi.org/10.3390/computers14020066
+>
 > Koshman, Y., & Zubkova, A. (2026). Artificial intelligence in project management. *Development
 > Management*, 25(1), 23–31. https://doi.org/10.63341/devt/1.2026.23
 
@@ -65,7 +71,7 @@ Koshman 和 Zubkova（2026）综述了 97 篇关于项目管理中人工智能�
 | 重复性工作（编写代码、评估文本…） | 一个提示一个提示地手动完成 | **在航向之内自动化** | 自动化 |
 | 事后留下什么 | 一段很长的对话 | **仓库中的航行日志与评审** | 智能体的日志 |
 
-**原则。** 在与方向有关的决策上，TTW 原则上拒绝切换为全自动会话：即使你要求，它也不会设定、变更、关闭或重新开启航向，也不会代你确认任何事。但它**会**自动化重复性强的工作场景，例如编写代码、按标准评估文本、收集证据、起草报告和差异，并把结果交回给你决定（[ADR 0004](../../docs/adr/0004-human-in-the-loop.md)）。
+**原则。** 技能的写法是：在与方向有关的决策上拒绝切换为全自动会话——即使你要求，也不会设定、变更、关闭或重新开启航向，也不会代你确认任何事。这依赖于模型遵循技能文本；由评测检验，而非由代码强制。但技能**会**自动化重复性强的工作场景，例如编写代码、按标准评估文本、收集证据、起草报告和差异，并把结果交回给你决定（[ADR 0004](../../docs/adr/0004-human-in-the-loop.md)）。
 
 ## 工作方式
 
@@ -81,14 +87,14 @@ Koshman 和 Zubkova（2026）综述了 97 篇关于项目管理中人工智能�
 
 ### 以证据为本
 
-航向可能在自身逻辑上一致，却仍与项目实际不符。自 v1.1.0 起，表会依据项目自身的证据校准，早期的试航检查点能及早发现错误，而航向审查期间守望者会暂停（[原因](../../docs/benchmarks/2026-11-25-best-vs-worst.md)）。
+航向可能在自身逻辑上一致，却仍与项目实际不符。自 v1.1.0 起，初始设定会依据项目自身的证据来校准航向；早期的试航检查点旨在及早发现错误的航向；航向审查期间守望者会暂停。目前的证据只有一次基准测试和两次在合成数据上各运行一次的评测，由维护者借助 Claude 完成（[基准测试及其偏差警示](../../docs/benchmarks/2026-11-25-best-vs-worst.md)）。
 
 ### 航向
 
 | 部分 | 回答这个问题 |
 |---|---|
 | **范围**（*Scope*） | 这个航向要引导项目的哪一部分？哪些不在范围内？ |
-| **标准**（*Standard*） | 工作将依据什么来评估？**预设视角**、**自由撰写的评分标准**，或**具名的外部标准**；一律检查其适用性、可评估性、一致性、范围、权利与伦理。 |
+| **标准**（*Standard*） | 工作将依据什么来评估？**预设视角**、**自由撰写的评分标准**，或**具名的外部标准**。技能会指示 Claude 检查其适用性、可评估性、一致性、范围、权利与伦理。 |
 | **上下文**（*Context*） | 这项工作属于哪里？领域、利益相关者、现状、**参考文献与先例**。 |
 | **约束**（*Constraints*） | 什么在限制你？时间、预算、人力、指定技术、法规。 |
 | **问题**（*Problem*） | 今天哪里出了问题（**原始问题**）？"完成"是什么样子（**最终目标**）？ |
@@ -104,6 +110,16 @@ Koshman 和 Zubkova（2026）综述了 97 篇关于项目管理中人工智能�
 如需新增，请参阅 [CONTRIBUTING](CONTRIBUTING.md)。
 
 </details>
+
+## 成本与适用范围
+
+| | |
+|---|---|
+| **需要** | 每次提示的守望者需要 Claude Code；`bash` ≥ 3.2 和 `awk`；`git` 可选（统计提交数、项目后评审）。只用 skills 时，可在任何支持 Agent Skills 的智能体中运行，但没有每次提示的守望。 |
+| **每次提示**（实测） | hook 中位数 6–11 ms，p95 最高 21 ms；在基准测试的航行日志上注入约 120–650 个 token 的上下文，上限 4,000 字符（约 1,000 个 token）。没有航行日志时：约 3 ms，不注入任何内容。每行 300 次运行，在同一台机器上测得（[基准测试](../../docs/benchmarks/2026-11-25-best-vs-worst.md#hook-time-per-prompt)）。 |
+| **初始设定的工作量** | 预计约五轮问答。在 v1.0.0 的基准测试中（模拟的项目经理），最佳情况约 4 轮，最差情况约 11 轮；v1.1.0 的初始设定尚未重新测量。 |
+| **仍需由你完成的事** | 回答初始设定的问题，确认或拒绝每一项变更，在守望者提醒时运行检查点，提交航行日志。 |
+| **可能效果较差的情形**（未经测试） | 证据不在仓库中的项目：证据扫描读取 README、`docs/`、决策记录、计划、`git log`，以及（若已安装代码托管平台的 CLI）未关闭的 issue。没有任何书面记录的误解仍会通过初始设定（[ADR 0003](../../docs/adr/0003-evidence-grounded-bearing.md)）。Claude Code 以外的智能体没有每次提示的守望。 |
 
 ## 安装
 
@@ -139,11 +155,12 @@ Claude：我不能替你确认变更；只有项目经理能确认。我可以�
 
 ## 你的数据：TTW 一概不保存
 
-- **没有服务器、没有账号、没有遥测、没有网络调用。** TTW 只是用 Markdown 写成的 skills，加上一个读取文件的 bash 脚本。
+- **没有服务器、没有账号、没有遥测。** TTW 只是用 Markdown 写成的 skills，加上一个读取文件的 bash 脚本。该脚本 [`hooks/watchman.sh`](../../hooks/watchman.sh) 不进行任何网络调用；有 git 时，它会在本地运行 `git rev-list`。你可以自行核实：`grep -nE 'curl|wget|/dev/tcp|ssh|https?://' hooks/watchman.sh` 不会输出任何内容。
+- **skills 中的一处网络使用：** 在证据扫描期间，如果安装了代码托管平台的 CLI（例如 `gh`），`/checkwatch` 可能会请 Claude 用它列出未关闭的 issue 和 pull request。该请求会发送到你的代码托管平台，并受你的 Claude Code 权限约束。
 - 守望者读取 `.watch/WATCH.md`，只写入 `.watch/.state`（用于统计检查点的匿名会话 ID；仅存于本地，并被 git 忽略）。TTW 产生的其他一切——航行日志和评审——都**保存在你的仓库中，由你掌控**。
 - TTW 不保存你项目的代码、内容或对话。skills 被要求绝不把机密或个人数据复制到航行日志中。
 - **TTW 无法控制的一件事：** 守望者输出的内容会成为 Claude Code 发送给模型提供商的提示的一部分。这部分受 Claude Code 和提供商的条款约束，而不是 TTW。
-- TTW 是 **human-in-the-loop**：未经项目经理确认，航向不会有任何改变。
+- TTW 是 **human-in-the-loop**：技能的写法是未经项目经理确认不改变航向的任何内容；hook 从不编辑航行日志。
 
 ## 禁止用途
 
@@ -208,7 +225,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
 如果你希望在任何研究中引用本作品，请引用其 Zenodo 记录。GitHub 的 **"Cite this repository"** 按钮会读取 [CITATION.cff](../../CITATION.cff)。
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.2.2) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.3) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -219,7 +236,7 @@ i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, e
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.2.2},
+  version   = {1.2.3},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}

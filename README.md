@@ -11,7 +11,7 @@
 
 # The Traveler's Watch
 
-[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.3-blue)](CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -25,10 +25,12 @@ change course only on purpose, with every change confirmed by the project manage
 > ten minutes, so he keeps walking the same stretch, sure he is making progress.
 > — [read the full tale](docs/tale.md)
 
-Long projects worked through with language models fail the same way: early assumptions harden,
-context gets summarized away, and a model that took a wrong turn keeps returning to it
-([why this happens](docs/methods.md)). The Traveler's Watch (TTW) gives your project a watch you can
-trust, and keeps you, not the model, in charge of where it points.
+Long projects worked through with language models often drift in a similar way: early assumptions
+harden, context gets summarized away, and a model that took a wrong turn tends to keep returning to
+it ([what the studies found](docs/methods.md)). The Traveler's Watch (TTW) keeps a written bearing in
+your repository, shows it to the model on every prompt, and leaves you, not the model, in charge of
+where it points. Whether it reduces drift has not yet been measured
+([limits](docs/methods.md#limits-of-this-evidence)).
 
 **→ New here? Start with the [Quick start](QUICKSTART.md)** (install, first day, daily routine).
 
@@ -40,34 +42,46 @@ trust, and keeps you, not the model, in charge of where it points.
 | A written **bearing** in your own repository (`.watch/WATCH.md`), re-read on every prompt. | A memory of your conversations, a database, or a cloud service. |
 | A **one-line drift flag**, checkpoints on a cadence, course changes you confirm, and a post-project review built from the logbook history. | A guarantee: it has not been tested in a controlled study of drift reduction ([limits](docs/methods.md#limits-of-this-evidence)). |
 | **Automation for repetitive work inside the bearing**: coding, evaluating texts against your Standard, gathering evidence, drafting reports. | A replacement for your judgement, your PM tools (Jira, GitHub Projects…), or your team's decisions. |
-| **Human in the loop by principle**: it refuses to run the bearing in a fully automated session. | A certification of anything: not ISO/IEC 42001, not legal, safety, or regulatory compliance. |
+| **Human in the loop by design**: the skills are written to refuse to run the bearing in a fully automated session (tested by evals, not enforced by code). | A certification of anything: not ISO/IEC 42001, not legal, safety, or regulatory compliance. |
 
 A person reading "watch on every prompt" may picture a tool that runs by itself. It does not, and
 that is on purpose. In the tale, the traveler would not have fixed his watch on the watch's word,
 because the watch was the thing that was wrong; it was the watchman's explanation that let him see
 it. And the watchman would never have told him to fix it if the traveler had not been there to ask.
-**Both are essential.** In TTW, you are the traveler, the model is the watchman, and the logbook is
-the watch you keep right together.
+TTW is designed around that split: you are the traveler, the model is the watchman, and the logbook
+is the watch you keep right together. The tale illustrates the design; the reasons for it are in the
+next section and in [docs/methods.md](docs/methods.md).
 
 ## Why human-in-the-loop in project management?
 
-Koshman and Zubkova (2026) reviewed 97 publications on AI in project management. They found that AI
-methods **improved forecast accuracy, automated decision-making, and optimised task management**
-across the planning, implementation, and closure stages. They also found three limitations that
-remain unresolved, and each one shaped TTW:
+Adamantiadou and Tsironis (2025) reviewed 97 peer-reviewed studies (2011–2024) on AI in project
+management. As summarized by Koshman and Zubkova (2026), AI methods in those studies **improved
+forecast accuracy, automated decision-making, and optimised task management** during the planning,
+implementation, and closure stages. The same summary lists three unresolved limitations, and each
+one shaped TTW:
 
-| Unresolved limitation (Koshman & Zubkova, 2026) | How TTW responds |
+| Unresolved limitation (Adamantiadou & Tsironis, 2025, as summarized by Koshman & Zubkova, 2026) | How TTW responds |
 |---|---|
-| AI models **adapt poorly to changing project conditions**. | Direction stays with the PM. Changes go through `/fixwatch` and need the PM's confirmation; a checkpoint can put the bearing *under review* when reality has moved. |
-| AI models are **rarely validated against the initial data**. | The bearing is set against the project's own documents and history, and every checkpoint asks whether the bearing still matches that evidence. |
-| AI is **little studied in phases such as the post-project review**. | TTW now keeps a Checkpoint log and builds a post-project review from the logbook history ([ADR 0005](docs/adr/0005-post-project-review.md)). |
+| AI models **adapt insufficiently to changing project conditions**. | Direction stays with the PM. Changes go through `/fixwatch` and need the PM's confirmation; a checkpoint can put the bearing *under review* when reality has moved. |
+| AI models have **limited validation against the initial data**. | The bearing is set against the project's own documents and history, and every checkpoint asks whether the bearing still matches that evidence. |
+| AI is **little researched in phases such as the post-project review**. | TTW now keeps a Checkpoint log and builds a post-project review from the logbook history ([ADR 0005](docs/adr/0005-post-project-review.md)). |
 
-Our position, informed by that review: **AI-led projects, where the model sets and changes direction
-on its own, are inefficient.** A model's reading of a changing project is not yet adaptive or
-validated enough to own the direction, and correcting a wrong direction late costs more than
-confirming it early. So TTW automates the work and leaves the steering to a person. The review
-itself does not evaluate TTW; this is our reading of it.
+*Source note:* the points above are taken from Koshman and Zubkova's summary (full text read).
+Adamantiadou and Tsironis's own abstract words the gaps as "addressing dynamic project environments,
+validating AI models with real-world data, and … underexplored phases like project closure". Their
+full text was not read.
 
+**Design premise** (the maintainer's reading, not a finding of either review): given those
+limitations, TTW assumes a model should not set or change a project's direction on its own. A
+model's reading of a changing project has not been shown to be adaptive or validated enough to own
+the direction, and a wrong direction found late can cost more to correct than one confirmed early.
+So TTW automates work inside the direction and leaves the steering to a person. Neither review
+evaluates TTW.
+
+> Adamantiadou, D. S., & Tsironis, L. (2025). Leveraging artificial intelligence in project
+> management: A systematic review of applications, challenges, and future directions. *Computers*,
+> 14(2), 66. https://doi.org/10.3390/computers14020066
+>
 > Koshman, Y., & Zubkova, A. (2026). Artificial intelligence in project management. *Development
 > Management*, 25(1), 23–31. https://doi.org/10.63341/devt/1.2026.23
 
@@ -80,9 +94,10 @@ itself does not evaluate TTW; this is our reading of it.
 | Repetitive work (coding, evaluating texts…) | By hand, prompt by prompt | **Automated, inside the bearing** | Automated |
 | What is left afterwards | A long conversation | **A logbook and a review in your repo** | The agent's logs |
 
-**Principle.** TTW refuses, by principle, to switch to fully automated sessions for decisions about
-direction: it will not set, change, close, or reopen the bearing, or confirm anything on your
-behalf, even if you ask. It **does** automate the contexts where work is repetitive, such as coding,
+**Principle.** The skills are written to refuse fully automated sessions for decisions about
+direction: they will not set, change, close, or reopen the bearing, or confirm anything on your
+behalf, even if you ask. This relies on the model following the skill text. It is tested by evals,
+not enforced by code. The skills **do** automate the contexts where work is repetitive, such as coding,
 evaluating texts against a Standard, gathering evidence, and drafting reports and diffs, and brings
 the result back for your decision ([ADR 0004](docs/adr/0004-human-in-the-loop.md)).
 
@@ -100,14 +115,14 @@ the result back for your decision ([ADR 0004](docs/adr/0004-human-in-the-loop.md
 
 ### Grounded in evidence
 
-A bearing can be consistent with itself and still wrong about the project. Since v1.1.0 the watch is set against the project's own evidence, an early shakedown checkpoint catches mistakes soon, and the watchman pauses while the bearing is under review ([why](docs/benchmarks/2026-11-25-best-vs-worst.md)).
+A bearing can be consistent with itself and still wrong about the project. Since v1.1.0 the intake sets the bearing against the project's own evidence, an early shakedown checkpoint is designed to catch a wrong bearing soon, and the watchman pauses while the bearing is under review. The evidence so far is one benchmark and two single-run evals on synthetic fixtures, run by the maintainer with Claude ([benchmark and its bias warning](docs/benchmarks/2026-11-25-best-vs-worst.md)).
 
 ### The bearing
 
 | Section | Answer this |
 |---|---|
 | **Scope** | What part of the project does this bearing steer, and what not? |
-| **Standard** | What will the work be judged against? A **lens preset**, a **free-text rubric**, or a **named external standard**, always checked for fit, evaluability, consistency, scope, rights, and ethics. |
+| **Standard** | What will the work be judged against? A **lens preset**, a **free-text rubric**, or a **named external standard**. The skill instructs Claude to check it for fit, evaluability, consistency, scope, rights, and ethics. |
 | **Context** | Where does this work live? Field, stakeholders, current state, **referenced works**. |
 | **Constraints** | What limits you? Time, budget, people, mandated technology, regulation. |
 | **Problem** | What is wrong today (**original problem**), and what does done look like (**final objective**)? |
@@ -123,6 +138,16 @@ Included: [Project Management](skills/checkwatch/references/lenses/project-manag
 To add yours, see [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-lens).
 
 </details>
+
+## What it costs and where it fits
+
+| | |
+|---|---|
+| **Needs** | Claude Code for the per-prompt watchman; `bash` ≥ 3.2 and `awk`; `git` optional (commit counting, post-project review). The skills alone run in any Agent Skills agent, without the per-prompt watch. |
+| **Per prompt** (measured) | Hook median 6–11 ms, p95 up to 21 ms; ≈ 120–650 tokens of injected context on the benchmark logbooks, capped at 4,000 characters (≈ 1,000 tokens). Without a logbook: ≈ 3 ms, nothing injected. 300 runs per row on one machine ([benchmark](docs/benchmarks/2026-11-25-best-vs-worst.md#hook-time-per-prompt)). |
+| **Intake effort** | Aim for about five question rounds. The v1.0.0 benchmark (simulated PMs) took about 4 in its best case and about 11 in its worst; the v1.1.0 intake has not been re-measured. |
+| **What you still do** | Answer the intake, confirm or reject every change, run a checkpoint when nudged, commit the logbook. |
+| **Where it may work less well** (untested) | Projects whose evidence lives outside the repository: the evidence scan reads the README, `docs/`, decision records, plans, `git log`, and open issues if a forge CLI is installed. A misconception with no written trace still passes intake ([ADR 0003](docs/adr/0003-evidence-grounded-bearing.md)). Agents other than Claude Code get no per-prompt watch. |
 
 ## Install
 
@@ -158,8 +183,13 @@ Full session: [examples/pm-walkthrough.md](examples/pm-walkthrough.md).
 
 ## Your data: TTW keeps none
 
-- **No server, no account, no telemetry, no network calls.** TTW is Markdown skills plus one bash
-  script that reads a file.
+- **No server, no account, no telemetry.** TTW is Markdown skills plus one bash script that reads
+  a file. The script, [`hooks/watchman.sh`](hooks/watchman.sh), makes no network calls; it runs
+  `git rev-list` locally when git is present. Check it yourself:
+  `grep -nE 'curl|wget|/dev/tcp|ssh|https?://' hooks/watchman.sh` prints nothing.
+- **One network use, in the skills:** during an evidence scan, `/checkwatch` may ask Claude to list
+  open issues and pull requests with your forge's CLI (for example `gh`) if it is installed. That
+  request goes to your forge, under your Claude Code permissions.
 - The watchman reads `.watch/WATCH.md` and writes only `.watch/.state` (anonymous session ids for
   the checkpoint count; local and git-ignored). Everything else TTW produces, the logbook and the
   reviews, lives **in your repository, under your control**.
@@ -167,7 +197,8 @@ Full session: [examples/pm-walkthrough.md](examples/pm-walkthrough.md).
   copy secrets or personal data into the logbook.
 - **One thing TTW does not control:** what the watchman prints becomes part of the prompt Claude Code
   sends to the model provider. That is covered by your Claude Code and provider terms, not by TTW.
-- TTW is **human-in-the-loop**: nothing in the bearing changes without the PM's confirmation.
+- TTW is **human-in-the-loop**: the skills are written so that nothing in the bearing changes
+  without the PM's confirmation, and the hook never edits the logbook.
 
 ## Prohibited uses
 
@@ -246,7 +277,7 @@ If you wish to cite this work in any of your research, please cite the Zenodo re
 **"Cite this repository"** button reads [CITATION.cff](CITATION.cff).
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.2.2) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.3) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -257,7 +288,7 @@ If you wish to cite this work in any of your research, please cite the Zenodo re
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.2.2},
+  version   = {1.2.3},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}

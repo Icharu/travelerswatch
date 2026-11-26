@@ -8,24 +8,28 @@ Thank you for helping keep travelers on their path. Contributions of every size 
 ## What led to this project
 
 TTW encourages both users and contributors to understand what led to it before changing it. The
-design rests on roughly **five years of research (2021–2026)** on how language models drift in long
-work and on how AI is changing project management, plus one earlier study on scope creep.
+design draws on literature published 2020–2026: studies of how language models drift in long work,
+reviews of how AI is changing project management, and one study on scope creep.
 
-Research on how AI works and is used in the modern world is **interdisciplinary** in nature
-(Koshman & Zubkova, 2026), so contributions from any field are welcome. Two reviews frame TTW's
-place in that research:
+Koshman and Zubkova (2026) describe research on how AI works and is used in the modern world as
+**interdisciplinary** in nature, so contributions from any field are welcome. Two reviews frame
+TTW's place in that research:
 
-- **What AI already does well in project management.** Adamantiadou and Tsironis (2025) found that
-  machine learning, deep learning, and hybrid models have significantly expanded what project
-  management can do, improving **cost estimation, schedule forecasting, and risk analysis**. TTW
-  takes that seriously: it automates repetitive work inside the bearing.
-  *Transparency note: we cite this finding as it is reported in Koshman & Zubkova (2026); we checked
-  the original article's details through its DOI.*
-- **What is still unresolved.** Koshman and Zubkova (2026) reviewed 97 publications and found that AI
-  models adapt poorly to changing project conditions, are rarely validated against the initial data,
-  and are little studied in phases such as the post-project review. TTW is built around those gaps:
-  the PM keeps the direction, the bearing is checked against evidence, and the logbook supports a
-  post-project review.
+- **What AI already does well in project management.** Adamantiadou and Tsironis (2025) reviewed 97
+  peer-reviewed studies (2011–2024). Their abstract reports that machine learning, deep learning,
+  and hybrid models have shown potential to enhance project management, notably **cost estimation,
+  duration forecasting, and risk assessment**. TTW takes that seriously: it automates repetitive
+  work inside the bearing.
+- **What is still unresolved.** The same review, as summarized by Koshman and Zubkova (2026),
+  reports that AI models adapt insufficiently to changing project conditions, have limited
+  validation against the initial data, and are little researched in phases such as the post-project
+  review. TTW is built around those gaps: the PM keeps the direction, the bearing is checked against
+  evidence, and the logbook supports a post-project review.
+
+*Source note (what was read):* Koshman & Zubkova (2026): full text. Adamantiadou & Tsironis (2025):
+read through Koshman & Zubkova's summary and through the abstract and bibliographic metadata of its
+DOI record; the full text was not read. Earlier versions of this file credited the 97-publication
+review to Koshman & Zubkova; that was an attribution error, corrected in v1.2.3.
 
 | Year | Reference | Why it matters here |
 |---|---|---|
@@ -34,8 +38,8 @@ place in that research:
 | 2024 | [*A Survey on LLM-as-a-Judge*](https://arxiv.org/abs/2411.15594) | LLM judges need explicit criteria → the Standard is set before any verdict |
 | 2025 | Laban et al., [*LLMs Get Lost In Multi-Turn Conversation*](https://arxiv.org/abs/2505.06120) | Models take wrong turns and do not recover → the bearing is set up front |
 | 2025 | Dongre et al., [*Drift No More?*](https://arxiv.org/abs/2510.07777) | Reminders lower drift → the watchman on every prompt |
-| 2025 | Adamantiadou & Tsironis, [*Leveraging AI in Project Management*](https://doi.org/10.3390/computers14020066) | AI improves estimation, forecasting, risk analysis → automate the repetitive work |
-| 2026 | Koshman & Zubkova, [*Artificial intelligence in project management*](https://doi.org/10.63341/devt/1.2026.23) | Adaptability, validation, and post-project review are unresolved → human in the loop |
+| 2025 | Adamantiadou & Tsironis, [*Leveraging AI in Project Management*](https://doi.org/10.3390/computers14020066) | Review of 97 studies: AI shows potential in estimation, forecasting, and risk; adaptability, validation, and late phases unresolved → automate repetitive work, keep a human in the loop |
+| 2026 | Koshman & Zubkova, [*Artificial intelligence in project management*](https://doi.org/10.63341/devt/1.2026.23) | Review of 21 publications (2021–2025) and of AI tools; summarizes the 97-study review; interdisciplinary framing → human in the loop, contributions from any field |
 
 The full annotated list, with the design consequence of each source, is in
 [docs/methods.md](docs/methods.md). How the project started and who decides is in
@@ -120,6 +124,37 @@ Translators: keep the language bar, links (relative to `i18n/<lang>/`, e.g. `../
 badges, commands, and shell code blocks identical (the dialogue in *Quick example* may be
 translated). Update the `Translated from` note at the top of the file. Arabic: keep prose inside
 `<div dir="rtl">` and code blocks outside it.
+
+**Keep the claim type.** Every sentence about TTW is a *design intent* ("is designed to", "the skill
+instructs Claude to"), a *mechanism* ("the hook does X", checkable in a file), or a *result* ("in
+<test>, <number>"). A translation must keep the same type: check the verb, not only the noun. Keep
+the same sources and numbers as the English, keep author–year citations and original titles
+untranslated, and add no local claims or sources. Spanish uses neutral international Spanish
+(impersonal *se* or *usted*). zh-Hans and zh-Hant are localized separately, never converted
+character by character.
+
+| English | pt-BR | es | zh-Hans | zh-Hant | ja | ar |
+|---|---|---|---|---|---|---|
+| is designed to | foi projetado para | está diseñado para | 旨在 | 旨在 | 〜を目的として設計されている | صُمّم لـ |
+| the skill instructs Claude to | a skill instrui o Claude a | la skill indica a Claude que | 技能指示 Claude | 技能指示 Claude | スキルは Claude に〜するよう指示する | توجّه المهارةُ Claude إلى |
+| tested by evals, not enforced by code | testado por evals, não imposto por código | probado con evals, no impuesto por código | 由评测检验，而非由代码强制 | 由評測檢驗，而非由程式碼強制 | eval で検証されており、コードで強制されてはいない | تُختبَر بالتقييمات ولا تفرضها الشيفرة |
+| may / can | pode | puede | 可能 | 可能 | 〜可能性がある | قد |
+| according to | segundo | según | 据 | 據 | 〜によれば | وفقًا لـ |
+| as summarized by | conforme resumido por | según el resumen de | 据…的综述 | 據…的回顧 | 〜の要約による | كما لخّصه |
+| design premise | premissa de projeto | premisa de diseño | 设计前提 | 設計前提 | 設計上の前提 | فرضية التصميم |
+| guarantees | *avoid*: foi projetado para | *avoid*: está diseñado para | *avoid*: 旨在 | *avoid*: 旨在 | *avoid*: 〜設計されている | *avoid*: صُمّم لـ |
+| always (rules only) | sempre | siempre | 始终 | 始終 | 必ず | دائمًا |
+| significant (statistical only) | significativo | significativo | 显著 | 顯著 | 有意 | دالّ إحصائيًا |
+| substantial (non-statistical) | substancial | sustancial | 较大 | 較大 | 大きな | كبير |
+| evidence | evidência | evidencia | 证据 | 證據 | 根拠 | الأدلة |
+| indicates (not "proves") | indica | indica | 表明 | 顯示 | 示唆する | تشير إلى |
+| efficient | eficiente | eficiente | 高效 | 高效 | 効率的 | ذو كفاءة |
+| effective | eficaz | eficaz | 有效 | 有效 | 効果的 | فعّال |
+| drift | desvio | desvío | 漂移 | 偏移 | ずれ | الانحراف |
+| bearing | rumo | rumbo | 航向 | 航向 | 針路 | المسار |
+| human in the loop | humano no circuito | humano en el circuito | 人在回路中 | 人在迴路中 | ヒューマン・イン・ザ・ループ | الإنسان ضمن الحلقة |
+
+The glossary is machine-assisted; native-speaker corrections are welcome.
 
 ## Pull requests
 

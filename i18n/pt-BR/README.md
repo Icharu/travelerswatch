@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> Traduzido de `README.md` (v1.2.2, 2026-11-26). Tradução assistida por máquina; revisões de falantes nativos são bem-vindas. A versão em inglês é a canônica.
+> Traduzido de `README.md` (v1.2.3, 2026-11-26). Tradução assistida por máquina; revisões de falantes nativos são bem-vindas. A versão em inglês é a canônica.
 
 # The Traveler's Watch (O Relógio do Viajante)
 
-[![Version](https://img.shields.io/badge/version-v1.2.2-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.3-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -29,10 +29,12 @@ registrada.
 > avançando.
 > — [leia o conto completo](tale.md)
 
-Projetos longos feitos com modelos de linguagem falham do mesmo jeito: suposições iniciais se
-cristalizam, o contexto se perde em resumos, e um modelo que pegou o caminho errado continua voltando
-a ele ([por que isso acontece](../../docs/methods.md)). O Traveler's Watch (TTW) dá ao seu projeto um
-relógio em que você pode confiar, e mantém você, e não o modelo, no comando de para onde ele aponta.
+Projetos longos feitos com modelos de linguagem costumam se desviar de forma parecida: suposições
+iniciais se cristalizam, o contexto se perde em resumos, e um modelo que pegou o caminho errado tende
+a continuar voltando a ele ([o que os estudos encontraram](../../docs/methods.md)). O Traveler's Watch
+(TTW) mantém um rumo escrito no seu repositório, mostra-o ao modelo a cada prompt e deixa você, e não
+o modelo, no comando de para onde ele aponta. Ainda não foi medido se ele reduz o desvio
+([limites](../../docs/methods.md#limits-of-this-evidence)).
 
 **→ Primeira vez aqui? Comece pelo [Guia rápido](QUICKSTART.md)** (instalação, primeiro dia, rotina diária).
 
@@ -44,34 +46,46 @@ relógio em que você pode confiar, e mantém você, e não o modelo, no comando
 | Um **rumo** escrito no seu próprio repositório (`.watch/WATCH.md`), relido a cada prompt. | Uma memória das suas conversas, um banco de dados ou um serviço em nuvem. |
 | Um **aviso de desvio em uma linha**, pontos de controle periódicos, mudanças de curso que você confirma e uma revisão pós-projeto construída a partir do histórico do diário de bordo. | Uma garantia: não foi testado em um estudo controlado de redução de desvio ([limites](../../docs/methods.md#limits-of-this-evidence)). |
 | **Automação de trabalho repetitivo dentro do rumo**: código, avaliação de textos segundo o seu Padrão, coleta de evidências, rascunho de relatórios. | Um substituto para o seu julgamento, suas ferramentas de GP (Jira, GitHub Projects…) ou as decisões da sua equipe. |
-| **Humano no circuito (human-in-the-loop) por princípio**: recusa-se a conduzir o rumo em uma sessão totalmente automatizada. | Uma certificação de qualquer coisa: nem ISO/IEC 42001, nem conformidade legal, de segurança ou regulatória. |
+| **Humano no circuito (human-in-the-loop) por projeto**: as skills foram escritas para recusar conduzir o rumo em uma sessão totalmente automatizada (testado por evals, não imposto por código). | Uma certificação de qualquer coisa: nem ISO/IEC 42001, nem conformidade legal, de segurança ou regulatória. |
 
 Quem lê "vigia a cada prompt" pode imaginar uma ferramenta que funciona sozinha. Não é, e isso é
 proposital. No conto, o viajante não teria consertado o relógio confiando no próprio relógio, porque
 era justamente ele que estava errado; foi a explicação do vigia que o fez enxergar o problema. E o
 vigia jamais lhe diria para consertar o relógio se o viajante não estivesse ali para perguntar.
-**Os dois são essenciais.** No TTW, você é o viajante, o modelo é o vigia, e o diário de bordo é o
-relógio que vocês mantêm certo juntos.
+O TTW foi projetado em torno dessa divisão: você é o viajante, o modelo é o vigia, e o diário de
+bordo é o relógio que vocês mantêm certo juntos. O conto ilustra o projeto; as razões dele estão na
+próxima seção e em [docs/methods.md](../../docs/methods.md).
 
 ## Por que humano no circuito na gestão de projetos?
 
-Koshman e Zubkova (2026) revisaram 97 publicações sobre IA na gestão de projetos. Eles constataram que
-métodos de IA **melhoraram a precisão das previsões, automatizaram a tomada de decisão e otimizaram a
-gestão de tarefas** nas etapas de planejamento, execução e encerramento. Também apontaram três
-limitações ainda não resolvidas, e cada uma moldou o TTW:
+Adamantiadou e Tsironis (2025) revisaram 97 estudos revisados por pares (2011–2024) sobre IA na
+gestão de projetos. Conforme resumido por Koshman e Zubkova (2026), métodos de IA nesses estudos
+**melhoraram a precisão das previsões, automatizaram a tomada de decisão e otimizaram a gestão de
+tarefas** nas etapas de planejamento, execução e encerramento. O mesmo resumo aponta três limitações
+ainda não resolvidas, e cada uma moldou o TTW:
 
-| Limitação não resolvida (Koshman & Zubkova, 2026) | Como o TTW responde |
+| Limitação não resolvida (Adamantiadou & Tsironis, 2025, conforme resumido por Koshman & Zubkova, 2026) | Como o TTW responde |
 |---|---|
-| Modelos de IA **se adaptam mal a condições de projeto que mudam**. | A direção fica com o gerente de projeto. Mudanças passam pelo `/fixwatch` e precisam da confirmação dele; um ponto de controle pode colocar o rumo *em revisão* quando a realidade mudou. |
-| Modelos de IA **raramente são validados em relação aos dados iniciais**. | O rumo é definido a partir dos documentos e do histórico do próprio projeto, e cada ponto de controle pergunta se o rumo ainda corresponde a essas evidências. |
-| A IA é **pouco estudada em fases como a revisão pós-projeto**. | O TTW agora mantém um Registro de pontos de controle e constrói uma revisão pós-projeto a partir do histórico do diário de bordo ([ADR 0005](../../docs/adr/0005-post-project-review.md)). |
+| Modelos de IA **se adaptam de forma insuficiente a condições de projeto que mudam**. | A direção fica com o gerente de projeto. Mudanças passam pelo `/fixwatch` e precisam da confirmação dele; um ponto de controle pode colocar o rumo *em revisão* quando a realidade mudou. |
+| Modelos de IA **têm validação limitada em relação aos dados iniciais**. | O rumo é definido a partir dos documentos e do histórico do próprio projeto, e cada ponto de controle pergunta se o rumo ainda corresponde a essas evidências. |
+| A IA é **pouco pesquisada em fases como a revisão pós-projeto**. | O TTW agora mantém um Registro de pontos de controle e constrói uma revisão pós-projeto a partir do histórico do diário de bordo ([ADR 0005](../../docs/adr/0005-post-project-review.md)). |
 
-Nossa posição, informada por essa revisão: **projetos conduzidos pela IA, em que o modelo define e
-muda a direção sozinho, são ineficientes.** A leitura que um modelo faz de um projeto em mudança ainda
-não é adaptável nem validada o suficiente para assumir a direção, e corrigir uma direção errada tarde
-custa mais do que confirmá-la cedo. Por isso o TTW automatiza o trabalho e deixa o leme com uma
-pessoa. A revisão em si não avalia o TTW; esta é a nossa leitura dela.
+*Nota sobre as fontes:* os pontos acima foram tirados do resumo de Koshman e Zubkova (texto completo
+lido). O próprio resumo (*abstract*) de Adamantiadou e Tsironis descreve as lacunas como "addressing
+dynamic project environments, validating AI models with real-world data, and … underexplored phases
+like project closure". O texto completo deles não foi lido.
 
+**Premissa de projeto** (leitura do mantenedor, não um achado de nenhuma das revisões): diante dessas
+limitações, o TTW parte do princípio de que um modelo não deve definir nem mudar sozinho a direção de
+um projeto. Não foi demonstrado que a leitura que um modelo faz de um projeto em mudança seja
+adaptável ou validada o suficiente para assumir a direção, e uma direção errada descoberta tarde pode
+custar mais para corrigir do que uma confirmada cedo. Por isso o TTW automatiza o trabalho dentro da
+direção e deixa o leme com uma pessoa. Nenhuma das revisões avalia o TTW.
+
+> Adamantiadou, D. S., & Tsironis, L. (2025). Leveraging artificial intelligence in project
+> management: A systematic review of applications, challenges, and future directions. *Computers*,
+> 14(2), 66. https://doi.org/10.3390/computers14020066
+>
 > Koshman, Y., & Zubkova, A. (2026). Artificial intelligence in project management. *Development
 > Management*, 25(1), 23–31. https://doi.org/10.63341/devt/1.2026.23
 
@@ -84,11 +98,12 @@ pessoa. A revisão em si não avalia o TTW; esta é a nossa leitura dela.
 | Trabalho repetitivo (código, avaliação de textos…) | À mão, prompt a prompt | **Automatizado, dentro do rumo** | Automatizado |
 | O que fica depois | Uma conversa longa | **Um diário de bordo e uma revisão no seu repositório** | Os logs do agente |
 
-**Princípio.** O TTW se recusa, por princípio, a passar para sessões totalmente automatizadas nas
-decisões sobre a direção: não define, muda, encerra nem reabre o rumo, nem confirma nada em seu nome,
-mesmo que você peça. Ele **automatiza**, sim, os contextos em que o trabalho é repetitivo, como
+**Princípio.** As skills foram escritas para recusar sessões totalmente automatizadas nas decisões
+sobre a direção: não definem, mudam, encerram nem reabrem o rumo, nem confirmam nada em seu nome,
+mesmo que você peça. Isso depende de o modelo seguir o texto das skills; é testado por evals, não
+imposto por código. As skills **automatizam**, sim, os contextos em que o trabalho é repetitivo, como
 código, avaliação de textos segundo um Padrão, coleta de evidências e rascunho de relatórios e diffs,
-e devolve o resultado para a sua decisão ([ADR 0004](../../docs/adr/0004-human-in-the-loop.md)).
+e devolvem o resultado para a sua decisão ([ADR 0004](../../docs/adr/0004-human-in-the-loop.md)).
 
 ## Como funciona
 
@@ -104,14 +119,14 @@ e devolve o resultado para a sua decisão ([ADR 0004](../../docs/adr/0004-human-
 
 ### Ancorado em evidências
 
-Um rumo pode ser coerente consigo mesmo e ainda assim estar errado sobre o projeto. Desde a v1.1.0, o relógio é acertado com as evidências do próprio projeto, um ponto de controle inicial pega erros cedo e o vigia pausa enquanto o rumo está em revisão ([por quê](../../docs/benchmarks/2026-11-25-best-vs-worst.md)).
+Um rumo pode ser coerente consigo mesmo e ainda assim estar errado sobre o projeto. Desde a v1.1.0, a entrevista inicial acerta o rumo com as evidências do próprio projeto, um ponto de controle inicial foi projetado para detectar cedo um rumo errado e o vigia pausa enquanto o rumo está em revisão. As evidências até agora são um benchmark e duas avaliações de execução única com dados sintéticos, feitos pelo mantenedor com o Claude ([o benchmark e seu alerta de viés](../../docs/benchmarks/2026-11-25-best-vs-worst.md)).
 
 ### O rumo
 
 | Seção | Responda a isto |
 |---|---|
 | **Escopo** (*Scope*) | Que parte do projeto este rumo conduz, e qual não? |
-| **Padrão** (*Standard*) | Contra o que o trabalho será avaliado? Um **preset de lente**, uma **rubrica em texto livre** ou um **padrão externo nomeado**, sempre verificado quanto a adequação, avaliabilidade, consistência, escopo, direitos e ética. |
+| **Padrão** (*Standard*) | Contra o que o trabalho será avaliado? Um **preset de lente**, uma **rubrica em texto livre** ou um **padrão externo nomeado**. A skill instrui o Claude a verificá-lo quanto a adequação, avaliabilidade, consistência, escopo, direitos e ética. |
 | **Contexto** (*Context*) | Onde esse trabalho se insere? Área, partes interessadas, situação atual, **obras de referência**. |
 | **Restrições** (*Constraints*) | O que limita vocês? Prazo, orçamento, pessoas, tecnologia obrigatória, regulação. |
 | **Problema** (*Problem*) | O que está errado hoje (**problema original**) e como é o "pronto" (**objetivo final**)? |
@@ -127,6 +142,16 @@ Incluídas: [Gestão de Projetos](../../skills/checkwatch/references/lenses/proj
 Para adicionar a sua, veja o [CONTRIBUTING](CONTRIBUTING.md#adicionando-uma-lente).
 
 </details>
+
+## O que custa e onde se aplica
+
+| | |
+|---|---|
+| **Requisitos** | Claude Code para o vigia a cada prompt; `bash` ≥ 3.2 e `awk`; `git` opcional (contagem de commits, revisão pós-projeto). As skills sozinhas rodam em qualquer agente compatível com Agent Skills, sem a vigia a cada prompt. |
+| **Por prompt** (medido) | Mediana do hook de 6–11 ms, p95 de até 21 ms; ≈ 120–650 tokens de contexto injetado nos diários de bordo do benchmark, com limite de 4000 caracteres (≈ 1000 tokens). Sem diário de bordo: ≈ 3 ms, nada injetado. 300 execuções por linha, em uma única máquina ([benchmark](../../docs/benchmarks/2026-11-25-best-vs-worst.md#hook-time-per-prompt)). |
+| **Esforço da entrevista inicial** | Conte com cerca de cinco rodadas de perguntas. No benchmark da v1.0.0 (gerentes de projeto simulados), foram cerca de 4 no melhor caso e cerca de 11 no pior; a entrevista inicial da v1.1.0 ainda não foi medida de novo. |
+| **O que continua com você** | Responder à entrevista inicial, confirmar ou recusar cada mudança, fazer um ponto de controle quando o vigia pedir, fazer commit do diário de bordo. |
+| **Onde pode funcionar pior** (não testado) | Projetos cujas evidências ficam fora do repositório: a varredura de evidências lê o README, `docs/`, registros de decisão, planos, o `git log` e as issues abertas, se houver uma CLI da forja instalada. Um equívoco sem nenhum registro escrito ainda passa pela entrevista inicial ([ADR 0003](../../docs/adr/0003-evidence-grounded-bearing.md)). Agentes que não sejam o Claude Code não têm a vigia a cada prompt. |
 
 ## Instalação
 
@@ -162,8 +187,13 @@ Sessão completa (em inglês): [examples/pm-walkthrough.md](../../examples/pm-wa
 
 ## Seus dados: o TTW não guarda nenhum
 
-- **Sem servidor, sem conta, sem telemetria, sem chamadas de rede.** O TTW é um conjunto de skills em
-  Markdown mais um script bash que lê um arquivo.
+- **Sem servidor, sem conta, sem telemetria.** O TTW é um conjunto de skills em Markdown mais um
+  script bash que lê um arquivo. O script, [`hooks/watchman.sh`](../../hooks/watchman.sh), não faz
+  chamadas de rede; ele executa `git rev-list` localmente quando o git está presente. Confira você
+  mesmo: `grep -nE 'curl|wget|/dev/tcp|ssh|https?://' hooks/watchman.sh` não imprime nada.
+- **Um uso de rede, nas skills:** durante a varredura de evidências, o `/checkwatch` pode pedir ao
+  Claude que liste issues e pull requests abertos com a CLI da sua forja (por exemplo, `gh`), se ela
+  estiver instalada. Essa requisição vai para a sua forja, sob as permissões do seu Claude Code.
 - O vigia lê `.watch/WATCH.md` e grava apenas `.watch/.state` (ids de sessão anônimos para contar os
   pontos de controle; local e ignorado pelo git). Tudo o mais que o TTW produz, o diário de bordo e as
   revisões, fica **no seu repositório, sob o seu controle**.
@@ -172,7 +202,8 @@ Sessão completa (em inglês): [examples/pm-walkthrough.md](../../examples/pm-wa
 - **Uma coisa que o TTW não controla:** o que o vigia imprime passa a fazer parte do prompt que o
   Claude Code envia ao provedor do modelo. Isso é regido pelos termos do Claude Code e do provedor,
   não pelo TTW.
-- O TTW é **human-in-the-loop**: nada no rumo muda sem a confirmação do gerente de projeto.
+- O TTW é **human-in-the-loop**: as skills foram escritas para que nada no rumo mude sem a
+  confirmação do gerente de projeto, e o hook nunca edita o diário de bordo.
 
 ## Usos proibidos
 
@@ -258,7 +289,7 @@ Se você quiser citar este trabalho em qualquer uma de suas pesquisas, cite o re
 botão **"Cite this repository"** do GitHub lê o [CITATION.cff](../../CITATION.cff).
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.2.2) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.3) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -269,7 +300,7 @@ botão **"Cite this repository"** do GitHub lê o [CITATION.cff](../../CITATION.
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.2.2},
+  version   = {1.2.3},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}
