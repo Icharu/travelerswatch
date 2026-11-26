@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> Traducido de `README.md` (Unreleased, 2026-11-25). Traducción asistida por máquina; las revisiones de hablantes nativos son bienvenidas. La versión en inglés es la canónica.
+> Traducido de `README.md` (v1.2.0, 2026-11-26). Traducción asistida por máquina; las revisiones de hablantes nativos son bienvenidas. La versión en inglés es la canónica.
 
 # The Traveler's Watch (El Reloj del Viajero)
 
-[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.0-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -259,7 +259,7 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
 **"Cite this repository"** de GitHub lee [CITATION.cff](../../CITATION.cff).
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.1.0) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.0) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -270,7 +270,7 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.1.0},
+  version   = {1.2.0},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}
@@ -280,6 +280,7 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
 | Citar | DOI |
 |---|---|
 | Todas las versiones (usa este salvo que necesites una versión concreta) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.0 | *DOI que se añadirá tras la publicación en Zenodo* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -292,7 +293,7 @@ ejemplos) está bajo la licencia [**CC BY-NC 4.0**](../../LICENSE): puedes compa
 fines **no comerciales**, con atribución. CC BY-NC 4.0 no es una licencia de código abierto aprobada
 por la OSI; TTW tiene el código disponible para uso no comercial.
 
-Esto se aplica desde la primera versión posterior a la v1.1.0. Las copias de versiones anteriores
+Esto se aplica desde la v1.2.0. Las copias de versiones anteriores
 conservan las licencias con que se publicaron (v1.0.0: MIT; v1.1.0: MIT para el código y CC BY 4.0
 para la documentación). El cuento en [docs/tale.md](../../docs/tale.md) es una reescritura original;
 la cita de Isaías 21:11 es de dominio público.

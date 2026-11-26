@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../QUICKSTART.md) · [Português (Brasil)](../pt-BR/QUICKSTART.md) · [Español](../es/QUICKSTART.md) · [繁體中文](../zh-Hant/QUICKSTART.md) · [简体中文](../zh-Hans/QUICKSTART.md) · **日本語** · [العربية](../ar/QUICKSTART.md)
 
-> `QUICKSTART.md`（Unreleased、2026-11-25）からの翻訳です。機械支援による翻訳のため、正式な版は英語版です。
+> `QUICKSTART.md`（v1.2.0、2026-11-26）からの翻訳です。機械支援による翻訳のため、正式な版は英語版です。
 
 # クイックスタート
 

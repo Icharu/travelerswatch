@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> 譯自 `README.md`（Unreleased，2026-11-25）。本譯文為機器輔助翻譯，歡迎母語人士校訂。以英文版為準。
+> 譯自 `README.md`（v1.2.0，2026-11-26）。本譯文為機器輔助翻譯，歡迎母語人士校訂。以英文版為準。
 
 # The Traveler's Watch（旅人之錶）
 
-[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.0-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -208,7 +208,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 若你希望在任何研究中引用本作品，請引用其 Zenodo 記錄。GitHub 的 **「Cite this repository」** 按鈕會讀取 [CITATION.cff](../../CITATION.cff)。
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.1.0) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.0) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -219,7 +219,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.1.0},
+  version   = {1.2.0},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}
@@ -229,6 +229,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 | 引用 | DOI |
 |---|---|
 | 所有版本（除非需要特定版本，請使用此 DOI） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.0 | *DOI 將於 Zenodo 發布後補上* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -238,7 +239,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 
 © 2026 Icaro de Jesus Silva。整個儲存庫（程式碼、skill 文字、文件與範例）採用 [**CC BY-NC 4.0**](../../LICENSE) 授權：只要註明出處，即可為**非商業**目的分享與改作。CC BY-NC 4.0 並非 OSI 認可的開放原始碼授權；TTW 是供非商業使用的原始碼公開專案。
 
-此授權自 v1.1.0 之後的第一個版本起適用。先前版本的副本仍保留其發布時的授權（v1.0.0：MIT；v1.1.0：程式碼為 MIT，文件為 CC BY 4.0）。[docs/tale.md](../../docs/tale.md) 中的故事為原創改寫；以賽亞書 21:11 的引文屬公有領域。
+此授權自 v1.2.0 起適用。先前版本的副本仍保留其發布時的授權（v1.0.0：MIT；v1.1.0：程式碼為 MIT，文件為 CC BY 4.0）。[docs/tale.md](../../docs/tale.md) 中的故事為原創改寫；以賽亞書 21:11 的引文屬公有領域。
 
 <details>
 <summary><b>延伸閱讀</b></summary>

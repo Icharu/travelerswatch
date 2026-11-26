@@ -6,6 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-26
+
 ### Added
 - Zenodo DOIs in the READMEs and `CITATION.cff`: concept 10.5281/zenodo.24543183, v1.1.0 10.5281/zenodo.24543326, v1.0.0 10.5281/zenodo.24543184.
 - **Post-project review** (`/checkwatch` Part C): rebuilds the timeline from the logbook and git
@@ -96,6 +98,7 @@ steered the work the wrong way. See [ADR 0003](docs/adr/0003-evidence-grounded-b
 - SECURITY.md with private vulnerability reporting and a best-effort response table; CONTRIBUTING.md;
   CITATION.cff; .zenodo.json.
 
-[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/Icharu/travelerswatch/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/Icharu/travelerswatch/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Icharu/travelerswatch/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Icharu/travelerswatch/releases/tag/v1.0.0

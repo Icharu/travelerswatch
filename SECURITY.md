@@ -4,9 +4,9 @@
 
 | Version | Supported |
 |---|---|
-| 1.1.x | ✅ |
-| 1.0.x | ⚠️ Critical fixes only — please upgrade |
-| < 1.0 | ❌ |
+| 1.2.x | ✅ |
+| 1.1.x | ⚠️ Critical fixes only — please upgrade |
+| ≤ 1.0.x | ❌ |
 
 ## Reporting a vulnerability
 

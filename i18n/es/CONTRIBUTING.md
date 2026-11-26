@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../CONTRIBUTING.md) · [Português (Brasil)](../pt-BR/CONTRIBUTING.md) · **Español** · [繁體中文](../zh-Hant/CONTRIBUTING.md) · [简体中文](../zh-Hans/CONTRIBUTING.md) · [日本語](../ja/CONTRIBUTING.md) · [العربية](../ar/CONTRIBUTING.md)
 
-> Traducido de `CONTRIBUTING.md` (Unreleased, 2026-11-25). Traducción asistida por máquina; la versión en inglés es la canónica.
+> Traducido de `CONTRIBUTING.md` (v1.2.0, 2026-11-26). Traducción asistida por máquina; la versión en inglés es la canónica.
 
 # Contribuir a The Traveler's Watch
 

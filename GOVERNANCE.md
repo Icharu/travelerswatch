@@ -11,7 +11,7 @@ they might work later.
 | **Maintainer and author** | Icaro de Jesus Silva ([Icharu](https://github.com/Icharu) on GitHub) |
 | **Model** | **Solo-maintained** and **solo-driven** (definitions below) |
 | **Started** | 2026-11-25, first public release v1.0.0 the same day |
-| **License** | [CC BY-NC 4.0](LICENSE) from the first release after v1.1.0 (earlier releases keep their licenses) |
+| **License** | [CC BY-NC 4.0](LICENSE) from v1.2.0 (earlier releases keep their licenses) |
 | **AI assistance** | Built with Claude Code (Claude Opus 5.5) as a coding and writing assistant; disclosed below |
 | **Funding / SLA** | Maintained in spare time; there is no service-level agreement |
 

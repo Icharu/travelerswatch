@@ -291,7 +291,7 @@ else ok "hostile: session id sanitized (nothing written)"; fi
 rm -rf "$P"
 
 # ---------------------------------------------------------------------------
-# Unreleased — closed bearing (post-project review) and Checkpoint log
+# v1.2.0 — closed bearing (post-project review) and Checkpoint log
 # ---------------------------------------------------------------------------
 echo
 echo "watchman.sh closed bearing"

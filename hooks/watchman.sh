@@ -13,7 +13,7 @@
 # - Intake annotations "*( … )*" are stripped from the injected text.
 # - One awk pass over the logbook; parsing otherwise uses bash built-ins (bash ≥ 3.2).
 #
-# Unreleased:
+# v1.2:
 # - Bearing "closed" (after a post-project review) → silent: the watch has ended.
 # - "## Checkpoint log" is history for the review; it is not injected.
 #

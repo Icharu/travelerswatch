@@ -11,7 +11,7 @@
 
 # The Traveler's Watch
 
-[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.0-blue)](CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -246,7 +246,7 @@ If you wish to cite this work in any of your research, please cite the Zenodo re
 **"Cite this repository"** button reads [CITATION.cff](CITATION.cff).
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.1.0) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.0) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -257,7 +257,7 @@ If you wish to cite this work in any of your research, please cite the Zenodo re
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.1.0},
+  version   = {1.2.0},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}
@@ -267,6 +267,7 @@ If you wish to cite this work in any of your research, please cite the Zenodo re
 | Cite | DOI |
 |---|---|
 | All versions (use this unless you need a specific release) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.0 | *DOI added after the Zenodo release* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -279,7 +280,7 @@ licensed under [**CC BY-NC 4.0**](LICENSE): you may share and adapt it for **non
 purposes, with attribution. CC BY-NC 4.0 is not an OSI-approved open-source license; TTW is
 source-available for non-commercial use.
 
-This applies from the first release after v1.1.0. Copies of earlier releases keep the licenses they
+This applies from v1.2.0. Copies of earlier releases keep the licenses they
 were published under (v1.0.0: MIT; v1.1.0: MIT for code and CC BY 4.0 for documentation). The tale in
 [docs/tale.md](docs/tale.md) is an original retelling; the quotation from Isaiah 21:11 is in the
 public domain.

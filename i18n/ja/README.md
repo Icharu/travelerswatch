@@ -9,11 +9,11 @@
   </picture>
 </p>
 
-> `README.md`（Unreleased、2026-11-25）からの翻訳です。機械支援による翻訳のため、ネイティブスピーカーによるレビューを歓迎します。正式な版は英語版です。
+> `README.md`（v1.2.0、2026-11-26）からの翻訳です。機械支援による翻訳のため、ネイティブスピーカーによるレビューを歓迎します。正式な版は英語版です。
 
 # The Traveler's Watch（旅人の時計）
 
-[![Version](https://img.shields.io/badge/version-v1.1.0-blue)](../../CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.2.0-blue)](../../CHANGELOG.md)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](../../LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24543183.svg)](https://doi.org/10.5281/zenodo.24543183)
 [![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-8A2BE2)](https://agentskills.io/)
@@ -208,7 +208,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 研究でこの成果物を引用したい場合は、Zenodo のレコードを引用してください。GitHub の **「Cite this repository」** ボタンは [CITATION.cff](../../CITATION.cff) を読み込みます。
 
 > de Jesus Silva, I. (2026). *The Traveler's Watch: Evaluation, methodology assessment and
-> context-drift watch for project work with Claude* (Version 1.1.0) [Computer software]. Zenodo.
+> context-drift watch for project work with Claude* (Version 1.2.0) [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.24543183
 
 <details>
@@ -219,7 +219,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
   author    = {de Jesus Silva, Icaro},
   title     = {The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude},
   year      = {2026},
-  version   = {1.1.0},
+  version   = {1.2.0},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24543183},
   url       = {https://doi.org/10.5281/zenodo.24543183}
@@ -229,6 +229,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 | 引用対象 | DOI |
 |---|---|
 | 全バージョン（特定のリリースが必要な場合を除き、こちらを使用） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.0 | *DOI は Zenodo での公開後に追加* |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -238,7 +239,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 
 © 2026 Icaro de Jesus Silva。リポジトリ全体（コード、スキルのテキスト、ドキュメント、例）は [**CC BY-NC 4.0**](../../LICENSE) でライセンスされています。クレジットを表示すれば、**非営利**の目的で共有・翻案できます。CC BY-NC 4.0 は OSI 承認のオープンソースライセンスではありません。TTW は非営利利用向けのソース公開プロジェクトです。
 
-これは v1.1.0 の次のリリースから適用されます。それ以前のリリースのコピーは、公開時のライセンスのままです（v1.0.0：MIT、v1.1.0：コードは MIT、ドキュメントは CC BY 4.0）。[docs/tale.md](../../docs/tale.md) の物語はオリジナルの再話であり、イザヤ書 21:11 の引用はパブリックドメインです。
+これは v1.2.0 から適用されます。それ以前のリリースのコピーは、公開時のライセンスのままです（v1.0.0：MIT、v1.1.0：コードは MIT、ドキュメントは CC BY 4.0）。[docs/tale.md](../../docs/tale.md) の物語はオリジナルの再話であり、イザヤ書 21:11 の引用はパブリックドメインです。
 
 <details>
 <summary><b>参考文献</b></summary>

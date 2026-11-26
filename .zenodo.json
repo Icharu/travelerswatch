@@ -1,7 +1,7 @@
 {
   "title": "The Traveler's Watch: evaluation, methodology assessment and context-drift watch for project work with Claude",
   "upload_type": "software",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "<p>A Claude Code plugin and three portable Agent Skills that set a project's bearing (Scope, Standard, Context, Constraints, Problem, Tools) grounded in the project's own evidence, flag drift from it on every prompt, check whether the bearing itself still matches reality, and record deliberate, PM-confirmed course changes in an append-only logbook.</p>",
   "creators": [
     {
@@ -26,5 +26,5 @@
       "resource_type": "software"
     }
   ],
-  "notes": "Licensed under CC BY-NC 4.0 (all files: code, skill text, documentation) from the first release after v1.1.0. Earlier releases keep their original licenses: v1.0.0 MIT; v1.1.0 MIT (code) and CC BY 4.0 (documentation and skill text)."
+  "notes": "Licensed under CC BY-NC 4.0 (all files: code, skill text, documentation) from v1.2.0. Earlier releases keep their original licenses: v1.0.0 MIT; v1.1.0 MIT (code) and CC BY 4.0 (documentation and skill text)."
 }

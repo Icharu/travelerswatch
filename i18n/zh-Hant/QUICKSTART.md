@@ -1,7 +1,7 @@
 <!-- lang-bar -->
 [English](../../QUICKSTART.md) · [Português (Brasil)](../pt-BR/QUICKSTART.md) · [Español](../es/QUICKSTART.md) · **繁體中文** · [简体中文](../zh-Hans/QUICKSTART.md) · [日本語](../ja/QUICKSTART.md) · [العربية](../ar/QUICKSTART.md)
 
-> 譯自 `QUICKSTART.md`（Unreleased，2026-11-25）。本譯文為機器輔助翻譯，以英文版為準。
+> 譯自 `QUICKSTART.md`（v1.2.0，2026-11-26）。本譯文為機器輔助翻譯，以英文版為準。
 
 # 快速入門
 
