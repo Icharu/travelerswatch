@@ -1,7 +1,7 @@
 ---
 name: configwatch
 description: Shows and changes the Traveler's Watch settings for a project — the checkpoint cadence (every N commits or M sessions, or off) stored in the Status section of .watch/WATCH.md — without touching the bearing. Use when the user runs /configwatch, asks how often checkpoints should happen, wants the "checkpoint is due" nudge more or less often or turned off, or wants to see the watch's current status.
-license: CC-BY-4.0
+license: CC-BY-NC-4.0
 metadata:
   version: "1.1.0"
   family: travelers-watch
@@ -69,5 +69,6 @@ come early; later ones can be spaced out.
 
 - Never change the bearing (Scope, Standard, Context, Constraints, Problem, Tools) here — that is
   `fixwatch`. Never change `Bearing:` status here either: *under review* is set by a checkpoint and
-  closed by `/fixwatch`.
+  closed by `/fixwatch`; *closed* is set only by a post-project review (`/checkwatch`) and reopened
+  only by `/fixwatch`.
 - Never rewrite earlier Path log entries.

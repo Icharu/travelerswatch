@@ -1,10 +1,11 @@
 # Watch Logbook
-<!-- travelers-watch logbook v1.1 · created by /checkwatch · bearing sections change only through /fixwatch · settings through /configwatch -->
+<!-- travelers-watch logbook v1.2 · created by /checkwatch · bearing sections change only through /fixwatch · settings through /configwatch · closed only by a post-project review -->
 
-> The bearing for this project. Everything below the Path log heading is append-only history.
+> The bearing for this project. The Checkpoint log and the Path log are append-only history.
 > Write each item clean: where an item came from goes in the Path log, not in the sections.
 
 ## Status
+<!-- Bearing: confirmed | under review since <date> — <reason> | closed <date> — post-project review -->
 - **Bearing:** confirmed
 - **Checkpoint cadence:** every 3 commits or 2 sessions
 - **Last checkpoint:** <YYYY-MM-DD> @ <short commit SHA, or — if no git>
@@ -44,6 +45,9 @@
 - <section ↔ section: tension> — Resolved: <how>
 - <section ↔ section: tension> *Accepted risk (PM).*
 - <PM statement ↔ evidence (source)> *Accepted contradiction (PM).*
+
+## Checkpoint log
+<!-- one line per checkpoint, appended by /checkwatch: - <YYYY-MM-DD> @ <sha or —> — <verdict> — <one-line reason> -->
 
 ## Path log
 ### <YYYY-MM-DD> — Bearing set

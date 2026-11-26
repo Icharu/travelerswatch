@@ -290,6 +290,30 @@ if [ -f "$P/.watch/.state" ]; then
 else ok "hostile: session id sanitized (nothing written)"; fi
 rm -rf "$P"
 
+# ---------------------------------------------------------------------------
+# Unreleased — closed bearing (post-project review) and Checkpoint log
+# ---------------------------------------------------------------------------
+echo
+echo "watchman.sh closed bearing"
+
+# 16. Closed bearing → silent, exits 0, writes no state
+P="$(new_project)"; write_v11 "$P" "closed 2026-12-20 — post-project review" "every 1 commits or 1 sessions" "2026-12-20 @ —"
+OUT="$(run_session "$P" a)"; CODE=$?; OUT2="$(run_session "$P" b)"
+assert_eq "$CODE" "0" "closed: exits 0"
+assert_eq "$OUT$OUT2" "" "closed: prints nothing (watch ended)"
+[ ! -f "$P/.watch/.state" ] && ok "closed: no state file" || bad "closed: no state file"
+rm -rf "$P"
+
+# 17. Checkpoint log section is ignored by the hook (not injected as a course change)
+P="$(new_project)"; write_v11 "$P" "confirmed" "off" "2026-11-10 @ —"
+awk '/^## Path log/ { print "## Checkpoint log"; print "- 2026-11-12 @ — — On path — CHECKPOINT-LOG-MARKER"; print "" } { print }' \
+  "$P/.watch/WATCH.md" > "$P/.watch/W.tmp" && mv "$P/.watch/W.tmp" "$P/.watch/WATCH.md"
+OUT="$(run_session "$P" a)"
+assert_contains "$OUT" "Divert 25%" "checkpoint log: bearing still injected"
+assert_not_contains "$OUT" "CHECKPOINT-LOG-MARKER" "checkpoint log: not injected"
+assert_contains "$OUT" "bearing established" "checkpoint log: latest course change still from Path log"
+rm -rf "$P"
+
 echo
 echo "$PASS passed, $FAIL failed"
 [ "$FAIL" -eq 0 ]

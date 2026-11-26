@@ -13,6 +13,10 @@
 # - Intake annotations "*( … )*" are stripped from the injected text.
 # - One awk pass over the logbook; parsing otherwise uses bash built-ins (bash ≥ 3.2).
 #
+# Unreleased:
+# - Bearing "closed" (after a post-project review) → silent: the watch has ended.
+# - "## Checkpoint log" is history for the review; it is not injected.
+#
 # - Silent when there is no logbook, or when TRAVELERSWATCH_DISABLE=1.
 # - Always exits 0: the watchman must never block the traveler.
 # - Dependencies: bash, awk (git optional).
@@ -102,9 +106,13 @@ next_part; DIGEST="$PART"
 LAST_CHANGE="$ALL"
 
 # ---------------------------------------------------------------------------
+# Status: closed → the watch has ended (post-project review done); stay silent.
 # Status: under review → suspend the watch, point to /fixwatch.
 # ---------------------------------------------------------------------------
 case "$BEARING_STATUS" in
+  [Cc][Ll][Oo][Ss][Ee][Dd]*)
+    exit 0
+    ;;
   [Uu][Nn][Dd][Ee][Rr]" "[Rr][Ee][Vv][Ii][Ee][Ww]*)
     REASON="${BEARING_STATUS:12}"
     while :; do

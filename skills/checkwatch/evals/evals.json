@@ -134,6 +134,37 @@
         "Recommends keeping the default shakedown cadence (3 commits or 2 sessions)",
         "Continues the intake instead of stopping"
       ]
+    },
+    {
+      "id": 10,
+      "prompt": "/checkwatch — the pilot ends this week. Can we do the post-project review?",
+      "expected_output": "Part C: Claude rebuilds the timeline from the Checkpoint log and Path log, compares original and final bearing, judges the objective anchor with evidence, says the accepted staffing risk materialized, drafts evidence-tied lessons, and asks the PM to choose review-and-close, review-only, edit, or cancel before writing anything.",
+      "files": [
+        "evals/files/fixture-closing/.watch/WATCH.md"
+      ],
+      "expectations": [
+        "Counts 3 checkpoints by verdict (2 on path, 1 drifting) and 1 course change (new information)",
+        "Shows the Constraints change as logged (2027-01-16 entry)",
+        "States the objective anchor status with evidence (21% at the last checkpoint vs the 25% target), without inventing a final figure",
+        "Says the accepted staffing risk materialized, citing the Path log entry",
+        "Asks the PM to pick review and close / review only / edit / cancel and writes nothing before that",
+        "On close: writes .watch/reviews/<date>-post-project-review.md, sets Status to closed, appends a 'Project closed — post-project review' entry"
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "/checkwatch — are we still on track?",
+      "expected_output": "Checkpoint on a v1.1 logbook: after the report, Claude updates Last checkpoint and, because the logbook has no Checkpoint log, adds the heading right before the Path log and appends one line with date, SHA, verdict, and reason.",
+      "files": [
+        "evals/files/fixture-wrong-bearing/.watch/WATCH.md",
+        "evals/files/fixture-wrong-bearing/README.md",
+        "evals/files/fixture-wrong-bearing/docs/evaluation/2026-11-10-evaluation.md"
+      ],
+      "expectations": [
+        "Adds a '## Checkpoint log' heading immediately before '## Path log'",
+        "Appends exactly one line in the form '- <date> @ <sha or —> — <verdict> — <reason>'",
+        "Does not edit any bearing section or earlier Path log entry"
+      ]
     }
   ]
 }
