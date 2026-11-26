@@ -8,7 +8,7 @@
       "name": "de Jesus Silva, Icaro"
     }
   ],
-  "license": "MIT",
+  "license": "cc-by-nc-4.0",
   "access_right": "open",
   "keywords": [
     "agent-skills",
@@ -26,5 +26,5 @@
       "resource_type": "software"
     }
   ],
-  "notes": "Dual-licensed from v1.1.0: code (hooks, tests, configuration: .sh, .py, .json, .yml, .cff) under MIT (LICENSE); documentation and skill text (all Markdown files) under CC BY 4.0 (LICENSE-docs). Release v1.0.0 is MIT in full."
+  "notes": "Licensed under CC BY-NC 4.0 (all files: code, skill text, documentation) from the first release after v1.1.0. Earlier releases keep their original licenses: v1.0.0 MIT; v1.1.0 MIT (code) and CC BY 4.0 (documentation and skill text)."
 }

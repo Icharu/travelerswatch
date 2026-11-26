@@ -32,5 +32,5 @@ body:
       options:
         - label: The criteria are my own wording and do not copy text from a paid or copyrighted standard.
           required: true
-        - label: I agree that the lens text is published under CC BY 4.0, like the rest of the skill text.
+        - label: I agree that the lens text is published under CC BY-NC 4.0, like the rest of the repository.
           required: true
