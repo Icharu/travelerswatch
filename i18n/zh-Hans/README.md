@@ -23,7 +23,7 @@
 只需设定一次项目的航向；每当工作偏离航向，你会收到一行提醒；只有在有意决定时才改变方向，且每次变更都需经项目经理确认并记录。
 
 > 一位旅人带着一块坏掉的表穿越浓雾。每次他在正午看表，指针就倒退十分钟，于是他一遍遍走过同一段路，却坚信自己在前进。
-> —— [阅读完整故事](../../docs/tale.md)
+> —— [阅读完整故事](tale.md)
 
 借助语言模型推进的长期项目也会以同样的方式失败：早期假设逐渐固化，上下文在摘要中丢失，而模型一旦走错一步，就会不断回到那条错路（[原因说明](../../docs/methods.md)）。The Traveler's Watch（TTW）给你的项目一块值得信赖的表，并让**你**而不是模型，决定它指向哪里。
 
@@ -190,7 +190,7 @@ hooks/                 hooks.json · watchman.sh (bash + awk, no other dependenc
 tests/                 watchman.test.sh · bench_hook.py
 docs/                  tale · concepts · methods (literature) · ISO/IEC 42001 map · adr/ · benchmarks/
 examples/              worked PM session
-i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant, zh-Hans, ja, ar
+i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, es, zh-Hant, zh-Hans, ja, ar
 ```
 
 运行测试：`bash tests/watchman.test.sh` · 测量 hook：`python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
@@ -229,6 +229,8 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 | 引用 | DOI |
 |---|---|
 | 所有版本（除非需要特定版本，请使用此 DOI） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.1 | [10.5281/zenodo.24548859](https://doi.org/10.5281/zenodo.24548859) |
+| v1.2.0 | [10.5281/zenodo.24548668](https://doi.org/10.5281/zenodo.24548668) |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -238,7 +240,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 
 © 2026 Icaro de Jesus Silva。整个仓库（代码、skill 文本、文档和示例）采用 [**CC BY-NC 4.0**](../../LICENSE) 许可：只要注明出处，即可出于**非商业**目的分享和改编。CC BY-NC 4.0 不是 OSI 认可的开源许可证；TTW 是面向非商业使用的源代码公开项目。
 
-此许可自 v1.2.0 起适用。此前版本的副本仍保留其发布时的许可（v1.0.0：MIT；v1.1.0：代码为 MIT，文档为 CC BY 4.0）。[docs/tale.md](../../docs/tale.md) 中的故事为原创改写；以赛亚书 21:11 的引文属于公有领域。
+此许可自 v1.2.0 起适用。此前版本的副本仍保留其发布时的许可（v1.0.0：MIT；v1.1.0：代码为 MIT，文档为 CC BY 4.0）。[故事](tale.md)为原创改写；以赛亚书 21:11 的引文属于公有领域。
 
 <details>
 <summary><b>延伸阅读</b></summary>

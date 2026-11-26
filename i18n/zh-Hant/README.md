@@ -23,7 +23,7 @@
 只需設定一次專案的航向；每當工作偏離航向，你會收到一行提醒；只有在刻意決定時才改變方向，且每次變更都須經專案經理確認並記錄。
 
 > 一位旅人帶著一只壞掉的錶穿越濃霧。每次他在正午看錶，指針就倒退十分鐘，於是他一再走過同一段路，卻深信自己正在前進。
-> —— [閱讀完整故事](../../docs/tale.md)
+> —— [閱讀完整故事](tale.md)
 
 借助語言模型推進的長期專案也會以同樣的方式失敗：早期的假設逐漸固化、脈絡在摘要中流失，而模型一旦走錯一步，就會不斷回到那條錯路（[原因說明](../../docs/methods.md)）。The Traveler's Watch（TTW）給你的專案一只值得信賴的錶，並讓**你**而不是模型，決定它指向哪裡。
 
@@ -190,7 +190,7 @@ hooks/                 hooks.json · watchman.sh (bash + awk, no other dependenc
 tests/                 watchman.test.sh · bench_hook.py
 docs/                  tale · concepts · methods (literature) · ISO/IEC 42001 map · adr/ · benchmarks/
 examples/              worked PM session
-i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant, zh-Hans, ja, ar
+i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, es, zh-Hant, zh-Hans, ja, ar
 ```
 
 執行測試：`bash tests/watchman.test.sh` · 測量 hook：`python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
@@ -229,6 +229,8 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 | 引用 | DOI |
 |---|---|
 | 所有版本（除非需要特定版本，請使用此 DOI） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.1 | [10.5281/zenodo.24548859](https://doi.org/10.5281/zenodo.24548859) |
+| v1.2.0 | [10.5281/zenodo.24548668](https://doi.org/10.5281/zenodo.24548668) |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -238,7 +240,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 
 © 2026 Icaro de Jesus Silva。整個儲存庫（程式碼、skill 文字、文件與範例）採用 [**CC BY-NC 4.0**](../../LICENSE) 授權：只要註明出處，即可為**非商業**目的分享與改作。CC BY-NC 4.0 並非 OSI 認可的開放原始碼授權；TTW 是供非商業使用的原始碼公開專案。
 
-此授權自 v1.2.0 起適用。先前版本的副本仍保留其發布時的授權（v1.0.0：MIT；v1.1.0：程式碼為 MIT，文件為 CC BY 4.0）。[docs/tale.md](../../docs/tale.md) 中的故事為原創改寫；以賽亞書 21:11 的引文屬公有領域。
+此授權自 v1.2.0 起適用。先前版本的副本仍保留其發布時的授權（v1.0.0：MIT；v1.1.0：程式碼為 MIT，文件為 CC BY 4.0）。[故事](tale.md)為原創改寫；以賽亞書 21:11 的引文屬公有領域。
 
 <details>
 <summary><b>延伸閱讀</b></summary>

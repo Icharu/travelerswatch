@@ -23,7 +23,7 @@
 プロジェクトの針路を一度決めれば、作業が針路から外れるたびに一行で知らせます。針路の変更は意図したときだけ行い、変更のたびにプロジェクトマネージャーの確認を得て記録します。
 
 > ある旅人が、壊れた時計を頼りに濃い霧の中を進んでいた。正午に時計を見るたびに針が十分戻り、彼は前に進んでいると信じたまま、同じ道を何度も歩き続けた。
-> —— [物語の全文を読む](../../docs/tale.md)
+> —— [物語の全文を読む](tale.md)
 
 言語モデルと進める長期プロジェクトも同じように失敗します。初期の思い込みが固まり、コンテキストは要約の中で失われ、一度道を誤ったモデルは何度もその誤りに戻ってしまいます（[なぜ起きるのか](../../docs/methods.md)）。The Traveler's Watch（TTW）は、あなたのプロジェクトに信頼できる時計を与え、その時計がどこを指すかを決めるのはモデルではなく**あなた**であり続けるようにします。
 
@@ -190,7 +190,7 @@ hooks/                 hooks.json · watchman.sh (bash + awk, no other dependenc
 tests/                 watchman.test.sh · bench_hook.py
 docs/                  tale · concepts · methods (literature) · ISO/IEC 42001 map · adr/ · benchmarks/
 examples/              worked PM session
-i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant, zh-Hans, ja, ar
+i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, es, zh-Hant, zh-Hans, ja, ar
 ```
 
 テストの実行：`bash tests/watchman.test.sh` · hook の計測：`python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
@@ -229,6 +229,8 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 | 引用対象 | DOI |
 |---|---|
 | 全バージョン（特定のリリースが必要な場合を除き、こちらを使用） | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.1 | [10.5281/zenodo.24548859](https://doi.org/10.5281/zenodo.24548859) |
+| v1.2.0 | [10.5281/zenodo.24548668](https://doi.org/10.5281/zenodo.24548668) |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -238,7 +240,7 @@ i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant
 
 © 2026 Icaro de Jesus Silva。リポジトリ全体（コード、スキルのテキスト、ドキュメント、例）は [**CC BY-NC 4.0**](../../LICENSE) でライセンスされています。クレジットを表示すれば、**非営利**の目的で共有・翻案できます。CC BY-NC 4.0 は OSI 承認のオープンソースライセンスではありません。TTW は非営利利用向けのソース公開プロジェクトです。
 
-これは v1.2.0 から適用されます。それ以前のリリースのコピーは、公開時のライセンスのままです（v1.0.0：MIT、v1.1.0：コードは MIT、ドキュメントは CC BY 4.0）。[docs/tale.md](../../docs/tale.md) の物語はオリジナルの再話であり、イザヤ書 21:11 の引用はパブリックドメインです。
+これは v1.2.0 から適用されます。それ以前のリリースのコピーは、公開時のライセンスのままです（v1.0.0：MIT、v1.1.0：コードは MIT、ドキュメントは CC BY 4.0）。[物語](tale.md)はオリジナルの再話であり、イザヤ書 21:11 の引用はパブリックドメインです。
 
 <details>
 <summary><b>参考文献</b></summary>

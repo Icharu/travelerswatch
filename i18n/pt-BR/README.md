@@ -27,7 +27,7 @@ registrada.
 > Um viajante atravessa uma neblina densa com um relógio quebrado. Toda vez que o consulta ao
 > meio-dia, ele volta dez minutos, e o viajante segue percorrendo o mesmo trecho, certo de que está
 > avançando.
-> — [leia o conto completo](../../docs/tale.md)
+> — [leia o conto completo](tale.md)
 
 Projetos longos feitos com modelos de linguagem falham do mesmo jeito: suposições iniciais se
 cristalizam, o contexto se perde em resumos, e um modelo que pegou o caminho errado continua voltando
@@ -233,7 +233,7 @@ hooks/                 hooks.json · watchman.sh (bash + awk, no other dependenc
 tests/                 watchman.test.sh · bench_hook.py
 docs/                  tale · concepts · methods (literature) · ISO/IEC 42001 map · adr/ · benchmarks/
 examples/              worked PM session
-i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant, zh-Hans, ja, ar
+i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, es, zh-Hant, zh-Hans, ja, ar
 ```
 
 Rodar os testes: `bash tests/watchman.test.sh` · medir o hook: `python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
@@ -279,6 +279,8 @@ botão **"Cite this repository"** do GitHub lê o [CITATION.cff](../../CITATION.
 | Citar | DOI |
 |---|---|
 | Todas as versões (use este, salvo se precisar de uma versão específica) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.1 | [10.5281/zenodo.24548859](https://doi.org/10.5281/zenodo.24548859) |
+| v1.2.0 | [10.5281/zenodo.24548668](https://doi.org/10.5281/zenodo.24548668) |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -293,7 +295,7 @@ TTW tem código disponível para uso não comercial.
 
 Isso vale a partir da v1.2.0. Cópias de versões anteriores mantêm as
 licenças com que foram publicadas (v1.0.0: MIT; v1.1.0: MIT para o código e CC BY 4.0 para a
-documentação). O conto em [docs/tale.md](../../docs/tale.md) é um reconto original; a citação de
+documentação). O [conto](tale.md) é um reconto original; a citação de
 Isaías 21:11 está em domínio público.
 
 <details>

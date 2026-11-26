@@ -61,7 +61,7 @@ A lista comentada completa, com a consequência de design de cada fonte, está e
 | Contribuição | Onde |
 |---|---|
 | Uma **lente** para uma nova área (ex.: eventos, construção, programas sem fins lucrativos, design de produto) | `skills/checkwatch/references/lenses/` |
-| Uma **revisão de tradução** por falante nativo | `i18n/<lang>/` (README, QUICKSTART, CONTRIBUTING) |
+| Uma **revisão de tradução** por falante nativo | `i18n/<lang>/` (README, QUICKSTART, CONTRIBUTING, tale) |
 | Um novo **caso de avaliação** (um prompt e o comportamento esperado) | `skills/<skill>/evals/evals.json` |
 | Um **relato de bug** ou ideia | [Issues](https://github.com/Icharu/travelerswatch/issues). Use os modelos. |
 | Um **problema de segurança** | **Não** em issues. Veja o [SECURITY.md](../../SECURITY.md). |
@@ -119,7 +119,7 @@ Os arquivos em inglês na raiz (`README.md`, `QUICKSTART.md`, `CONTRIBUTING.md`)
 traduções ficam agrupadas por idioma em `i18n/<lang>/`, para que a raiz não fique poluída. Ao mudar
 um arquivo em inglês, indique no pull request quais traduções ficaram desatualizadas. Tradutores:
 mantenham idênticos a barra de idiomas, os links (relativos a `i18n/<lang>/`, ex.:
-`../../docs/tale.md`), os badges, os comandos e os blocos de código de shell (o diálogo do *Exemplo
+`../../docs/methods.md`), os badges, os comandos e os blocos de código de shell (o diálogo do *Exemplo
 rápido* pode ser traduzido). Atualizem a nota `Traduzido de` no topo do arquivo. Árabe: mantenham o
 texto dentro de `<div dir="rtl">` e os blocos de código fora dele.
 

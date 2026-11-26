@@ -1,3 +1,6 @@
+<!-- lang-bar -->
+**English** · [Português (Brasil)](../i18n/pt-BR/tale.md) · [Español](../i18n/es/tale.md) · [繁體中文](../i18n/zh-Hant/tale.md) · [简体中文](../i18n/zh-Hans/tale.md) · [日本語](../i18n/ja/tale.md) · [العربية](../i18n/ar/tale.md)
+
 # The Traveler's Watch
 
 *An original retelling, written for this project.*

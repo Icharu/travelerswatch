@@ -46,7 +46,7 @@ TTW 鼓勵使用者與貢獻者在修改之前，先了解是什麼促成了它�
 | 貢獻 | 位置 |
 |---|---|
 | 新領域的**視角**（例如活動、營建、非營利計畫、產品設計） | `skills/checkwatch/references/lenses/` |
-| 由母語人士進行的**翻譯校訂** | `i18n/<lang>/`（README、QUICKSTART、CONTRIBUTING） |
+| 由母語人士進行的**翻譯校訂** | `i18n/<lang>/`（README、QUICKSTART、CONTRIBUTING、tale） |
 | 新的**評估案例**（一個提示加上預期行為） | `skills/<skill>/evals/evals.json` |
 | **錯誤回報**或想法 | [Issues](https://github.com/Icharu/travelerswatch/issues)。請使用範本。 |
 | **安全問題** | **不要**發在 issues。請見 [SECURITY.md](../../SECURITY.md)。 |
@@ -87,7 +87,7 @@ hook 會解析固定標籤：`## Status`、`- **Bearing:**`（`confirmed` / `und
 
 ## 翻譯
 
-根目錄中的英文檔案（`README.md`、`QUICKSTART.md`、`CONTRIBUTING.md`）為正式版本。翻譯依語言集中放在 `i18n/<lang>/`，讓根目錄保持整潔。修改英文檔案時，請在 pull request 中註明哪些翻譯因此過時。譯者：請保持語言列、連結（相對於 `i18n/<lang>/`，例如 `../../docs/tale.md`）、徽章、指令與 shell 程式碼區塊完全相同（*快速範例*中的對話可以翻譯）。請更新檔案頂端的「譯自」說明。阿拉伯文：正文放在 `<div dir="rtl">` 內，程式碼區塊放在外面。
+根目錄中的英文檔案（`README.md`、`QUICKSTART.md`、`CONTRIBUTING.md`）為正式版本。翻譯依語言集中放在 `i18n/<lang>/`，讓根目錄保持整潔。修改英文檔案時，請在 pull request 中註明哪些翻譯因此過時。譯者：請保持語言列、連結（相對於 `i18n/<lang>/`，例如 `../../docs/methods.md`）、徽章、指令與 shell 程式碼區塊完全相同（*快速範例*中的對話可以翻譯）。請更新檔案頂端的「譯自」說明。阿拉伯文：正文放在 `<div dir="rtl">` 內，程式碼區塊放在外面。
 
 ## Pull requests
 

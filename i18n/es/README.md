@@ -26,7 +26,7 @@ registrado.
 
 > Un viajero cruza una niebla espesa con un reloj roto. Cada vez que lo mira al mediodía, se atrasa
 > diez minutos, así que sigue recorriendo el mismo tramo, convencido de que avanza.
-> — [lee el cuento completo](../../docs/tale.md)
+> — [lee el cuento completo](tale.md)
 
 Los proyectos largos hechos con modelos de lenguaje fallan de la misma manera: las suposiciones
 iniciales se endurecen, el contexto se pierde en resúmenes y un modelo que tomó un giro equivocado
@@ -234,7 +234,7 @@ hooks/                 hooks.json · watchman.sh (bash + awk, no other dependenc
 tests/                 watchman.test.sh · bench_hook.py
 docs/                  tale · concepts · methods (literature) · ISO/IEC 42001 map · adr/ · benchmarks/
 examples/              worked PM session
-i18n/<lang>/           README, QUICKSTART and CONTRIBUTING in pt-BR, es, zh-Hant, zh-Hans, ja, ar
+i18n/<lang>/           README, QUICKSTART, CONTRIBUTING and the tale in pt-BR, es, zh-Hant, zh-Hans, ja, ar
 ```
 
 Ejecutar las pruebas: `bash tests/watchman.test.sh` · medir el hook: `python3 -I tests/bench_hook.py hooks/watchman.sh 300 <project-dir>`
@@ -280,6 +280,8 @@ Si deseas citar este trabajo en cualquiera de tus investigaciones, cita el regis
 | Citar | DOI |
 |---|---|
 | Todas las versiones (usa este salvo que necesites una versión concreta) | [10.5281/zenodo.24543183](https://doi.org/10.5281/zenodo.24543183) |
+| v1.2.1 | [10.5281/zenodo.24548859](https://doi.org/10.5281/zenodo.24548859) |
+| v1.2.0 | [10.5281/zenodo.24548668](https://doi.org/10.5281/zenodo.24548668) |
 | v1.1.0 | [10.5281/zenodo.24543326](https://doi.org/10.5281/zenodo.24543326) |
 | v1.0.0 | [10.5281/zenodo.24543184](https://doi.org/10.5281/zenodo.24543184) |
 
@@ -294,7 +296,7 @@ por la OSI; TTW tiene el código disponible para uso no comercial.
 
 Esto se aplica desde la v1.2.0. Las copias de versiones anteriores
 conservan las licencias con que se publicaron (v1.0.0: MIT; v1.1.0: MIT para el código y CC BY 4.0
-para la documentación). El cuento en [docs/tale.md](../../docs/tale.md) es una reescritura original;
+para la documentación). El [cuento](tale.md) es una reescritura original;
 la cita de Isaías 21:11 es de dominio público.
 
 <details>

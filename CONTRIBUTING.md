@@ -58,7 +58,7 @@ The full annotated list, with the design consequence of each source, is in
 | Contribution | Where |
 |---|---|
 | A **lens** for a new field (e.g. events, construction, nonprofit programs, product design) | `skills/checkwatch/references/lenses/` |
-| A **translation review** by a native speaker | `i18n/<lang>/` (README, QUICKSTART, CONTRIBUTING) |
+| A **translation review** by a native speaker | `i18n/<lang>/` (README, QUICKSTART, CONTRIBUTING, tale) |
 | A new **eval case** (a prompt plus the behaviour you expect) | `skills/<skill>/evals/evals.json` |
 | A **bug report** or idea | [Issues](https://github.com/Icharu/travelerswatch/issues). Use the templates. |
 | A **security problem** | **Not** in issues. See [SECURITY.md](SECURITY.md). |
@@ -113,10 +113,10 @@ and the tests.
 
 ## Translations
 
-The English files at the root (`README.md`, `QUICKSTART.md`, `CONTRIBUTING.md`) are canonical.
+The English files (`README.md`, `QUICKSTART.md`, `CONTRIBUTING.md` at the root, and `docs/tale.md`) are canonical.
 Translations are grouped by language under `i18n/<lang>/`, so the root stays uncluttered. When you
 change an English file, note in the pull request which translations are now out of date.
-Translators: keep the language bar, links (relative to `i18n/<lang>/`, e.g. `../../docs/tale.md`),
+Translators: keep the language bar, links (relative to `i18n/<lang>/`, e.g. `../../docs/methods.md`),
 badges, commands, and shell code blocks identical (the dialogue in *Quick example* may be
 translated). Update the `Translated from` note at the top of the file. Arabic: keep prose inside
 `<div dir="rtl">` and code blocks outside it.
